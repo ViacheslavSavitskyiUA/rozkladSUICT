@@ -11,7 +11,7 @@ import SwiftUI
 struct ScheduleSUICTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChoiceView(viewModel: .init())
         }
     }
 }
