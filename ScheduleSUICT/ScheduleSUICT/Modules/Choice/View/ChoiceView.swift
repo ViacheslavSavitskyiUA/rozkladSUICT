@@ -10,36 +10,44 @@ import SwiftUI
 struct ChoiceView: View {
     
     @ObservedObject var viewModel: ChoiceViewModel
+    @State private var toListView = false
     
     var body: some View {
-            VStack(spacing: 20) {
-                
-                Spacer()
-                Spacer()
-                
-                Group {
-                    ChoiceCardView(viewModel: viewModel.studentCardViewModel,
-                                   userType: .student)
-                        .onTapGesture {
-                            viewModel.select(userType: .student)
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    VStack(spacing: 14) {
+                        
+                        Spacer()
+                        
+                        Group {
+                            ChoiceCardView(viewModel: viewModel.studentCardViewModel,
+                                           userType: .student)
+                            .onTapGesture {
+                                viewModel.select(userType: .student)
+                            }
+                            
+                            Text("Оберіть свою сторону")
+                                .font(.gilroy(.bold, size: 24))
+                                .padding()
+                            
+                            ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
+                                           userType: .teacher)
+                            .onTapGesture {
+                                viewModel.select(userType: .teacher)
+                            }
                         }
-                    
-                    Text("Оберіть свою сторону")
-                        .font(.gilroy(.semibold,
-                                      size: 24))
-                        .padding()
-                    
-                    ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
-                                   userType: .teacher)
-                        .onTapGesture {
-                            viewModel.select(userType: .teacher)
-                        }
+                        .padding(.top, 16)
+                    }
                 }
+                .navigationDestination(isPresented: $toListView, destination: {
+                    SelectListView(viewModel: .init(userType: viewModel.selectUserType))
+                })
                 
                 Spacer()
                 
                 Button {
-                    print("tap")
+                    toListView.toggle()
                 } label: {
                     Text("Далі")
                         .font(.gilroy(.semibold, size: 20))
@@ -53,7 +61,8 @@ struct ChoiceView: View {
                 .opacity(viewModel.selectUserType != .unowned ? 1 : 0.5)
                 .padding(.bottom)
             }
-            .ignoresSafeArea()
+        }
+        .scrollIndicators(.hidden)
     }
 }
 

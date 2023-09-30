@@ -11,7 +11,7 @@ struct ChoiceCardView: View {
     
     @ObservedObject var viewModel: ChoiceCardViewModel
     
-    private let constantSize: CGFloat = UIScreen.main.bounds.size.width - 140
+    private let constantSize: CGFloat = UIScreen.main.bounds.size.width - 180
     let userType: UserType
     
     var body: some View {
@@ -23,14 +23,11 @@ struct ChoiceCardView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(viewModel.isSelect ? userType.borderColor : .clear, lineWidth: 6)
                 }
-                
-            userType.backgroundColor
-                .cornerRadius(16)
-                .frame(width: 200, height: 200)
+            
             VStack {
                 LottieView(loopMode: .loop, lottieFile: userType.lottieFile)
-                    .scaleEffect(0.17)
-                    .frame(width: 160, height: 160)
+                    .scaleEffect(0.15)
+                    .frame(width: 150, height: 150)
                 Text(userType.title)
                     .font(.gilroy(.light, size: 12))
             }

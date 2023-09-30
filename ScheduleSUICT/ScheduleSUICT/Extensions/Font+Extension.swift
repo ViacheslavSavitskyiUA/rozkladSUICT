@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Font {
     enum GilroyFont {
-        case regular, semibold, medium, light
+        case regular, semibold, medium, light, bold
 
         var value: String {
             switch self {
@@ -17,6 +17,7 @@ extension Font {
             case .semibold: return "Gilroy-Semibold"
             case .medium:   return "Gilroy-Medium"
             case .light:    return "Gilroy-Light"
+            case .bold:     return "Gilroy-Bold"
             }
         }
     }

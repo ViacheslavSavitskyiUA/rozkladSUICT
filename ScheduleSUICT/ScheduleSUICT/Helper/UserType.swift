@@ -42,4 +42,12 @@ enum UserType {
         default:       return .clear
         }
     }
+    
+    var titleSelectItemsView: String {
+        switch self {
+        case .student: return "Оберіть групу"
+        case .teacher: return  "Знайдіть себе"
+        case .unowned: return ""
+        }
+    }
 }
