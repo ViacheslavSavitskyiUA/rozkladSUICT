@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - FacultyModel
-class FacultyModel: BaseModel, Codable {
+class FacultyModel: Codable {
     let id: Int
     let shortName, fullName: String
 }

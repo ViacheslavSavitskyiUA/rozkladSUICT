@@ -12,35 +12,42 @@ struct SelectItemView: View {
     @ObservedObject var viewModel: SelectItemViewModel
     
     var body: some View {
-        DisclosureGroup(isExpanded: $viewModel.isReveal,
-                        content: {
+        GroupBox {
+            DisclosureGroup(isExpanded: $viewModel.isOpen,
+                            content: {
                 VStack(spacing: 16) {
-                    ForEach(viewModel.inputsData) { item in
+                    ForEach(viewModel.inputItems) { item in
                         VStack {
                             Divider()
-                            Text("(\(item.shortName)) \(item.fullName)")
+                            Text(viewModel.setupItemTitle(item))
                                 .font(.gilroy(.regular, size: 14))
                                 .onTapGesture {
                                     withAnimation(.easeInOut) {
                                         viewModel.selectedItem = item
-                                        viewModel.isReveal.toggle()
+                                        viewModel.isOpen.toggle()
                                     }
-                                    
                                 }
                                 .padding(.top)
                         }
                     }
                 }
-        }, label: {
-            Text(viewModel.selectedItem == nil 
-                 ? "Оберіть інститут"
-                 : "(\(viewModel.selectedItem?.shortName ?? ""))\(viewModel.selectedItem?.fullName ?? "")")
+            }, label: {
+                Text(viewModel.setupSelectTitle())
                 .foregroundStyle(Color.black)
                 .font(.gilroy(.bold, size: 16))
-        })
+                .padding(.bottom, viewModel.isOpen ? 12 : 0)
+            })
+        }
+        .background(Color.pastelBianca)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding([.leading, .trailing])
+        .inactive(viewModel.isInactive)
     }
 }
 
 #Preview {
-    SelectItemView(viewModel: .init(inputsData: [], type: .faculty))
+    SelectItemView(viewModel: .init(type: .course,
+                                    inputsItem: [],
+                                    isInactive: false,
+                                    completion: nil))
 }

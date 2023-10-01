@@ -35,11 +35,13 @@
 		67B3FBE82AC6F4E900366366 /* FacultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBE72AC6F4E900366366 /* FacultyModel.swift */; };
 		67E9398D2AC602E100AB47ED /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9398C2AC602E100AB47ED /* UserType.swift */; };
 		67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */; };
-		67EDEC7B2AC7F4720003C3AD /* StepCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC7A2AC7F4720003C3AD /* StepCounterView.swift */; };
-		67EDEC7D2AC7F4800003C3AD /* StepCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC7C2AC7F4800003C3AD /* StepCounterViewModel.swift */; };
-		67EDEC802AC7F6210003C3AD /* StepCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC7F2AC7F6210003C3AD /* StepCountView.swift */; };
-		67EDEC822AC7F64C0003C3AD /* StepCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC812AC7F64C0003C3AD /* StepCountViewModel.swift */; };
-		67F581252AC74D4A003EC9F2 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F581242AC74D4A003EC9F2 /* BaseModel.swift */; };
+		67EDEC8A2AC87C890003C3AD /* ChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC892AC87C890003C3AD /* ChoiceEntity.swift */; };
+		67EDEC8D2AC87DB10003C3AD /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC8C2AC87DB10003C3AD /* BaseEntity.swift */; };
+		67EDEC902AC8B2760003C3AD /* Inactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC8F2AC8B2760003C3AD /* Inactive.swift */; };
+		67EDEC952AC996DD0003C3AD /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC942AC996DD0003C3AD /* URLRequest+Extension.swift */; };
+		67EDEC982AC9B1120003C3AD /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC972AC9B1120003C3AD /* GroupModel.swift */; };
+		67EDEC9A2AC9D8DF0003C3AD /* ChairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC992AC9D8DF0003C3AD /* ChairModel.swift */; };
+		67EDEC9C2AC9DD1A0003C3AD /* TeacherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */; };
 		67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F581262AC7DF7B003EC9F2 /* CourseModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,11 +75,13 @@
 		67B3FBE72AC6F4E900366366 /* FacultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyModel.swift; sourceTree = "<group>"; };
 		67E9398C2AC602E100AB47ED /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCardViewModel.swift; sourceTree = "<group>"; };
-		67EDEC7A2AC7F4720003C3AD /* StepCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterView.swift; sourceTree = "<group>"; };
-		67EDEC7C2AC7F4800003C3AD /* StepCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterViewModel.swift; sourceTree = "<group>"; };
-		67EDEC7F2AC7F6210003C3AD /* StepCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountView.swift; sourceTree = "<group>"; };
-		67EDEC812AC7F64C0003C3AD /* StepCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountViewModel.swift; sourceTree = "<group>"; };
-		67F581242AC74D4A003EC9F2 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		67EDEC892AC87C890003C3AD /* ChoiceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEntity.swift; sourceTree = "<group>"; };
+		67EDEC8C2AC87DB10003C3AD /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		67EDEC8F2AC8B2760003C3AD /* Inactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inactive.swift; sourceTree = "<group>"; };
+		67EDEC942AC996DD0003C3AD /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
+		67EDEC972AC9B1120003C3AD /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		67EDEC992AC9D8DF0003C3AD /* ChairModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairModel.swift; sourceTree = "<group>"; };
+		67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		67F581262AC7DF7B003EC9F2 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +147,8 @@
 				6760AF212AC5C06A000434A6 /* ContentView.swift */,
 				6760AF442AC5DE16000434A6 /* Modules */,
 				6760AF3E2AC5DDAA000434A6 /* Views */,
+				67EDEC8E2AC8B1280003C3AD /* Modifiers */,
+				67EDEC882AC8753E0003C3AD /* Entities */,
 				67B3FBE62AC6F4C100366366 /* Models */,
 				67B3FBDD2AC6AE0400366366 /* Network */,
 				6760AF4F2AC5E086000434A6 /* Helper */,
@@ -181,6 +187,7 @@
 			children = (
 				6760AF3A2AC5D929000434A6 /* Font+Extension.swift */,
 				6760AF3C2AC5DBAD000434A6 /* Color+Extension.swift */,
+				67EDEC942AC996DD0003C3AD /* URLRequest+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,7 +195,6 @@
 		6760AF3E2AC5DDAA000434A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				67EDEC792AC7EEA10003C3AD /* StepCounter */,
 				67EDEC782AC7EE990003C3AD /* Lottie */,
 			);
 			path = Views;
@@ -243,8 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				67B3FBE72AC6F4E900366366 /* FacultyModel.swift */,
-				67F581242AC74D4A003EC9F2 /* BaseModel.swift */,
 				67F581262AC7DF7B003EC9F2 /* CourseModel.swift */,
+				67EDEC972AC9B1120003C3AD /* GroupModel.swift */,
+				67EDEC992AC9D8DF0003C3AD /* ChairModel.swift */,
+				67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,23 +283,21 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
-		67EDEC792AC7EEA10003C3AD /* StepCounter */ = {
+		67EDEC882AC8753E0003C3AD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				67EDEC7E2AC7F5F80003C3AD /* StepCount */,
-				67EDEC7A2AC7F4720003C3AD /* StepCounterView.swift */,
-				67EDEC7C2AC7F4800003C3AD /* StepCounterViewModel.swift */,
+				67EDEC8C2AC87DB10003C3AD /* BaseEntity.swift */,
+				67EDEC892AC87C890003C3AD /* ChoiceEntity.swift */,
 			);
-			path = StepCounter;
+			path = Entities;
 			sourceTree = "<group>";
 		};
-		67EDEC7E2AC7F5F80003C3AD /* StepCount */ = {
+		67EDEC8E2AC8B1280003C3AD /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				67EDEC7F2AC7F6210003C3AD /* StepCountView.swift */,
-				67EDEC812AC7F64C0003C3AD /* StepCountViewModel.swift */,
+				67EDEC8F2AC8B2760003C3AD /* Inactive.swift */,
 			);
-			path = StepCount;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,24 +387,26 @@
 				67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */,
 				6760AF402AC5DDCF000434A6 /* Lottie.swift in Sources */,
 				6760AF472AC5DE8E000434A6 /* ChoiceView.swift in Sources */,
-				67EDEC822AC7F64C0003C3AD /* StepCountViewModel.swift in Sources */,
+				67EDEC9C2AC9DD1A0003C3AD /* TeacherModel.swift in Sources */,
 				6760AF222AC5C06A000434A6 /* ContentView.swift in Sources */,
 				6760AF492AC5DEAD000434A6 /* ChoiceCardView.swift in Sources */,
 				67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */,
-				67EDEC802AC7F6210003C3AD /* StepCountView.swift in Sources */,
+				67EDEC952AC996DD0003C3AD /* URLRequest+Extension.swift in Sources */,
 				67B3FBE52AC6E62D00366366 /* SelectItemViewModel.swift in Sources */,
 				6760AF202AC5C06A000434A6 /* ScheduleSUICTApp.swift in Sources */,
-				67EDEC7B2AC7F4720003C3AD /* StepCounterView.swift in Sources */,
 				671361762AC69C4E00B78C42 /* SelectListViewModel.swift in Sources */,
+				67EDEC902AC8B2760003C3AD /* Inactive.swift in Sources */,
 				67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */,
+				67EDEC9A2AC9D8DF0003C3AD /* ChairModel.swift in Sources */,
 				671361722AC69C3300B78C42 /* SelectListView.swift in Sources */,
-				67EDEC7D2AC7F4800003C3AD /* StepCounterViewModel.swift in Sources */,
 				67B3FBE32AC6E61A00366366 /* SelectItemView.swift in Sources */,
 				6713616D2AC691BB00B78C42 /* ChoiceViewModel.swift in Sources */,
 				67E9398D2AC602E100AB47ED /* UserType.swift in Sources */,
+				67EDEC982AC9B1120003C3AD /* GroupModel.swift in Sources */,
 				6760AF3B2AC5D929000434A6 /* Font+Extension.swift in Sources */,
+				67EDEC8D2AC87DB10003C3AD /* BaseEntity.swift in Sources */,
 				67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */,
-				67F581252AC74D4A003EC9F2 /* BaseModel.swift in Sources */,
+				67EDEC8A2AC87C890003C3AD /* ChoiceEntity.swift in Sources */,
 				6760AF512AC5E0A6000434A6 /* LottieHelper.swift in Sources */,
 				6760AF3D2AC5DBAD000434A6 /* Color+Extension.swift in Sources */,
 			);

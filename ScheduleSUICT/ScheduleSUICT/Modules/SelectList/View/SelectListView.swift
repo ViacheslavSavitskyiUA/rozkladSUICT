@@ -14,21 +14,10 @@ struct SelectListView: View {
     var body: some View {
             VStack {
                 ScrollView {
-                    GroupBox {
-                        VStack(spacing: 20) {
-                            SelectItemView(viewModel: viewModel.facultyViewModel)
-                        }
-                    }
-                    .background(Color.pastelBianca)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .padding()
+                    fillScreen(userType: viewModel.userType)
                 }
                 .task {
-                    do {
-                        try await viewModel.fetchFaculties()
-                    } catch {
-                        print(error)
-                    }
+                    await viewModel.fetchFaculties()
                 }
                 
                 Spacer()
@@ -43,12 +32,28 @@ struct SelectListView: View {
                         .foregroundColor(.white)
                         .cornerRadius(12)
                 }
-                .disabled(false)
-                .opacity(1)
+                .inactive(true)
                 .padding(.bottom)
             }
             .navigationTitle(viewModel.userType.titleSelectItemsView)
             .navigationBarTitleDisplayMode(.large)
+    }
+    
+    @ViewBuilder func fillScreen(userType: UserType) -> some View {
+        VStack {
+            SelectItemView(viewModel: viewModel.facultyViewModel)
+            
+            switch userType {
+            case .student:
+                SelectItemView(viewModel: viewModel.courseViewModel)
+                SelectItemView(viewModel: viewModel.groupViewModel)
+            case .teacher:
+                SelectItemView(viewModel: viewModel.chairViewModel)
+                SelectItemView(viewModel: viewModel.teacherViewModel)
+            case .unowned:
+                EmptyView()
+            }
+        }
     }
 }
 

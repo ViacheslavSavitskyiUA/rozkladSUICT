@@ -20,11 +20,17 @@ enum APIError: Error {
 enum APIEndpoints {
     case faculties
     case courses
+    case groups
+    case chairs
+    case teachers
     
     var endpointString: String {
         switch self {
         case .faculties: return "list/faculties"
         case .courses: return "list/courses"
+        case .groups: return "list/groups"
+        case .chairs: return "list/chairs"
+        case .teachers: return "list/teachers-by-chair"
         }
     }
 }
@@ -34,11 +40,10 @@ final class NetworkClient {
 }
 
 extension NetworkClient {
-    
     func request<T: Codable>(endpoint: APIEndpoints,
                              method: HTTPMethod = .get,
                              urlParams: String? = nil,
-                             body: [String: Any] = [:]) async throws -> Result<T, Error> {
+                             body: [String: String] = [:]) async -> Result<T, Error> {
         
         var newPath = "\(path)\(endpoint.endpointString)"
         if let urlParams = urlParams {
@@ -49,15 +54,14 @@ extension NetworkClient {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.httpBody = try! JSONSerialization.data(withJSONObject: body)
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(APIError.badRequest) }
+
+         try? request.setMultipartFormData(body, encoding: .utf8)
         
         do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(APIError.badRequest) }
+            
             let decode = try JSONDecoder().decode(T.self, from: data)
-            print(decode)
             return .success(decode)
         } catch {
             return .failure(error)

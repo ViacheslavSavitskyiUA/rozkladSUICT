@@ -57,8 +57,7 @@ struct ChoiceView: View {
                         .foregroundColor(.white)
                         .cornerRadius(12)
                 }
-                .disabled(viewModel.selectUserType != .unowned ? false : true)
-                .opacity(viewModel.selectUserType != .unowned ? 1 : 0.5)
+                .inactive(viewModel.selectUserType != .unowned ? false : true)
                 .padding(.bottom)
             }
         }
