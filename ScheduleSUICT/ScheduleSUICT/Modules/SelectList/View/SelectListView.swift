@@ -32,7 +32,7 @@ struct SelectListView: View {
                         .foregroundColor(.white)
                         .cornerRadius(12)
                 }
-                .inactive(true)
+                .inactive(!viewModel.isActiveNextButton)
                 .padding(.bottom)
             }
             .navigationTitle(viewModel.userType.titleSelectItemsView)

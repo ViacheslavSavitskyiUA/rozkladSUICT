@@ -28,7 +28,11 @@ enum SelectItemType {
 
 final class SelectItemViewModel: ObservableObject {
     
-    @Published var inputItems: [ChoiceEntity]
+    @Published var inputItems: [ChoiceEntity] {
+        didSet {
+            print(inputItems)
+        }
+    }
     @Published var selectedItem: ChoiceEntity? = nil {
         didSet {
             if selectedItem != nil {
@@ -77,7 +81,7 @@ final class SelectItemViewModel: ObservableObject {
         case .course, .group:
             return "\(item.fullName)"
         case .teacher:
-            return "\(selectedItem?.shortName ?? "") \(selectedItem?.fullName ?? "")"
+            return "\(item.fullName) \(item.shortName ?? "")"
         }
     }
 }

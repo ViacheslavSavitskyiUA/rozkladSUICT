@@ -9,11 +9,11 @@ import Combine
 
 final class SelectListViewModel: ObservableObject {
     
-    // For all
+    // MARK: - For all
     @Published var faculties: [FacultyModel] = []
     @Published var facultyViewModel: SelectItemViewModel!
     
-    // MARK: For student
+    // MARK: - For student
     @Published var courses: [CourseModel] = []
     @Published var groups: [GroupModel] = []
 
@@ -26,6 +26,8 @@ final class SelectListViewModel: ObservableObject {
     
     @Published var chairViewModel: SelectItemViewModel!
     @Published var teacherViewModel: SelectItemViewModel!
+    
+    @Published var isActiveNextButton = false
     
     
     let userType: UserType
@@ -84,6 +86,17 @@ extension SelectListViewModel {
             print(error)
         }
     }
+    
+    private func fetchTeachers() async {
+        let models = await network.getTeachers(chairId: chairViewModel.selectedItem?.id ?? 0)
+        
+        switch models {
+        case .success(let teachers):
+            teacherViewModel.inputItems = transform(teachers: teachers)
+        case .failure(let error):
+            print(error)
+        }
+    }
 }
 
 // MARK: Private
@@ -94,9 +107,18 @@ private extension SelectListViewModel {
                                       isInactive: false,
                                       completion: { [self] in
             Task {
-                await fetchCourses()
+                switch type {
+                case .student:
+                    await fetchCourses()
+                    courseViewModel.isInactive = false
+                case .teacher:
+                    await fetchChairs()
+                    chairViewModel.isInactive = false
+                case .unowned: ()
+                }
             }
-            courseViewModel.isInactive = false
+            
+            setupChoicesView(type: .faculty)
         })
         
         switch type {
@@ -108,28 +130,34 @@ private extension SelectListViewModel {
                 Task {
                     await fetchGroups()
                 }
+                setupChoicesView(type: .course)
                 groupViewModel.isInactive = false
+                
             })
             
             self.groupViewModel = .init(type: .group,
                                         inputsItem: [],
                                         isInactive: true,
-                                        completion: {
-                
+                                        completion: { [self] in
+                setupChoicesView(type: .group)
             })
         case .teacher:
             self.chairViewModel = .init(type: .chair,
                                         inputsItem: [],
                                         isInactive: true,
-                                        completion: {
-                
+                                        completion: { [self] in
+                Task {
+                    await fetchTeachers()
+                }
+                setupChoicesView(type: .chair)
+                teacherViewModel.isInactive = false
             })
             
             self.teacherViewModel = .init(type: .teacher,
                                           inputsItem: [],
                                           isInactive: true,
-                                          completion: {
-                
+                                          completion: { [self] in
+                setupChoicesView(type: .chair)
             })
         default: ()
         }
@@ -188,5 +216,40 @@ private extension SelectListViewModel {
                                               fullName: teacher.lastName))
         }
         return choicesEntity
+    }
+    
+    func setupChoicesView(type: SelectItemType) {
+        switch type {
+        case .faculty:
+            switch userType {
+            case .student:
+                courseViewModel.isOpen = false
+                courseViewModel.selectedItem = nil
+                courseViewModel.isInactive = true
+                
+                groupViewModel.isOpen = false
+                groupViewModel.selectedItem = nil
+                groupViewModel.isInactive = true
+            case .teacher:
+                chairViewModel.isOpen = false
+                chairViewModel.selectedItem = nil
+                chairViewModel.isInactive = true
+                
+                teacherViewModel.isOpen = false
+                teacherViewModel.selectedItem = nil
+                teacherViewModel.isInactive = true
+            case .unowned: ()
+            }
+        case .course:
+            groupViewModel.isOpen = false
+            groupViewModel.selectedItem = nil
+            groupViewModel.isInactive = true
+        case .chair:
+            teacherViewModel.isOpen = false
+            teacherViewModel.selectedItem = nil
+            teacherViewModel.isInactive = true
+        case .group, .teacher:
+            isActiveNextButton = true
+        }
     }
 }
