@@ -15,6 +15,9 @@ final class ChoiceViewModel: ObservableObject {
     
     @Published var selectUserType: UserType = .unowned
     
+    @Published var isToNextScreen = false
+    
+    
     init() {
         self.studentCardViewModel = ChoiceCardViewModel()
         self.teacherCardViewModel = ChoiceCardViewModel()

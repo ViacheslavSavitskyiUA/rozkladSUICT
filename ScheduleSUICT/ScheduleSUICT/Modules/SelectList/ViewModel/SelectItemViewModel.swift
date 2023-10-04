@@ -28,11 +28,7 @@ enum SelectItemType {
 
 final class SelectItemViewModel: ObservableObject {
     
-    @Published var inputItems: [ChoiceEntity] {
-        didSet {
-            print(inputItems)
-        }
-    }
+    @Published var inputItems: [ChoiceEntity]
     @Published var selectedItem: ChoiceEntity? = nil {
         didSet {
             if selectedItem != nil {
@@ -56,6 +52,10 @@ final class SelectItemViewModel: ObservableObject {
         self.inputItems = inputsItem
         self.isInactive = isInactive
         self.completion = completion
+    }
+    
+    deinit {
+        selectedItem = nil
     }
     
     // MARK: - Public methods

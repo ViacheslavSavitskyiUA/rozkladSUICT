@@ -43,6 +43,7 @@ final class SelectListViewModel: ObservableObject {
 
 // MARK: - Requests
 extension SelectListViewModel {
+    
     @MainActor
     func fetchFaculties() async {
         isShowLoader = true
@@ -121,7 +122,7 @@ private extension SelectListViewModel {
         self.facultyViewModel = .init(type: .faculty,
                                       inputsItem: [],
                                       isInactive: false,
-                                      completion: { [self] in
+                                      completion: { [unowned self] in
             Task {
                 switch type {
                 case .student:
@@ -142,38 +143,43 @@ private extension SelectListViewModel {
             self.courseViewModel = .init(type: .course,
                                          inputsItem: [],
                                          isInactive: true,
-                                         completion: { [self] in
+                                         completion: { [weak self] in
+                guard let self = self else { return }
+                
                 Task {
-                    await fetchGroups()
+                    await self.fetchGroups()
                 }
-                setupChoicesView(type: .course)
-                groupViewModel.isInactive = false
+                
+                self.setupChoicesView(type: .course)
+                self.groupViewModel.isInactive = false
                 
             })
             
             self.groupViewModel = .init(type: .group,
                                         inputsItem: [],
                                         isInactive: true,
-                                        completion: { [self] in
-                setupChoicesView(type: .group)
+                                        completion: { [weak self] in
+                self?.setupChoicesView(type: .group)
             })
         case .teacher:
             self.chairViewModel = .init(type: .chair,
                                         inputsItem: [],
                                         isInactive: true,
-                                        completion: { [self] in
+                                        completion: { [weak self] in
+                guard let self = self else { return }
+                
                 Task {
-                    await fetchTeachers()
+                    await self.fetchTeachers()
                 }
-                setupChoicesView(type: .chair)
-                teacherViewModel.isInactive = false
+                self.setupChoicesView(type: .chair)
+                self.teacherViewModel.isInactive = false
             })
             
             self.teacherViewModel = .init(type: .teacher,
                                           inputsItem: [],
                                           isInactive: true,
-                                          completion: { [self] in
-                setupChoicesView(type: .teacher)
+                                          completion: { [weak self] in
+                self?.setupChoicesView(type: .teacher)
             })
         default: ()
         }

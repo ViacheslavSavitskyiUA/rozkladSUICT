@@ -10,7 +10,6 @@ import SwiftUI
 struct ChoiceView: View {
     
     @ObservedObject var viewModel: ChoiceViewModel
-    @State private var toListView = false
     
     var body: some View {
         NavigationStack {
@@ -40,14 +39,16 @@ struct ChoiceView: View {
                         .padding(.top, 16)
                     }
                 }
-                .navigationDestination(isPresented: $toListView, destination: {
-                    SelectListView(viewModel: .init(userType: viewModel.selectUserType))
+                .navigationDestination(isPresented: $viewModel.isToNextScreen, destination: {
+                    if viewModel.isToNextScreen {
+                        SelectListView(viewModel: .init(userType: viewModel.selectUserType))
+                    }
                 })
                 
                 Spacer()
                 
                 Button {
-                    toListView.toggle()
+                    viewModel.isToNextScreen.toggle()
                 } label: {
                     Text("Далі")
                         .font(.gilroy(.semibold, size: 20))

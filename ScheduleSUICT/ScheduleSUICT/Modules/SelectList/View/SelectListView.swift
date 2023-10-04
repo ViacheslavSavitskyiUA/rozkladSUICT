@@ -14,7 +14,6 @@ struct SelectListView: View {
     @ObservedObject var viewModel: SelectListViewModel
     
     var body: some View {
-//        LoaderView(isShowing: /*$viewModel.isShowLoader*/ .constant(true)) {
             NavigationStack {
                 VStack {
                     ScrollView {
@@ -25,6 +24,7 @@ struct SelectListView: View {
                     }
                     
                     Spacer()
+                    
                     Button {
                         print("tap")
                     } label: {
