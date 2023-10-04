@@ -79,7 +79,7 @@ final class SelectItemViewModel: ObservableObject {
         case .faculty, .chair:
             return "(\(item.shortName ?? "")) \(item.fullName)"
         case .course, .group:
-            return "\(item.fullName)"
+            return "              \(item.fullName)              "
         case .teacher:
             return "\(item.fullName) \(item.shortName ?? "")"
         }

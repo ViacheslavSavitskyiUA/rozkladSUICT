@@ -16,7 +16,7 @@ final class SelectListViewModel: ObservableObject {
     // MARK: - For student
     @Published var courses: [CourseModel] = []
     @Published var groups: [GroupModel] = []
-
+    
     @Published var courseViewModel: SelectItemViewModel!
     @Published var groupViewModel: SelectItemViewModel!
     
@@ -29,6 +29,7 @@ final class SelectListViewModel: ObservableObject {
     
     @Published var isActiveNextButton = false
     
+    @Published var isShowLoader = false
     
     let userType: UserType
     
@@ -42,8 +43,11 @@ final class SelectListViewModel: ObservableObject {
 
 // MARK: - Requests
 extension SelectListViewModel {
+    @MainActor
     func fetchFaculties() async {
+        isShowLoader = true
         let models = await network.getFaculties()
+        isShowLoader = false
         
         switch models {
         case .success(let faculties):
@@ -53,8 +57,11 @@ extension SelectListViewModel {
         }
     }
     
+    @MainActor
     private func fetchCourses() async {
+        isShowLoader = true
         let models = await network.getCourse(facultyViewModel.selectedItem?.id ?? 0)
+        isShowLoader = false
         
         switch models {
         case .success(let courses):
@@ -64,9 +71,12 @@ extension SelectListViewModel {
         }
     }
     
+    @MainActor
     private func fetchGroups() async {
+        isShowLoader = true
         let models = await network.getGroups(facultyViewModel.selectedItem?.id ?? 0,
                                              course: courseViewModel.selectedItem?.id ?? 0)
+        isShowLoader = false
         
         switch models {
         case .success(let groups):
@@ -76,8 +86,11 @@ extension SelectListViewModel {
         }
     }
     
+    @MainActor
     private func fetchChairs() async {
+        isShowLoader = true
         let models = await network.getChairs(facultyId: facultyViewModel.selectedItem?.id ?? 0)
+        isShowLoader = false
         
         switch models {
         case .success(let chairs):
@@ -87,8 +100,11 @@ extension SelectListViewModel {
         }
     }
     
+    @MainActor
     private func fetchTeachers() async {
+        isShowLoader = true
         let models = await network.getTeachers(chairId: chairViewModel.selectedItem?.id ?? 0)
+        isShowLoader = false
         
         switch models {
         case .success(let teachers):
@@ -157,12 +173,13 @@ private extension SelectListViewModel {
                                           inputsItem: [],
                                           isInactive: true,
                                           completion: { [self] in
-                setupChoicesView(type: .chair)
+                setupChoicesView(type: .teacher)
             })
         default: ()
         }
     }
     
+    @MainActor
     func transform(faculties: [FacultyModel]) -> [ChoiceEntity] {
         var choicesEntity = [ChoiceEntity]()
         
@@ -174,6 +191,7 @@ private extension SelectListViewModel {
         return choicesEntity
     }
     
+    @MainActor
     func transform(courses: [CourseModel]) -> [ChoiceEntity] {
         var choicesEntity = [ChoiceEntity]()
         
@@ -184,7 +202,8 @@ private extension SelectListViewModel {
         }
         return choicesEntity
     }
-
+    
+    @MainActor
     func transform(groups: [GroupModel]) -> [ChoiceEntity] {
         var choicesEntity = [ChoiceEntity]()
         
@@ -196,6 +215,7 @@ private extension SelectListViewModel {
         return choicesEntity
     }
     
+    @MainActor
     func transform(chairs: [ChairModel]) -> [ChoiceEntity] {
         var choicesEntity = [ChoiceEntity]()
         
@@ -207,6 +227,7 @@ private extension SelectListViewModel {
         return choicesEntity
     }
     
+    @MainActor
     func transform(teachers: [TeacherModel]) -> [ChoiceEntity] {
         var choicesEntity = [ChoiceEntity]()
         
@@ -230,6 +251,8 @@ private extension SelectListViewModel {
                 groupViewModel.isOpen = false
                 groupViewModel.selectedItem = nil
                 groupViewModel.isInactive = true
+                
+                isActiveNextButton = false
             case .teacher:
                 chairViewModel.isOpen = false
                 chairViewModel.selectedItem = nil
@@ -238,16 +261,22 @@ private extension SelectListViewModel {
                 teacherViewModel.isOpen = false
                 teacherViewModel.selectedItem = nil
                 teacherViewModel.isInactive = true
+                
+                isActiveNextButton = false
             case .unowned: ()
             }
         case .course:
             groupViewModel.isOpen = false
             groupViewModel.selectedItem = nil
             groupViewModel.isInactive = true
+            
+            isActiveNextButton = false
         case .chair:
             teacherViewModel.isOpen = false
             teacherViewModel.selectedItem = nil
             teacherViewModel.isInactive = true
+            
+            isActiveNextButton = false
         case .group, .teacher:
             isActiveNextButton = true
         }

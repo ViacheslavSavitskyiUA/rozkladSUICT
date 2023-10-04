@@ -9,34 +9,52 @@ import SwiftUI
 
 struct SelectListView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @ObservedObject var viewModel: SelectListViewModel
     
     var body: some View {
-            VStack {
-                ScrollView {
-                    fillScreen(userType: viewModel.userType)
+        LoaderView(isShowing: .constant(true)) {
+            NavigationStack {
+                VStack {
+                    ScrollView {
+                        fillScreen(userType: viewModel.userType)
+                    }
+                    .task {
+                        await viewModel.fetchFaculties()
+                    }
+                    
+                    Spacer()
+                    Button {
+                        print("tap")
+                    } label: {
+                        Text("Далі")
+                            .font(.gilroy(.semibold, size: 20))
+                            .padding()
+                            .frame(width: UIScreen.main.bounds.width - 40)
+                            .background(Color.fallGold)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                    }
+                    .inactive(!viewModel.isActiveNextButton)
+                    .padding(.bottom)
                 }
-                .task {
-                    await viewModel.fetchFaculties()
+                .navigationTitle(viewModel.userType.titleSelectItemsView)
+                .navigationBarTitleDisplayMode(.large)
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "arrowshape.backward")
+                                .bold()
+                                .foregroundStyle(Color.fennelFlower)
+                        }
+                    }
                 }
-                
-                Spacer()
-                Button {
-                    print("tap")
-                } label: {
-                    Text("Далі")
-                        .font(.gilroy(.semibold, size: 20))
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width - 40)
-                        .background(Color.fallGold)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                }
-                .inactive(!viewModel.isActiveNextButton)
-                .padding(.bottom)
             }
-            .navigationTitle(viewModel.userType.titleSelectItemsView)
-            .navigationBarTitleDisplayMode(.large)
+        }
     }
     
     @ViewBuilder func fillScreen(userType: UserType) -> some View {

@@ -21,21 +21,21 @@ struct SelectItemView: View {
                             Divider()
                             Text(viewModel.setupItemTitle(item))
                                 .font(.gilroy(.regular, size: 14))
+                                .padding(.top)
                                 .onTapGesture {
                                     withAnimation(.easeInOut) {
                                         viewModel.selectedItem = item
                                         viewModel.isOpen.toggle()
                                     }
                                 }
-                                .padding(.top)
                         }
                     }
                 }
             }, label: {
                 Text(viewModel.setupSelectTitle())
-                .foregroundStyle(Color.black)
-                .font(.gilroy(.bold, size: 16))
-                .padding(.bottom, viewModel.isOpen ? 12 : 0)
+                    .foregroundStyle(Color.black)
+                    .font(.gilroy(.bold, size: 16))
+                    .padding(.bottom, viewModel.isOpen ? 12 : 0)
             })
         }
         .background(Color.pastelBianca)
@@ -47,7 +47,8 @@ struct SelectItemView: View {
 
 #Preview {
     SelectItemView(viewModel: .init(type: .course,
-                                    inputsItem: [],
+                                    inputsItem: [ChoiceEntity(id: 0, shortName: nil, fullName: "2"),
+                                                 ChoiceEntity(id: 1, shortName: "FCVFV", fullName: "sdcdscsdcsdcsdcsdc")],
                                     isInactive: false,
                                     completion: nil))
 }
