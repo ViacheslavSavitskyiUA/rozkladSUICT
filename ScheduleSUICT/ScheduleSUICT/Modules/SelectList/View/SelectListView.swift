@@ -14,7 +14,7 @@ struct SelectListView: View {
     @ObservedObject var viewModel: SelectListViewModel
     
     var body: some View {
-        LoaderView(isShowing: .constant(true)) {
+//        LoaderView(isShowing: /*$viewModel.isShowLoader*/ .constant(true)) {
             NavigationStack {
                 VStack {
                     ScrollView {
@@ -51,10 +51,13 @@ struct SelectListView: View {
                                 .bold()
                                 .foregroundStyle(Color.fennelFlower)
                         }
+                        .disabled(viewModel.isShowLoader)
                     }
                 }
+                .popUpNavigationView(show: $viewModel.isShowLoader) {
+                    LoaderView()
+                }
             }
-        }
     }
     
     @ViewBuilder func fillScreen(userType: UserType) -> some View {
