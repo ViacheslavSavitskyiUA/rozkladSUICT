@@ -45,4 +45,20 @@ struct NetworkManager {
                               method: .post,
                               body: ["chairId" : "\(chairId)"])
     }
+    
+    func getRozklad(groupId: Int, dateStart: String, dateEnd: String) async -> Result<[RozkladModel], Error> {
+        await network.request(endpoint: .groupRozklad,
+                              method: .post,
+                              body: ["groupId" : "\(groupId)",
+                                     "dateStart" : dateStart,
+                                     "dateEnd" : "\(dateEnd)"])
+    }
+        
+        func getRozklad(teacherId: Int, dateStart: String, dateEnd: String) async -> Result<[RozkladModel], Error> {
+            await network.request(endpoint: .teacherRozklad,
+                                  method: .post,
+                                  body: ["teacherId" : "\(teacherId)",
+                                         "dateStart" : dateStart,
+                                         "dateEnd" : dateEnd])
+    }
 }

@@ -23,6 +23,8 @@ enum APIEndpoints {
     case groups
     case chairs
     case teachers
+    case groupRozklad
+    case teacherRozklad
     
     var endpointString: String {
         switch self {
@@ -31,6 +33,8 @@ enum APIEndpoints {
         case .groups: return "list/groups"
         case .chairs: return "list/chairs"
         case .teachers: return "list/teachers-by-chair"
+        case .groupRozklad: return "time-table/group"
+        case .teacherRozklad: return "time-table/teacher"
         }
     }
 }

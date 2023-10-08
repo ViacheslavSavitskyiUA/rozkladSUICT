@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 final class SelectListViewModel: ObservableObject {
     
@@ -30,14 +31,22 @@ final class SelectListViewModel: ObservableObject {
     @Published var isActiveNextButton = false
     
     @Published var isShowLoader = false
+    @Published var isShowRozklad = false
     
     let userType: UserType
     
     private let network = NetworkManager()
-    
+
     init(userType: UserType) {
         self.userType = userType
         self.setupViewModels(type: userType)
+    }
+    
+    func setupRozkladViewModel() -> ScheduleViewModel {
+        ScheduleViewModel(searchId: userType == .student
+                          ? groupViewModel.selectedItem?.id ?? 0
+                          : teacherViewModel.selectedItem?.id ?? 0,
+                          type: userType)
     }
 }
 
@@ -127,10 +136,16 @@ private extension SelectListViewModel {
                 switch type {
                 case .student:
                     await fetchCourses()
-                    courseViewModel.isInactive = false
+                    await MainActor.run {
+                        self.courseViewModel.isInactive = false
+                    }
+                    
                 case .teacher:
                     await fetchChairs()
-                    chairViewModel.isInactive = false
+                    await MainActor.run {
+                        self.chairViewModel.isInactive = false
+                    }
+                    
                 case .unowned: ()
                 }
             }

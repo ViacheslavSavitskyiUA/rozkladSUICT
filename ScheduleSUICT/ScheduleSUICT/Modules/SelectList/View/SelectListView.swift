@@ -26,7 +26,7 @@ struct SelectListView: View {
                     Spacer()
                     
                     Button {
-                        print("tap")
+                        viewModel.isShowRozklad.toggle()
                     } label: {
                         Text("Далі")
                             .font(.gilroy(.semibold, size: 20))
@@ -56,6 +56,11 @@ struct SelectListView: View {
                 }
                 .popUpNavigationView(show: $viewModel.isShowLoader) {
                     LoaderView()
+                }
+                .navigationDestination(isPresented: $viewModel.isShowRozklad) {
+                    if viewModel.isShowRozklad {
+                        ScheduleView(viewModel: viewModel.setupRozkladViewModel())
+                    }
                 }
             }
     }

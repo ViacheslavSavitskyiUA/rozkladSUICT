@@ -12,6 +12,7 @@ struct ScheduleSUICTApp: App {
     var body: some Scene {
         WindowGroup {
             ChoiceView(viewModel: .init())
+//            ScheduleView(viewModel: .init())
         }
     }
 }
