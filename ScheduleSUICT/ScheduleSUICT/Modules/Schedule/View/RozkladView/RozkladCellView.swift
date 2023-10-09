@@ -16,27 +16,26 @@ struct RozkladCellView: View {
             Rectangle()
                 .cornerRadius(12)
                 .foregroundStyle(Color.pastelBianca)
-                .overlay {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 12) {
-                            
-                            Text(viewModel.discipline)
-                                .font(.gilroy(.semibold, size: 14))
-                            
-                            Text(viewModel.auditory)
-                                .font(.gilroy(.medium, size: 12))
-                            
-                            Text(viewModel.groupAuditory)
-                                .font(.gilroy(.medium, size: 12))
-                            
-                            Spacer()
-                        }
-                        .padding(.vertical, 20)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 20)
+                .padding(.horizontal, 20)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    
+                    Text(viewModel.discipline)
+                        .font(.gilroy(.semibold, size: 16))
+                    
+                    Text(viewModel.auditory)
+                        .font(.gilroy(.medium, size: 16))
+                    
+                    Text(viewModel.groupAuditory)
+                        .font(.gilroy(.medium, size: 16))
                 }
+                .padding(.vertical, 20)
+                Spacer()
+            }
+            .padding(.horizontal, 40)
         }
+        .shadow(color: .pastelBianca, radius: 8, x: 0, y: 3)
     }
 }
 

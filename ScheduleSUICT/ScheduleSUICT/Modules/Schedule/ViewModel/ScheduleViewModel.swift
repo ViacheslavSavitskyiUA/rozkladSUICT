@@ -12,16 +12,21 @@ final class ScheduleViewModel: ObservableObject {
     
     @Published var rozklad: [RozkladEntity] = []
     
-    @Published var rozkladListViewModel: RozkladListViewModel! = .init(days: [])
+    @Published var rozkladListViewModel: RozkladListViewModel = .init(days: [])
+    @Published var dayCollectionViewModel: DayCollectionViewModel = .init()
     
     private let network = NetworkManager()
+    
+    @Published var isShowLoader = false
+    @Published var navigationTitle: String
     
     private let searchId: Int
     private let type: UserType
     
-    init(searchId: Int, type: UserType) {
+    init(searchId: Int, type: UserType, title: String) {
         self.searchId = searchId
         self.type = type
+        self.navigationTitle = title
     }
     
     @MainActor
@@ -33,7 +38,6 @@ final class ScheduleViewModel: ObservableObject {
                                                           dateStart: transformDateString().start,
                                                           dateEnd: transformDateString().end).get()
                 await transformRozklad(models: models)
-                rozkladListViewModel.days = rozklad
             } catch {
                 print(error)
             }
@@ -44,7 +48,6 @@ final class ScheduleViewModel: ObservableObject {
                                                           dateStart: transformDateString().start,
                                                           dateEnd: transformDateString().end).get()
                 await transformRozklad(models: models)
-                rozkladListViewModel.days = rozklad
             }  catch {
                 print(error)
             }
@@ -52,6 +55,7 @@ final class ScheduleViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func transformDateString() -> (start: String, end: String) {
         let dates = Date().getCurrentWeekDays()
         
@@ -60,28 +64,31 @@ final class ScheduleViewModel: ObservableObject {
         return (start: start, end: end)
     }
     
+    @MainActor
     func transformRozklad(models: [RozkladModel]) async {
-//        переделать трансформацию розклада
-//        var rozkladObject: RozkladEntity?
-//        
-//        for model in models {
-//            rozkladObject?.date = model.date
-//            for lesson in model.lessons {
-//                rozkladObject?.lessons.append(LessonEntity(lessonNumber: lesson.number,
-//                                                disciplineFullName: lesson.periods.first?.disciplineFullName ?? "",
-//                                                disciplineShortName: lesson.periods.first?.disciplineShortName ?? "",
-//                                                classroom: lesson.periods.first?.classroom ?? "",
-//                                                timeStart: lesson.periods.first?.timeStart ?? "",
-//                                                timeEnd: lesson.periods.first?.timeEnd ?? "",
-//                                                teachersName: lesson.periods.first?.teachersName ?? "",
-//                                                teachersNameFull: lesson.periods.first?.teachersNameFull ?? "",
-//                                                groups: lesson.periods.first?.groups ?? "",
-//                                                type: lesson.periods.first?.type ?? 0,
-//                                                typeStr: lesson.periods.first?.typeStr ?? ""))
-//            }
-//            guard let roz = rozkladObject else { return }
-//            rozklad.append(roz)
-//            rozkladObject = nil
-//        }
+        var rozkladObject: RozkladEntity = .init()
+        
+        for model in models {
+            rozkladObject.date = model.date
+            for lesson in model.lessons {
+                for period in lesson.periods {
+                    rozkladObject.lessons.append(.init(lessonNumber: lesson.number,
+                                                       disciplineFullName: period.disciplineFullName,
+                                                       disciplineShortName: period.disciplineShortName,
+                                                       classroom: period.classroom,
+                                                       timeStart: period.timeStart,
+                                                       timeEnd: period.timeEnd,
+                                                       teachersName: period.teachersName,
+                                                       teachersNameFull: period.teachersName,
+                                                       groups: period.groups,
+                                                       type: period.type,
+                                                       typeStr: period.typeStr))
+                }
+            }
+            rozklad.append(rozkladObject)
+            rozkladObject = .init()
+        }
+        
+        rozkladListViewModel.days = rozklad
     }
 }

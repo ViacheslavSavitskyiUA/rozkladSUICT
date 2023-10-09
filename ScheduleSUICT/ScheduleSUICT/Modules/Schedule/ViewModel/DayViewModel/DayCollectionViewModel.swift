@@ -12,9 +12,8 @@ final class DayCollectionViewModel: ObservableObject {
     
     @Published var days: [DayEntity] = []
     
-    private let network = NetworkManager()
-    
-    func setupDaysInWeek() {
+    @MainActor
+    func setupDaysInWeek() async {
         let dates = Date().getCurrentWeekDays()
         
         for date in dates {
@@ -29,6 +28,7 @@ final class DayCollectionViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func selected(day: DayEntity) {
         for (index, element) in days.enumerated() {
             days[index].isSelected = element.id == day.id ? true : false
@@ -37,7 +37,7 @@ final class DayCollectionViewModel: ObservableObject {
     
     @MainActor
     func fetchDays() async {
-        setupDaysInWeek()
+        await setupDaysInWeek()
         
         print("days \(days)")
         let dayStartDate = Transform.transformStringToDate(days.first?.dateISOString ?? "",

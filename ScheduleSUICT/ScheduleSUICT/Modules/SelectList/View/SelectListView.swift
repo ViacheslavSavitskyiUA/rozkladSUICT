@@ -14,55 +14,55 @@ struct SelectListView: View {
     @ObservedObject var viewModel: SelectListViewModel
     
     var body: some View {
-            NavigationStack {
-                VStack {
-                    ScrollView {
-                        fillScreen(userType: viewModel.userType)
-                    }
-                    .task {
-                        await viewModel.fetchFaculties()
-                    }
-                    
-                    Spacer()
-                    
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    fillScreen(userType: viewModel.userType)
+                }
+                .task {
+                    await viewModel.fetchFaculties()
+                }
+                
+                Spacer()
+                
+                Button {
+                    viewModel.isShowRozklad.toggle()
+                } label: {
+                    Text("Далі")
+                        .font(.gilroy(.semibold, size: 20))
+                        .padding()
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .background(Color.fallGold)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                }
+                .inactive(!viewModel.isActiveNextButton)
+                .padding(.bottom)
+            }
+            .navigationTitle(viewModel.userType.titleSelectItemsView)
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        viewModel.isShowRozklad.toggle()
+                        dismiss()
                     } label: {
-                        Text("Далі")
-                            .font(.gilroy(.semibold, size: 20))
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.width - 40)
-                            .background(Color.fallGold)
-                            .foregroundColor(.white)
-                            .cornerRadius(12)
+                        Image(systemName: "arrowshape.backward")
+                            .bold()
+                            .foregroundStyle(Color.fennelFlower)
                     }
-                    .inactive(!viewModel.isActiveNextButton)
-                    .padding(.bottom)
-                }
-                .navigationTitle(viewModel.userType.titleSelectItemsView)
-                .navigationBarTitleDisplayMode(.large)
-                .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "arrowshape.backward")
-                                .bold()
-                                .foregroundStyle(Color.fennelFlower)
-                        }
-                        .disabled(viewModel.isShowLoader)
-                    }
-                }
-                .popUpNavigationView(show: $viewModel.isShowLoader) {
-                    LoaderView()
-                }
-                .navigationDestination(isPresented: $viewModel.isShowRozklad) {
-                    if viewModel.isShowRozklad {
-                        ScheduleView(viewModel: viewModel.setupRozkladViewModel())
-                    }
+                    .disabled(viewModel.isShowLoader)
                 }
             }
+            .popUpNavigationView(show: $viewModel.isShowLoader) {
+                LoaderView()
+            }
+            .navigationDestination(isPresented: $viewModel.isShowRozklad) {
+                if viewModel.isShowRozklad {
+                    ScheduleView(viewModel: viewModel.setupRozkladViewModel())
+                }
+            }
+        }
     }
     
     @ViewBuilder func fillScreen(userType: UserType) -> some View {

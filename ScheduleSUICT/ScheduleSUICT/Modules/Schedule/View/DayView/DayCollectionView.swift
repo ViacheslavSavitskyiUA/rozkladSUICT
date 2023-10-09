@@ -39,6 +39,7 @@ struct DayCollectionView: View {
                     print(error)
                 }
             }
+            .margin(edges: .horizontal, 16)
         }
         .frame(height: 100)
     }

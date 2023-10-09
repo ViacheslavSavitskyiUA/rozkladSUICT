@@ -47,8 +47,8 @@ struct SelectItemView: View {
 
 #Preview {
     SelectItemView(viewModel: .init(type: .course,
-                                    inputsItem: [ChoiceEntity(id: 0, shortName: nil, fullName: "2"),
-                                                 ChoiceEntity(id: 1, shortName: "FCVFV", fullName: "sdcdscsdcsdcsdcsdc")],
+                                    inputsItem: [ChoiceEntity(id: 0, shortName: nil, fullName: "2", initials: ""),
+                                                 ChoiceEntity(id: 1, shortName: "FCVFV", fullName: "sdcdscsdcsdcsdcsdc", initials: "")],
                                     isInactive: false,
                                     completion: nil))
 }

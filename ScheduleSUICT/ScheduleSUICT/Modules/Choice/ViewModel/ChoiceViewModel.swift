@@ -25,10 +25,10 @@ final class ChoiceViewModel: ObservableObject {
     
     func select(userType: UserType) {
         withAnimation(.easeInOut) {
-        studentCardViewModel.isSelect = userType == .student ? true : false
-        teacherCardViewModel.isSelect = userType == .teacher ? true : false
-
-        selectUserType = userType
+            studentCardViewModel.isSelect = userType == .student ? true : false
+            teacherCardViewModel.isSelect = userType == .teacher ? true : false
+            
+            selectUserType = userType
         }
     }
 }

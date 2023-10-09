@@ -42,11 +42,15 @@ final class SelectListViewModel: ObservableObject {
         self.setupViewModels(type: userType)
     }
     
+    @MainActor
     func setupRozkladViewModel() -> ScheduleViewModel {
         ScheduleViewModel(searchId: userType == .student
                           ? groupViewModel.selectedItem?.id ?? 0
                           : teacherViewModel.selectedItem?.id ?? 0,
-                          type: userType)
+                          type: userType,
+                          title: userType == .student 
+                          ? groupViewModel.selectedItem?.fullName ?? ""
+                          : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
     }
 }
 
@@ -207,7 +211,8 @@ private extension SelectListViewModel {
         faculties.forEach { faculty in
             choicesEntity.append(ChoiceEntity(id: faculty.id,
                                               shortName: faculty.shortName,
-                                              fullName: faculty.fullName))
+                                              fullName: faculty.fullName,
+                                              initials: nil))
         }
         return choicesEntity
     }
@@ -219,7 +224,8 @@ private extension SelectListViewModel {
         courses.forEach { course in
             choicesEntity.append(ChoiceEntity(id: course.course,
                                               shortName: nil,
-                                              fullName: String(course.course)))
+                                              fullName: String(course.course),
+                                              initials: nil))
         }
         return choicesEntity
     }
@@ -231,7 +237,8 @@ private extension SelectListViewModel {
         groups.forEach { group in
             choicesEntity.append(ChoiceEntity(id: group.id,
                                               shortName: nil,
-                                              fullName: group.name))
+                                              fullName: group.name,
+                                              initials: nil))
         }
         return choicesEntity
     }
@@ -243,7 +250,8 @@ private extension SelectListViewModel {
         chairs.forEach { chair in
             choicesEntity.append(ChoiceEntity(id: chair.id,
                                               shortName: chair.shortName,
-                                              fullName: chair.fullName))
+                                              fullName: chair.fullName,
+                                              initials: nil))
         }
         return choicesEntity
     }
@@ -255,7 +263,8 @@ private extension SelectListViewModel {
         teachers.forEach { teacher in
             choicesEntity.append(ChoiceEntity(id: teacher.id,
                                               shortName: "\(teacher.firstName + " " + teacher.secondName)",
-                                              fullName: teacher.lastName))
+                                              fullName: teacher.lastName,
+                                              initials: "\(teacher.firstName.first ?? "|"). \(teacher.lastName.first ?? "|")."))
         }
         return choicesEntity
     }
