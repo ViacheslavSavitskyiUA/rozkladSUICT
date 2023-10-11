@@ -9,9 +9,9 @@ import SwiftUI
 
 final class DayCellViewModel: ObservableObject {
     
-    @Published var day: DayEntity
+    @Published var day: RozkladEntity
     
-    init(day: DayEntity) {
+    init(day: RozkladEntity) {
         self.day = day
     }
     
@@ -25,14 +25,12 @@ final class DayCellViewModel: ObservableObject {
             } else {
                 color = .pastelBianca
             }
-            
         } else {
             if day.isToday {
                 color = .fennelFlower.opacity(0.7)
             } else {
                 color = .pastelFirstSnow
             }
-            
         }
         
         return color

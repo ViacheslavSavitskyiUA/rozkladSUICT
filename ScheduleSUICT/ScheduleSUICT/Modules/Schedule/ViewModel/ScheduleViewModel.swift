@@ -10,9 +10,12 @@ import Foundation
 
 final class ScheduleViewModel: ObservableObject {
     
-    @Published var rozklad: [RozkladEntity] = []
+    private var rozklad: [RozkladEntity] = []
+    private var days: [DayEntity] = []
     
-    @Published var rozkladListViewModel: RozkladListViewModel = .init(days: [])
+    @Published var finalRozklad: [RozkladEntity] = []
+    
+    @Published var rozkladListViewModel: RozkladListViewModel = .init(days: [.init()])
     @Published var dayCollectionViewModel: DayCollectionViewModel = .init()
     
     private let network = NetworkManager()
@@ -31,12 +34,13 @@ final class ScheduleViewModel: ObservableObject {
     
     @MainActor
     func fetchRozklad() async {
+        isShowLoader = true
         switch type {
         case .student:
             do {
                 let models = try await network.getRozklad(groupId: searchId,
-                                                          dateStart: transformDateString().start,
-                                                          dateEnd: transformDateString().end).get()
+                                                          dateStart: transformRangeDateString().start,
+                                                          dateEnd: transformRangeDateString().end).get()
                 await transformRozklad(models: models)
             } catch {
                 print(error)
@@ -45,23 +49,90 @@ final class ScheduleViewModel: ObservableObject {
         case .teacher:
             do {
                 let models = try await network.getRozklad(teacherId: searchId,
-                                                          dateStart: transformDateString().start,
-                                                          dateEnd: transformDateString().end).get()
+                                                          dateStart: transformRangeDateString().start,
+                                                          dateEnd: transformRangeDateString().end).get()
                 await transformRozklad(models: models)
-            }  catch {
+            } catch {
                 print(error)
             }
         case .unowned: ()
         }
+        isShowLoader = false
     }
     
     @MainActor
-    func transformDateString() -> (start: String, end: String) {
+    func transformRangeDateString() -> (start: String, end: String) {
         let dates = Date().getCurrentWeekDays()
         
         let start = Transform.transformDateToString(date: dates.first ?? .now, dateFormat: .yyyyMMdd)
         let end = Transform.transformDateToString(date: dates.last ?? .now, dateFormat: .yyyyMMdd)
         return (start: start, end: end)
+    }
+    
+    @MainActor
+    func setupDays() async {
+        let dates = Date().getCurrentWeekDays()
+        
+        var datesString = [String]()
+        var rozkladObject: RozkladEntity = .init()
+        
+        for date in dates {
+            datesString.append(Transform.transformDateToString(date: date, dateFormat: .yyyyMMdd))
+        }
+        print("datesString \(datesString)")
+        
+        var haveDates: [String] = .init()
+        var haventDates: [String] = .init()
+        
+        for d in datesString {
+            if rozklad.contains(where: { $0.date == d }) {
+                haveDates.append(d)
+            } else {
+                haventDates.append(d)
+            }
+        }
+        print("haveDates \(haveDates)")
+        print("haventDates \(haventDates)")
+        
+        for date in datesString {
+            for r in rozklad {
+                if date == r.date && haveDates.contains(r.date) {
+                    rozkladObject.date = date
+                    rozkladObject.dayWeek = Transform.transformDateToString(date: Transform.transformStringToDate(date, dateFormat: .yyyyMMdd), dateFormat: .eeee)
+                    rozkladObject.isToday = Calendar.current.isDateInToday(Transform.transformStringToDate(date, dateFormat: .yyyyMMdd))
+                    rozkladObject.isSelected = rozkladObject.isToday
+                    for lesson in r.lessons {
+                        rozkladObject.lessons.append(
+                            .init(lessonNumber: lesson.lessonNumber,
+                                  disciplineFullName: lesson.disciplineFullName,
+                                  disciplineShortName: lesson.disciplineShortName,
+                                  classroom: lesson.classroom,
+                                  timeStart: lesson.timeStart,
+                                  timeEnd: lesson.timeEnd,
+                                  teachersName: lesson.teachersName,
+                                  teachersNameFull: lesson.teachersNameFull,
+                                  groups: lesson.groups,
+                                  type: lesson.type,
+                                  typeStr: lesson.typeStr))
+                    }
+                } else if haventDates.contains(date) {
+                    rozkladObject.date = date
+                    rozkladObject.dayWeek = Transform.transformDateToString(date: Transform.transformStringToDate(date, dateFormat: .yyyyMMdd), dateFormat: .eeee)
+                    rozkladObject.isEmpty = true
+                    rozkladObject.lessons = []
+                    rozkladObject.isToday = Calendar.current.isDateInToday(Transform.transformStringToDate(date, dateFormat: .yyyyMMdd))
+                    rozkladObject.isSelected = rozkladObject.isToday
+                }
+            }
+            finalRozklad.append(rozkladObject)
+            rozkladObject = .init()
+        }
+        
+        print(finalRozklad)
+        
+        rozkladListViewModel.days = finalRozklad
+        dayCollectionViewModel.days = finalRozklad
+        
     }
     
     @MainActor
@@ -72,17 +143,18 @@ final class ScheduleViewModel: ObservableObject {
             rozkladObject.date = model.date
             for lesson in model.lessons {
                 for period in lesson.periods {
-                    rozkladObject.lessons.append(.init(lessonNumber: lesson.number,
-                                                       disciplineFullName: period.disciplineFullName,
-                                                       disciplineShortName: period.disciplineShortName,
-                                                       classroom: period.classroom,
-                                                       timeStart: period.timeStart,
-                                                       timeEnd: period.timeEnd,
-                                                       teachersName: period.teachersName,
-                                                       teachersNameFull: period.teachersName,
-                                                       groups: period.groups,
-                                                       type: period.type,
-                                                       typeStr: period.typeStr))
+                    rozkladObject.lessons.append(
+                        .init(lessonNumber: lesson.number,
+                              disciplineFullName: period.disciplineFullName,
+                              disciplineShortName: period.disciplineShortName,
+                              classroom: period.classroom,
+                              timeStart: period.timeStart,
+                              timeEnd: period.timeEnd,
+                              teachersName: period.teachersName,
+                              teachersNameFull: period.teachersName,
+                              groups: period.groups,
+                              type: period.type,
+                              typeStr: period.typeStr))
                 }
             }
             rozklad.append(rozkladObject)

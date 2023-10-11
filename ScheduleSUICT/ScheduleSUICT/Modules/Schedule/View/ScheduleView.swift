@@ -9,26 +9,25 @@ import SwiftUI
 
 struct ScheduleView: View {
     
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     @ObservedObject var viewModel: ScheduleViewModel
     
     var body: some View {
-//        NavigationView {
             VStack {
                 DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
                 RozkladListView(viewModel: viewModel.rozkladListViewModel)
             }
             .navigationTitle(viewModel.navigationTitle)
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        dismiss()
+                        mode.wrappedValue.dismiss()
                     } label: {
                         Image(systemName: "arrowshape.backward")
-                            .bold()
+//                            .bold()
                             .foregroundStyle(Color.fennelFlower)
                     }
                     .disabled(viewModel.isShowLoader)
@@ -37,10 +36,9 @@ struct ScheduleView: View {
             .popUpNavigationView(show: $viewModel.isShowLoader, content: {
                 LoaderView()
             })
-//            .navigationBarHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
-//        }
         .task {
             await viewModel.fetchRozklad()
+            await viewModel.setupDays()
         }
     }
 }

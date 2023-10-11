@@ -12,7 +12,7 @@ struct ChoiceView: View {
     @ObservedObject var viewModel: ChoiceViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView { //////
             VStack {
                 ScrollView {
                     VStack(spacing: 14) {
@@ -38,13 +38,12 @@ struct ChoiceView: View {
                         }
                         .padding(.top, 16)
                     }
-                }
-                .navigationDestination(isPresented: $viewModel.isToNextScreen, destination: {
-                    if viewModel.isToNextScreen {
-                        SelectListView(viewModel: .init(userType: viewModel.selectUserType))
+                    
+                    NavigationLink(destination: SelectListView(viewModel: .init(userType: viewModel.selectUserType)),
+                                   isActive: $viewModel.isToNextScreen) {
+                        EmptyView()
                     }
-                })
-                
+                }
                 Spacer()
                 
                 Button {
@@ -61,8 +60,9 @@ struct ChoiceView: View {
                 .inactive(viewModel.selectUserType != .unowned ? false : true)
                 .padding(.bottom)
             }
-        }
-        .scrollIndicators(.hidden)
+        }.navigationViewStyle(.stack)
+            
+//        .scrollIndicators(.hidden)
     }
 }
 

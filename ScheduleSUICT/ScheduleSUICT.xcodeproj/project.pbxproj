@@ -19,7 +19,6 @@
 		671361762AC69C4E00B78C42 /* SelectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671361752AC69C4E00B78C42 /* SelectListViewModel.swift */; };
 		671BE11A2ACD9C3000310DA4 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BE1192ACD9C3000310DA4 /* UINavigationController+Extension.swift */; };
 		672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 672142CF2ACC7ADB007FB14D /* loaderAnimation.json */; };
-		672142D22ACC8E60007FB14D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 672142D12ACC8E60007FB14D /* Lottie */; };
 		67246B5E2ACD59DF0067D009 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67246B5D2ACD59DF0067D009 /* View+Extension.swift */; };
 		67246B602ACD620D0067D009 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67246B5F2ACD620D0067D009 /* LoaderView.swift */; };
 		674D5A1C2AD0026900558E5A /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1B2AD0026900558E5A /* DayEntity.swift */; };
@@ -39,12 +38,12 @@
 		6760AF3B2AC5D929000434A6 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF3A2AC5D929000434A6 /* Font+Extension.swift */; };
 		6760AF3D2AC5DBAD000434A6 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF3C2AC5DBAD000434A6 /* Color+Extension.swift */; };
 		6760AF402AC5DDCF000434A6 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF3F2AC5DDCF000434A6 /* Lottie.swift */; };
-		6760AF432AC5DDDF000434A6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6760AF422AC5DDDF000434A6 /* Lottie */; };
 		6760AF472AC5DE8E000434A6 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF462AC5DE8E000434A6 /* ChoiceView.swift */; };
 		6760AF492AC5DEAD000434A6 /* ChoiceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF482AC5DEAD000434A6 /* ChoiceCardView.swift */; };
 		6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6760AF4B2AC5E019000434A6 /* studentAnimation.json */; };
 		6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6760AF4D2AC5E037000434A6 /* teacherAnimation.json */; };
 		6760AF512AC5E0A6000434A6 /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF502AC5E0A6000434A6 /* LottieHelper.swift */; };
+		679856C02AD4121F00F25DCD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 679856BF2AD4121F00F25DCD /* Lottie */; };
 		67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */; };
 		67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */; };
 		67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBE02AC6DF7100366366 /* NetworkManager.swift */; };
@@ -131,8 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6760AF432AC5DDDF000434A6 /* Lottie in Frameworks */,
-				672142D22ACC8E60007FB14D /* Lottie in Frameworks */,
+				679856C02AD4121F00F25DCD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,8 +433,7 @@
 			);
 			name = ScheduleSUICT;
 			packageProductDependencies = (
-				6760AF422AC5DDDF000434A6 /* Lottie */,
-				672142D12ACC8E60007FB14D /* Lottie */,
+				679856BF2AD4121F00F25DCD /* Lottie */,
 			);
 			productName = ScheduleSUICT;
 			productReference = 6760AF1C2AC5C06A000434A6 /* ScheduleSUICT.app */;
@@ -467,7 +464,7 @@
 			);
 			mainGroup = 6760AF132AC5C06A000434A6;
 			packageReferences = (
-				6760AF412AC5DDDF000434A6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				679856BE2AD4121E00F25DCD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 6760AF1D2AC5C06A000434A6 /* Products */;
 			projectDirPath = "";
@@ -606,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -663,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -694,7 +691,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -732,7 +729,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -773,25 +770,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6760AF412AC5DDDF000434A6 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		679856BE2AD4121E00F25DCD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.2;
+				minimumVersion = 4.3.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		672142D12ACC8E60007FB14D /* Lottie */ = {
+		679856BF2AD4121F00F25DCD /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6760AF412AC5DDDF000434A6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		6760AF422AC5DDDF000434A6 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6760AF412AC5DDDF000434A6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 679856BE2AD4121E00F25DCD /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

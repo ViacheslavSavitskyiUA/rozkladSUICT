@@ -14,7 +14,7 @@ struct SelectListView: View {
     @ObservedObject var viewModel: SelectListViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 ScrollView {
                     fillScreen(userType: viewModel.userType)
@@ -38,6 +38,14 @@ struct SelectListView: View {
                 }
                 .inactive(!viewModel.isActiveNextButton)
                 .padding(.bottom)
+                
+                NavigationLink(destination: ScheduleView(viewModel: .init(
+                    searchId: viewModel.returnScheduleVMParameters().searchId,
+                    type: viewModel.returnScheduleVMParameters().type,
+                    title: viewModel.returnScheduleVMParameters().title)),
+                               isActive: $viewModel.isShowRozklad) {
+                    EmptyView()
+                }
             }
             .navigationTitle(viewModel.userType.titleSelectItemsView)
             .navigationBarTitleDisplayMode(.large)
@@ -48,21 +56,16 @@ struct SelectListView: View {
                         dismiss()
                     } label: {
                         Image(systemName: "arrowshape.backward")
-                            .bold()
                             .foregroundStyle(Color.fennelFlower)
                     }
-                    .disabled(viewModel.isShowLoader)
+                    .inactive(viewModel.isShowLoader)
                 }
             }
             .popUpNavigationView(show: $viewModel.isShowLoader) {
                 LoaderView()
             }
-            .navigationDestination(isPresented: $viewModel.isShowRozklad) {
-                if viewModel.isShowRozklad {
-                    ScheduleView(viewModel: viewModel.setupRozkladViewModel())
-                }
-            }
         }
+        .navigationBarHidden(true)
     }
     
     @ViewBuilder func fillScreen(userType: UserType) -> some View {

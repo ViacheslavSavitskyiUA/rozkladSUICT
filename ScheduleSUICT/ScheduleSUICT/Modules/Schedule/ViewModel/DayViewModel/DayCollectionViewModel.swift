@@ -10,44 +10,28 @@ import Foundation
 
 final class DayCollectionViewModel: ObservableObject {
     
-    @Published var days: [DayEntity] = []
+    @Published var days: [RozkladEntity] = []
     
     @MainActor
-    func setupDaysInWeek() async {
-        let dates = Date().getCurrentWeekDays()
-        
-        for date in dates {
-            days.append(DayEntity(dayString: Transform.transformDateToString(date: date,
-                                                                             dateFormat: .eeee).capitalized,
-                                  dateString: Transform.transformDateToString(date: date,
-                                                                              dateFormat: .ddMMyyyy),
-                                  isToday: Calendar.current.isDateInToday(date),
-                                  dateISOString: Transform.transformDateToString(date: date,
-                                                                                 dateFormat: .iso),
-                                  isSelected: Calendar.current.isDateInToday(date)))
-        }
-    }
-    
-    @MainActor
-    func selected(day: DayEntity) {
+    func selected(day: RozkladEntity) {
         for (index, element) in days.enumerated() {
-            days[index].isSelected = element.id == day.id ? true : false
+            days[index].isSelected = element.date == day.date ? true : false
         }
     }
     
-    @MainActor
-    func fetchDays() async {
-        await setupDaysInWeek()
-        
-        print("days \(days)")
-        let dayStartDate = Transform.transformStringToDate(days.first?.dateISOString ?? "",
-                                                           dateFormat: .iso)
-        let dayEndDate = Transform.transformStringToDate(days.last?.dateISOString ?? "",
-                                                         dateFormat: .iso)
-        
-        print("dayStartDate \(dayStartDate)")
-        print("dayEndDate \(dayEndDate)")
-    }
+//    @MainActor
+//    func fetchDays() async {
+//        await setupDaysInWeek()
+//        
+//        print("days \(days)")
+//        let dayStartDate = Transform.transformStringToDate(days.first?.dateISOString ?? "",
+//                                                           dateFormat: .iso)
+//        let dayEndDate = Transform.transformStringToDate(days.last?.dateISOString ?? "",
+//                                                         dateFormat: .iso)
+//        
+//        print("dayStartDate \(dayStartDate)")
+//        print("dayEndDate \(dayEndDate)")
+//    }
 }
 
 

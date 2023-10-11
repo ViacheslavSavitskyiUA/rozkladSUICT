@@ -11,19 +11,19 @@ struct DayCellView: View {
     
     @ObservedObject var viewModel: DayCellViewModel
     
-    var selected: (DayEntity) -> Void
+    var selected: (RozkladEntity) -> Void
     
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundColor(viewModel.foregroundColor())
                 .cornerRadius(8)
-                .shadow(color: viewModel.foregroundColor(), radius: 8, x: 0, y: 5)
+//                .shadow(color: viewModel.foregroundColor(), radius: 8, x: 0, y: 5)
             VStack(spacing: 8) {
-                Text(viewModel.day.dayString)
+                Text(viewModel.day.dayWeek)
                     .foregroundColor(.black)
                     .font(.gilroy(.light, size: 12))
-                Text(viewModel.day.dateString)
+                Text(viewModel.day.date)
                     .foregroundColor(.black)
                     .font(.gilroy(.light, size: 14))
             }
@@ -43,10 +43,10 @@ struct DayCellView: View {
     }
 }
 
-#Preview {
-    DayCellView(viewModel: .init(day: DayEntity(dayString: "rcf",
-                                                dateString: "dcsd",
-                                                isToday: true, dateISOString: "",
-                                                isSelected: false)),
-                selected: { _ in })
-}
+//#Preview {
+//    DayCellView(viewModel: .init(day: DayEntity(dayString: "rcf",
+//                                                dateString: "dcsd",
+//                                                isToday: true, dateISOString: "",
+//                                                isSelected: false)),
+//                selected: { _ in })
+//}

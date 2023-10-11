@@ -11,7 +11,14 @@ struct RozkladEntity: Identifiable {
     var id = UUID()
     
     var date: String
+    var dayWeek: String
+    
+    var isToday: Bool
+    var isSelected: Bool
+    
     var lessons: [LessonEntity]
+    
+    var isEmpty: Bool = false
 }
 
 struct LessonEntity: Identifiable {
@@ -55,9 +62,12 @@ struct LessonEntity: Identifiable {
 
 // MARK: -  RozkladEntity empty init
 extension RozkladEntity {
-    init(date: String = "", lessons: [LessonEntity] = []) {
+    init(date: String = "", dayWeek: String = "", lessons: [LessonEntity] = [], isToday: Bool = false, isSelected: Bool = false) {
         self.date = date
+        self.dayWeek = dayWeek
         self.lessons = lessons
+        self.isToday = isToday
+        self.isSelected = isSelected
     }
 }
 

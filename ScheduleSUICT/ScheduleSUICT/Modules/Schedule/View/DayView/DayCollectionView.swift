@@ -28,17 +28,6 @@ struct DayCollectionView: View {
                 }
             }
             .padding(.top, 8)
-            .task {
-                do {
-                   // try await viewModel.fetchLoses()
-                    try await viewModel.fetchDays()
-                    withAnimation(.easeIn) {
-                      //  value.scrollTo(viewModel.equipmentEntities[viewModel.equipmentEntities.count - 1].id)
-                    }
-                } catch {
-                    print(error)
-                }
-            }
             .margin(edges: .horizontal, 16)
         }
         .frame(height: 100)

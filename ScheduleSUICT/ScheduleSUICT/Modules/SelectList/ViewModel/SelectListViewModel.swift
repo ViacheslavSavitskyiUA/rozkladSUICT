@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import SwiftUI
 
 final class SelectListViewModel: ObservableObject {
     
@@ -42,7 +43,7 @@ final class SelectListViewModel: ObservableObject {
         self.setupViewModels(type: userType)
     }
     
-    @MainActor
+    
     func setupRozkladViewModel() -> ScheduleViewModel {
         ScheduleViewModel(searchId: userType == .student
                           ? groupViewModel.selectedItem?.id ?? 0
@@ -52,7 +53,18 @@ final class SelectListViewModel: ObservableObject {
                           ? groupViewModel.selectedItem?.fullName ?? ""
                           : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
     }
+    
+    func returnScheduleVMParameters() -> (searchId: Int, type: UserType, title: String) {
+        (searchId: userType == .student
+         ? groupViewModel.selectedItem?.id ?? 0
+         : teacherViewModel.selectedItem?.id ?? 0,
+         type: userType,
+         title: userType == .student
+         ? groupViewModel.selectedItem?.fullName ?? ""
+         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
+    }
 }
+
 
 // MARK: - Requests
 extension SelectListViewModel {

@@ -20,12 +20,10 @@ extension View {
                         
                         let size = proxy.size
                         
-                        NavigationStack {
-                            content()
-                                .padding(.bottom, 44)
-                        }
-                        .frame(width: size.width, height: size.height / 1.7, alignment: .center)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        content()
+                            .padding(.bottom, 44)
+                            .frame(width: size.width, height: size.height / 1.7, alignment: .center)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                     
                 }
