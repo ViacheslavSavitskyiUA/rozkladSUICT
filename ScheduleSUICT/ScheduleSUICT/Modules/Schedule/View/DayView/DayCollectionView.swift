@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct DayCollectionView: View {
     
@@ -23,17 +24,23 @@ struct DayCollectionView: View {
                             withAnimation {
                                 viewModel.selected(day: day)
                             }
+                            viewModel.completion(day)
                         })
                     }
                 }
             }
-            .padding(.top, 8)
+//            .padding(.top, 8)
             .margin(edges: .horizontal, 16)
+            .onReceive(Just(viewModel.day), perform: { _ in
+                withAnimation {
+                        value.scrollTo(viewModel.day.id, anchor: .center)
+                }
+            })
         }
-        .frame(height: 100)
+        .frame(height: 70)
     }
 }
 
-#Preview {
-    DayCollectionView(viewModel: .init())
-}
+//#Preview {
+//    DayCollectionView(viewModel: .init())
+//}

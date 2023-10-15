@@ -7,21 +7,28 @@
 
 import Combine
 import Foundation
+import SwiftUI
+
+enum ScrollType {
+    case collection
+    case table
+}
 
 final class ScheduleViewModel: ObservableObject {
     
-    private var rozklad: [RozkladEntity] = []
-    private var days: [DayEntity] = []
-    
     @Published var finalRozklad: [RozkladEntity] = []
     
-    @Published var rozkladListViewModel: RozkladListViewModel = .init(days: [.init()])
-    @Published var dayCollectionViewModel: DayCollectionViewModel = .init()
-    
-    private let network = NetworkManager()
+    @Published var rozkladListViewModel: RozkladListViewModel!
+    @Published var dayCollectionViewModel: DayCollectionViewModel!
     
     @Published var isShowLoader = false
     @Published var navigationTitle: String
+    
+    @Published var selectDay: RozkladEntity = .init()
+    
+    private let network = NetworkManager()
+    private var rozklad: [RozkladEntity] = []
+    private var days: [DayEntity] = []
     
     private let searchId: Int
     private let type: UserType
@@ -30,6 +37,19 @@ final class ScheduleViewModel: ObservableObject {
         self.searchId = searchId
         self.type = type
         self.navigationTitle = title
+        
+        setupViewModels()
+    }
+    
+    private func setupViewModels() {
+        rozkladListViewModel = .init(lessons: [])
+        
+        dayCollectionViewModel = .init(completion: { rozklad in
+            withAnimation {
+                self.rozkladListViewModel.lessons = rozklad.lessons
+                self.dayCollectionViewModel.day = rozklad
+            }
+        })
     }
     
     @MainActor
@@ -101,6 +121,7 @@ final class ScheduleViewModel: ObservableObject {
                     rozkladObject.dayWeek = Transform.transformDateToString(date: Transform.transformStringToDate(date, dateFormat: .yyyyMMdd), dateFormat: .eeee)
                     rozkladObject.isToday = Calendar.current.isDateInToday(Transform.transformStringToDate(date, dateFormat: .yyyyMMdd))
                     rozkladObject.isSelected = rozkladObject.isToday
+                    
                     for lesson in r.lessons {
                         rozkladObject.lessons.append(
                             .init(lessonNumber: lesson.lessonNumber,
@@ -115,6 +136,14 @@ final class ScheduleViewModel: ObservableObject {
                                   type: lesson.type,
                                   typeStr: lesson.typeStr))
                     }
+                    
+                    if rozkladObject.isToday {
+                        withAnimation {
+                            dayCollectionViewModel.day = rozkladObject
+                            rozkladListViewModel.lessons = rozkladObject.lessons
+                        }
+                    }
+                    
                 } else if haventDates.contains(date) {
                     rozkladObject.date = date
                     rozkladObject.dayWeek = Transform.transformDateToString(date: Transform.transformStringToDate(date, dateFormat: .yyyyMMdd), dateFormat: .eeee)
@@ -122,6 +151,13 @@ final class ScheduleViewModel: ObservableObject {
                     rozkladObject.lessons = []
                     rozkladObject.isToday = Calendar.current.isDateInToday(Transform.transformStringToDate(date, dateFormat: .yyyyMMdd))
                     rozkladObject.isSelected = rozkladObject.isToday
+                    
+                    if rozkladObject.isToday {
+                        withAnimation {
+                            dayCollectionViewModel.day = rozkladObject
+                            rozkladListViewModel.lessons = rozkladObject.lessons
+                        }
+                    }
                 }
             }
             finalRozklad.append(rozkladObject)
@@ -130,9 +166,7 @@ final class ScheduleViewModel: ObservableObject {
         
         print(finalRozklad)
         
-        rozkladListViewModel.days = finalRozklad
         dayCollectionViewModel.days = finalRozklad
-        
     }
     
     @MainActor
@@ -161,6 +195,6 @@ final class ScheduleViewModel: ObservableObject {
             rozkladObject = .init()
         }
         
-        rozkladListViewModel.days = rozklad
+//        rozkladListViewModel.days = rozklad
     }
 }

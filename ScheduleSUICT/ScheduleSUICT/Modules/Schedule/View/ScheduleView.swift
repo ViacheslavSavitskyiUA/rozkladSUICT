@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ScheduleView: View {
     
@@ -14,28 +15,32 @@ struct ScheduleView: View {
     @ObservedObject var viewModel: ScheduleViewModel
     
     var body: some View {
-            VStack {
-                DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
-                RozkladListView(viewModel: viewModel.rozkladListViewModel)
-            }
-            .navigationTitle(viewModel.navigationTitle)
-            .navigationBarTitleDisplayMode(.large)
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        mode.wrappedValue.dismiss()
-                    } label: {
-                        Image(systemName: "arrowshape.backward")
-//                            .bold()
-                            .foregroundStyle(Color.fennelFlower)
-                    }
-                    .disabled(viewModel.isShowLoader)
+        VStack {
+            DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
+                .background(Color.white)
+            
+            RozkladListView(viewModel: viewModel.rozkladListViewModel)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle(viewModel.navigationTitle)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    mode.wrappedValue.dismiss()
+                } label: {
+                    Image("backArrow")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                        .foregroundStyle(Color.fennelFlower)
                 }
+                .inactive(viewModel.isShowLoader)
             }
-            .popUpNavigationView(show: $viewModel.isShowLoader, content: {
-                LoaderView()
-            })
+        }
+        .popUpNavigationView(show: $viewModel.isShowLoader, content: {
+            LoaderView()
+        })
         .task {
             await viewModel.fetchRozklad()
             await viewModel.setupDays()

@@ -6,28 +6,19 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RozkladListView: View {
     
     @ObservedObject var viewModel: RozkladListViewModel
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVStack {
-                ForEach(viewModel.days) { day in
-                    Section {
-                        ForEach(day.lessons) { lesson in
-                            RozkladCellView(viewModel:
-                                    .init(discipline: lesson.disciplineFullName,
-                                          auditory: lesson.classroom,
-                                          groupAuditory: lesson.groups))
-                            .padding(.bottom, 12)
-                            .dynamicTypeSize(...DynamicTypeSize.medium)
-                        }
-                    } header: {
-                        Text(day.date)
-                    }
-                    
+                ForEach(viewModel.lessons) { lesson in
+                    RozkladCellView(viewModel: .init(lesson: lesson))
+                    .padding(.bottom, 12)
+                    .dynamicTypeSize(...DynamicTypeSize.medium)
                 }
             }
         }
@@ -35,5 +26,5 @@ struct RozkladListView: View {
 }
 
 #Preview {
-    RozkladListView(viewModel: .init(days: []))
+    RozkladListView(viewModel: .init(lessons: []))
 }

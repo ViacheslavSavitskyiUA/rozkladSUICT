@@ -50,12 +50,18 @@ struct SelectListView: View {
             .navigationTitle(viewModel.userType.titleSelectItemsView)
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
+//            .toolbarBackButton(isActiveButton: viewModel.isShowLoader, completion: {
+//                dismiss()
+//            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         dismiss()
                     } label: {
-                        Image(systemName: "arrowshape.backward")
+                        Image("backArrow")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
                             .foregroundStyle(Color.fennelFlower)
                     }
                     .inactive(viewModel.isShowLoader)

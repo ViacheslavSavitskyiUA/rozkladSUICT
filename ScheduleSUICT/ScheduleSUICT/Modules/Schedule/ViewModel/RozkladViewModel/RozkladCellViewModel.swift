@@ -8,13 +8,10 @@
 import Combine
 
 final class RozkladCellViewModel: ObservableObject {
-    @Published var discipline: String
-    @Published var auditory: String
-    @Published var groupAuditory: String
     
-    init(discipline: String, auditory: String, groupAuditory: String) {
-        self.discipline = discipline
-        self.auditory = auditory
-        self.groupAuditory = groupAuditory
+    @Published var lesson: LessonEntity
+    
+    init(lesson: LessonEntity) {
+        self.lesson = lesson
     }
 }

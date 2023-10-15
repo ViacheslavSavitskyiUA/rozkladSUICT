@@ -12,9 +12,9 @@ struct ChoiceView: View {
     @ObservedObject var viewModel: ChoiceViewModel
     
     var body: some View {
-        NavigationView { //////
+        NavigationView {
             VStack {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack(spacing: 14) {
                         
                         Spacer()
@@ -60,9 +60,9 @@ struct ChoiceView: View {
                 .inactive(viewModel.selectUserType != .unowned ? false : true)
                 .padding(.bottom)
             }
-        }.navigationViewStyle(.stack)
-            
-//        .scrollIndicators(.hidden)
+            .navigationBarHidden(true)
+        }
+        .navigationViewStyle(.stack)
     }
 }
 

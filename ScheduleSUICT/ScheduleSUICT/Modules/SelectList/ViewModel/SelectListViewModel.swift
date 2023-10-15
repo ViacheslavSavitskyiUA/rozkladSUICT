@@ -43,7 +43,6 @@ final class SelectListViewModel: ObservableObject {
         self.setupViewModels(type: userType)
     }
     
-    
     func setupRozkladViewModel() -> ScheduleViewModel {
         ScheduleViewModel(searchId: userType == .student
                           ? groupViewModel.selectedItem?.id ?? 0

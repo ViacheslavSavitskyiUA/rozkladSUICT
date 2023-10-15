@@ -9,13 +9,9 @@ import Combine
 
 final class RozkladListViewModel: ObservableObject {
     
-    @Published var days: [RozkladEntity] = [] {
-        didSet {
-            print("days \(days)")
-        }
-    }
+    @Published var lessons: [LessonEntity]
     
-    init(days: [RozkladEntity]) {
-        self.days = days
+    init(lessons: [LessonEntity]) {
+        self.lessons = lessons
     }
 }

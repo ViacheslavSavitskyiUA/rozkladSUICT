@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct RozkladEntity: Identifiable {
+struct RozkladEntity: Identifiable, Hashable, Equatable {
+    
+    static func == (lhs: RozkladEntity, rhs: RozkladEntity) -> Bool {
+        lhs.id == rhs.id && lhs.date == rhs.date && lhs.dayWeek == rhs.dayWeek && lhs.isToday == rhs.isToday && lhs.isSelected == rhs.isSelected && lhs.lessons == rhs.lessons && lhs.isEmpty == rhs.isEmpty
+    }
+    
     var id = UUID()
     
     var date: String
@@ -19,9 +25,19 @@ struct RozkladEntity: Identifiable {
     var lessons: [LessonEntity]
     
     var isEmpty: Bool = false
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(date)
+        hasher.combine(dayWeek)
+        hasher.combine(isToday)
+        hasher.combine(isSelected)
+        hasher.combine(lessons)
+        hasher.combine(isEmpty)
+    }
 }
 
-struct LessonEntity: Identifiable {
+struct LessonEntity: Identifiable, Hashable, Equatable {
     var id = UUID()
     
     var lessonNumber: Int

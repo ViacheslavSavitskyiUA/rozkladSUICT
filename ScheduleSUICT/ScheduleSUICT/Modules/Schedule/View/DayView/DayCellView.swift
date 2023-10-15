@@ -18,7 +18,7 @@ struct DayCellView: View {
             Rectangle()
                 .foregroundColor(viewModel.foregroundColor())
                 .cornerRadius(8)
-//                .shadow(color: viewModel.foregroundColor(), radius: 8, x: 0, y: 5)
+
             VStack(spacing: 8) {
                 Text(viewModel.day.dayWeek)
                     .foregroundColor(.black)
@@ -28,6 +28,8 @@ struct DayCellView: View {
                     .font(.gilroy(.light, size: 14))
             }
             .padding(4)
+            
+            haveLessons(!viewModel.day.lessons.isEmpty)
         }
         .frame(width: 80, height: 54)
         .onTapGesture {
@@ -41,12 +43,28 @@ struct DayCellView: View {
             }
         }
     }
+    
+    @ViewBuilder func haveLessons(_ hasLessons: Bool) -> some View {
+        switch hasLessons {
+        case true:
+            VStack {
+                HStack {
+                    Spacer()
+                    Circle()
+                        .frame(width: 8)
+                        .foregroundStyle(Color.fallGold)
+                        .padding([.top, .trailing], 4)
+                }
+                .padding(.bottom, 42)
+            }
+        case false:
+            EmptyView()
+        }
+    }
 }
 
-//#Preview {
-//    DayCellView(viewModel: .init(day: DayEntity(dayString: "rcf",
-//                                                dateString: "dcsd",
-//                                                isToday: true, dateISOString: "",
-//                                                isSelected: false)),
-//                selected: { _ in })
-//}
+#Preview {
+    DayCellView(viewModel: .init(day: .init(date: "20.20.2020", dayWeek: "понеділок", isToday: false, isSelected: false, lessons: []))) { _ in
+        
+    }
+}
