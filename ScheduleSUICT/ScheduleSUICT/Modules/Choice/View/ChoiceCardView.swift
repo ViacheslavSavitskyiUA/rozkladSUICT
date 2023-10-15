@@ -25,7 +25,7 @@ struct ChoiceCardView: View {
                 }
             
             VStack {
-                LottieView(loopMode: .loop, lottieFile: userType.lottieFile)
+                LottieView(loopMode: .loop, lottieFile: userType.lottieFile.rawValue)
                     .scaleEffect(0.15)
                     .frame(width: 150, height: 150)
                 Text(userType.title)

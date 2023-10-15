@@ -45,7 +45,9 @@ final class ScheduleViewModel: ObservableObject {
         rozkladListViewModel = .init(lessons: [])
         
         dayCollectionViewModel = .init(completion: { rozklad in
-            withAnimation {
+            withAnimation(.easeIn) { [weak self] in
+                guard let self = self else { return }
+                self.selectDay = rozklad
                 self.rozkladListViewModel.lessons = rozklad.lessons
                 self.dayCollectionViewModel.day = rozklad
             }
@@ -139,6 +141,7 @@ final class ScheduleViewModel: ObservableObject {
                     
                     if rozkladObject.isToday {
                         withAnimation {
+                            selectDay = rozkladObject
                             dayCollectionViewModel.day = rozkladObject
                             rozkladListViewModel.lessons = rozkladObject.lessons
                         }
@@ -154,6 +157,7 @@ final class ScheduleViewModel: ObservableObject {
                     
                     if rozkladObject.isToday {
                         withAnimation {
+                            selectDay = rozkladObject
                             dayCollectionViewModel.day = rozkladObject
                             rozkladListViewModel.lessons = rozkladObject.lessons
                         }
@@ -163,8 +167,6 @@ final class ScheduleViewModel: ObservableObject {
             finalRozklad.append(rozkladObject)
             rozkladObject = .init()
         }
-        
-        print(finalRozklad)
         
         dayCollectionViewModel.days = finalRozklad
     }
@@ -194,7 +196,5 @@ final class ScheduleViewModel: ObservableObject {
             rozklad.append(rozkladObject)
             rozkladObject = .init()
         }
-        
-//        rozkladListViewModel.days = rozklad
     }
 }

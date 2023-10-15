@@ -48,6 +48,15 @@
 		679856C42AD7D59700F25DCD /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */; };
 		679856C72AD7E07200F25DCD /* SwiftUITrackableScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 679856C62AD7E07200F25DCD /* SwiftUITrackableScrollView */; };
 		679856CA2ADBE27600F25DCD /* EmptyLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C92ADBE27600F25DCD /* EmptyLessonsView.swift */; };
+		679856DB2ADC048800F25DCD /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856CE2ADC048700F25DCD /* animation1.json */; };
+		679856F52ADC0EDA00F25DCD /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856E92ADC0ED900F25DCD /* animation2.json */; };
+		679856F72ADC0EDA00F25DCD /* animation8.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856EB2ADC0ED900F25DCD /* animation8.json */; };
+		679856F82ADC0EDA00F25DCD /* animation11.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856EC2ADC0ED900F25DCD /* animation11.json */; };
+		679856F92ADC0EDA00F25DCD /* animation12.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856ED2ADC0ED900F25DCD /* animation12.json */; };
+		679856FA2ADC0EDA00F25DCD /* animation13.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856EE2ADC0ED900F25DCD /* animation13.json */; };
+		679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856EF2ADC0ED900F25DCD /* animation10.json */; };
+		679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F02ADC0ED900F25DCD /* animation6.json */; };
+		679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F12ADC0ED900F25DCD /* animation9.json */; };
 		67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */; };
 		67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */; };
 		67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBE02AC6DF7100366366 /* NetworkManager.swift */; };
@@ -111,6 +120,15 @@
 		679856C12AD6A81300F25DCD /* ScrollIndicatorHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollIndicatorHidden.swift; sourceTree = "<group>"; };
 		679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
 		679856C92ADBE27600F25DCD /* EmptyLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLessonsView.swift; sourceTree = "<group>"; };
+		679856CE2ADC048700F25DCD /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
+		679856E92ADC0ED900F25DCD /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
+		679856EB2ADC0ED900F25DCD /* animation8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation8.json; sourceTree = "<group>"; };
+		679856EC2ADC0ED900F25DCD /* animation11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation11.json; sourceTree = "<group>"; };
+		679856ED2ADC0ED900F25DCD /* animation12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation12.json; sourceTree = "<group>"; };
+		679856EE2ADC0ED900F25DCD /* animation13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation13.json; sourceTree = "<group>"; };
+		679856EF2ADC0ED900F25DCD /* animation10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation10.json; sourceTree = "<group>"; };
+		679856F02ADC0ED900F25DCD /* animation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation6.json; sourceTree = "<group>"; };
+		679856F12ADC0ED900F25DCD /* animation9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation9.json; sourceTree = "<group>"; };
 		67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		67B3FBE02AC6DF7100366366 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -312,6 +330,7 @@
 		6760AF4A2AC5DFF0000434A6 /* LottieJSON */ = {
 			isa = PBXGroup;
 			children = (
+				679856CB2ADC045F00F25DCD /* EmptyLessons */,
 				6760AF4B2AC5E019000434A6 /* studentAnimation.json */,
 				6760AF4D2AC5E037000434A6 /* teacherAnimation.json */,
 				672142CF2ACC7ADB007FB14D /* loaderAnimation.json */,
@@ -335,6 +354,22 @@
 				679856C92ADBE27600F25DCD /* EmptyLessonsView.swift */,
 			);
 			path = EmptyLessonsView;
+			sourceTree = "<group>";
+		};
+		679856CB2ADC045F00F25DCD /* EmptyLessons */ = {
+			isa = PBXGroup;
+			children = (
+				679856CE2ADC048700F25DCD /* animation1.json */,
+				679856E92ADC0ED900F25DCD /* animation2.json */,
+				679856F02ADC0ED900F25DCD /* animation6.json */,
+				679856EB2ADC0ED900F25DCD /* animation8.json */,
+				679856F12ADC0ED900F25DCD /* animation9.json */,
+				679856EF2ADC0ED900F25DCD /* animation10.json */,
+				679856EC2ADC0ED900F25DCD /* animation11.json */,
+				679856ED2ADC0ED900F25DCD /* animation12.json */,
+				679856EE2ADC0ED900F25DCD /* animation13.json */,
+			);
+			path = EmptyLessons;
 			sourceTree = "<group>";
 		};
 		67B3FBDD2AC6AE0400366366 /* Network */ = {
@@ -502,11 +537,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6760AF332AC5D751000434A6 /* Gilroy-Regular.ttf in Resources */,
+				679856DB2ADC048800F25DCD /* animation1.json in Resources */,
+				679856F82ADC0EDA00F25DCD /* animation11.json in Resources */,
+				679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */,
+				679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */,
 				6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */,
 				6760AF352AC5D75C000434A6 /* Gilroy-Medium.ttf in Resources */,
+				679856F52ADC0EDA00F25DCD /* animation2.json in Resources */,
+				679856F72ADC0EDA00F25DCD /* animation8.json in Resources */,
 				67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */,
+				679856FA2ADC0EDA00F25DCD /* animation13.json in Resources */,
 				672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */,
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
+				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
+				679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */,
 				6760AF382AC5D7FA000434A6 /* Gilroy-Light.ttf in Resources */,
 				6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */,
 				6760AF312AC5D716000434A6 /* Gilroy-Semibold.ttf in Resources */,

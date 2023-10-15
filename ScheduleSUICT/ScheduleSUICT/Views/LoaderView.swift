@@ -14,7 +14,7 @@ struct LoaderView: View {
                 .frame(width: 160, height: 160)
                 .foregroundStyle(Color.white)
             
-            LottieView(loopMode: .loop, lottieFile: .loader)
+            LottieView(loopMode: .loop, lottieFile: LottieFile.loader.rawValue)
                 .scaleEffect(0.30)
         }
     }

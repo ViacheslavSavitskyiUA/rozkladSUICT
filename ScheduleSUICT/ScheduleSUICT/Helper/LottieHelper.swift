@@ -7,16 +7,20 @@
 
 import Foundation
 
-enum LottieFile {
-    case student
-    case teacher
-    case loader
+enum LottieFile: String {
+    case student = "studentAnimation"
+    case teacher = "teacherAnimation"
+    case loader = "loaderAnimation"
     
-    var fileName: String {
-        switch self {
-        case .student: return "studentAnimation"
-        case .teacher: return "teacherAnimation"
-        case .loader:  return "loaderAnimation"
-        }
+    enum EmptyLessons: String, CaseIterable {
+        case a1 = "animation1"
+        case a2 = "animation2"
+        case a6 = "animation6"
+        case a8 = "animation8"
+        case a9 = "animation9"
+        case a10 = "animation10"
+        case a11 = "animation11"
+        case a12 = "animation12"
+        case a13 = "animation13"
     }
 }

@@ -19,7 +19,7 @@ struct ScheduleView: View {
             DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
                 .background(Color.white)
             
-            RozkladListView(viewModel: viewModel.rozkladListViewModel)
+            showLessons(!viewModel.selectDay.isEmpty)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -44,6 +44,15 @@ struct ScheduleView: View {
         .task {
             await viewModel.fetchRozklad()
             await viewModel.setupDays()
+        }
+    }
+    
+    @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
+        switch hasLessons {
+        case true:
+            RozkladListView(viewModel: viewModel.rozkladListViewModel)
+        case false:
+            EmptyLessonsView()
         }
     }
 }

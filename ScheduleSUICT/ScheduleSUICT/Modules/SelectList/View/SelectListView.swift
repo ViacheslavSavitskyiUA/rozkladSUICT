@@ -50,9 +50,6 @@ struct SelectListView: View {
             .navigationTitle(viewModel.userType.titleSelectItemsView)
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
-//            .toolbarBackButton(isActiveButton: viewModel.isShowLoader, completion: {
-//                dismiss()
-//            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
