@@ -21,7 +21,7 @@ struct DayCollectionView: View {
                     ForEach(viewModel.days) { day in
                         DayCellView(viewModel: .init(day: day),
                                     selected: { day in
-                            withAnimation {
+                            withAnimation(.easeIn) {
                                 viewModel.selected(day: day)
                             }
                             viewModel.completion(day)
@@ -29,10 +29,9 @@ struct DayCollectionView: View {
                     }
                 }
             }
-//            .padding(.top, 8)
             .margin(edges: .horizontal, 16)
             .onReceive(Just(viewModel.day), perform: { _ in
-                withAnimation {
+                withAnimation(.easeIn) {
                         value.scrollTo(viewModel.day.id, anchor: .center)
                 }
             })

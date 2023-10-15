@@ -9,24 +9,33 @@ import SwiftUI
 
 struct EmptyLessonsView: View {
     var body: some View {
-        ZStack(content: {
+        ZStack {
             Rectangle()
                 .foregroundStyle(Color.pastelFirstSnow)
                 .cornerRadius(16)
                 .padding(20)
+            VStack {
+                Text("Сьогодні немає пар")
+                    .font(.gilroy(.bold, size: 28))
+                    .foregroundStyle(Color.black.opacity(0.7))
+                    .padding(.bottom, 40)
+                
+                ZStack {
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.width / 1.4)
+                        .foregroundStyle(Color.white)
+                        .cornerRadius(16)
+                    
+                    LottieView(loopMode: .loop,
+                               lottieFile: (LottieFile.EmptyLessons.allCases.randomElement()
+                                            ?? .a1).rawValue)
+                    .scaleEffect(0.2)
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width / 1.45, height: UIScreen.main.bounds.width / 1.45)
+                }
+            }
             
-            Rectangle()
-                .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.width / 1.4)
-                .foregroundStyle(Color.white)
-                .cornerRadius(16)
-            
-            LottieView(loopMode: .loop,
-                       lottieFile: (LottieFile.EmptyLessons.allCases.randomElement() 
-                                    ?? .a1).rawValue)
-            .scaleEffect(0.2)
-            .scaledToFit()
-            .frame(width: UIScreen.main.bounds.width / 1.45, height: UIScreen.main.bounds.width / 1.45)
-        })
+        }
     }
 }
 

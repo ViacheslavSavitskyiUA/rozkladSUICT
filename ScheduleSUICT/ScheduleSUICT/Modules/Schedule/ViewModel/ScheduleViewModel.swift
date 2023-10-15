@@ -140,7 +140,7 @@ final class ScheduleViewModel: ObservableObject {
                     }
                     
                     if rozkladObject.isToday {
-                        withAnimation {
+                        withAnimation(.easeIn) {
                             selectDay = rozkladObject
                             dayCollectionViewModel.day = rozkladObject
                             rozkladListViewModel.lessons = rozkladObject.lessons
@@ -156,7 +156,7 @@ final class ScheduleViewModel: ObservableObject {
                     rozkladObject.isSelected = rozkladObject.isToday
                     
                     if rozkladObject.isToday {
-                        withAnimation {
+                        withAnimation(.easeIn) {
                             selectDay = rozkladObject
                             dayCollectionViewModel.day = rozkladObject
                             rozkladListViewModel.lessons = rozkladObject.lessons
