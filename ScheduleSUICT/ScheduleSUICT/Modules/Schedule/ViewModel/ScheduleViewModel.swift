@@ -9,10 +9,6 @@ import Combine
 import Foundation
 import SwiftUI
 
-enum ScrollType {
-    case collection
-    case table
-}
 
 final class ScheduleViewModel: ObservableObject {
     

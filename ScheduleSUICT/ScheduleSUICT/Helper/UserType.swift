@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum UserType {
+enum UserType: String {
     case student, teacher, unowned
     
     var title: String {
@@ -46,7 +46,7 @@ enum UserType {
     var titleSelectItemsView: String {
         switch self {
         case .student: return "Оберіть групу"
-        case .teacher: return  "Знайдіть себе"
+        case .teacher: return "Знайдіть себе"
         case .unowned: return ""
         }
     }

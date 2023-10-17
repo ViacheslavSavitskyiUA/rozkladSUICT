@@ -16,7 +16,7 @@ struct SelectListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                setupView(isError: viewModel.isShowErrorView)
+                setupView(type: viewModel.screenType)
                 
                 NavigationLink(destination: ScheduleView(viewModel: .init(
                     searchId: viewModel.returnScheduleVMParameters().searchId,
@@ -46,6 +46,9 @@ struct SelectListView: View {
             .popUpNavigationView(show: $viewModel.isShowLoader) {
                 LoaderView()
             }
+            .task {
+                await viewModel.fetchFaculties()
+            }
         }
         .navigationBarHidden(true)
     }
@@ -67,16 +70,13 @@ struct SelectListView: View {
         }
     }
     
-    @ViewBuilder func setupView(isError: Bool) -> some View {
-        switch isError {
-        case true:
+    @ViewBuilder func setupView(type: ScreenType) -> some View {
+        switch type {
+        case .fail:
             NetworkErrorView()
-        case false:
+        case .success:
             ScrollView {
                 fillScreen(userType: viewModel.userType)
-            }
-            .task {
-                await viewModel.fetchFaculties()
             }
             
             Spacer()
@@ -94,6 +94,9 @@ struct SelectListView: View {
             }
             .inactive(!viewModel.isActiveNextButton)
             .padding(.bottom)
+        case .firstLoading:
+            Color.clear
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
     }
 }

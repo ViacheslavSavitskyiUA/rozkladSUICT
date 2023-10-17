@@ -43,6 +43,7 @@
 		6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6760AF4B2AC5E019000434A6 /* studentAnimation.json */; };
 		6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6760AF4D2AC5E037000434A6 /* teacherAnimation.json */; };
 		6760AF512AC5E0A6000434A6 /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF502AC5E0A6000434A6 /* LottieHelper.swift */; };
+		678ED20B2ADEFBF7001F4E79 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678ED20A2ADEFBF7001F4E79 /* StorageService.swift */; };
 		679856C02AD4121F00F25DCD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 679856BF2AD4121F00F25DCD /* Lottie */; };
 		679856C22AD6A81300F25DCD /* ScrollIndicatorHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C12AD6A81300F25DCD /* ScrollIndicatorHidden.swift */; };
 		679856C42AD7D59700F25DCD /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */; };
@@ -119,6 +120,7 @@
 		6760AF4B2AC5E019000434A6 /* studentAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentAnimation.json; sourceTree = "<group>"; };
 		6760AF4D2AC5E037000434A6 /* teacherAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teacherAnimation.json; sourceTree = "<group>"; };
 		6760AF502AC5E0A6000434A6 /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
+		678ED20A2ADEFBF7001F4E79 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		679856C12AD6A81300F25DCD /* ScrollIndicatorHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollIndicatorHidden.swift; sourceTree = "<group>"; };
 		679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
 		679856C92ADBE27600F25DCD /* EmptyLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLessonsView.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				6760AF502AC5E0A6000434A6 /* LottieHelper.swift */,
 				67E9398C2AC602E100AB47ED /* UserType.swift */,
 				67F67D562ACF26D20005534A /* TransformDate.swift */,
+				678ED20A2ADEFBF7001F4E79 /* StorageService.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				67246B602ACD620D0067D009 /* LoaderView.swift in Sources */,
 				671287D82ACED9BD00EF5CF5 /* DayCollectionViewModel.swift in Sources */,
 				674D5A282AD1DAD500558E5A /* RozkladEntity.swift in Sources */,
+				678ED20B2ADEFBF7001F4E79 /* StorageService.swift in Sources */,
 				671BE11A2ACD9C3000310DA4 /* UINavigationController+Extension.swift in Sources */,
 				67B3FBE32AC6E61A00366366 /* SelectItemView.swift in Sources */,
 				6713616D2AC691BB00B78C42 /* ChoiceViewModel.swift in Sources */,

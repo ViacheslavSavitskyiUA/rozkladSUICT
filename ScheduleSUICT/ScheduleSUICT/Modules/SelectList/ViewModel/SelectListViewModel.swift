@@ -9,6 +9,10 @@ import Combine
 import Foundation
 import SwiftUI
 
+enum ScreenType {
+    case success, fail, firstLoading
+}
+
 final class SelectListViewModel: ObservableObject {
     
     // MARK: - For all
@@ -32,7 +36,7 @@ final class SelectListViewModel: ObservableObject {
     @Published var isActiveNextButton = false
     
     @Published var isShowLoader = false
-    @Published var isShowErrorView = false
+    @Published var screenType: ScreenType = .firstLoading                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     @Published var isShowRozklad = false
     
     let userType: UserType
@@ -77,10 +81,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let faculties):
-            isShowErrorView = false
+            screenType = .success
             facultyViewModel.inputItems = transform(faculties: faculties)
         case .failure(let error):
-            isShowErrorView = true
+            screenType = .fail
             print(error)
         }
     }
@@ -93,10 +97,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let courses):
-            isShowErrorView = false
+            screenType = .success
             courseViewModel.inputItems = transform(courses: courses)
         case .failure(let error):
-            isShowErrorView = true
+            screenType = .fail
             print(error)
         }
     }
@@ -110,10 +114,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let groups):
-            isShowErrorView = false
+            screenType = .success
             groupViewModel.inputItems = transform(groups: groups)
         case .failure(let error):
-            isShowErrorView = true
+            screenType = .fail
             print(error)
         }
     }
@@ -126,10 +130,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let chairs):
-            isShowErrorView = false
+            screenType = .success
             chairViewModel.inputItems = transform(chairs: chairs)
         case .failure(let error):
-            isShowErrorView = true
+            screenType = .fail
             print(error)
         }
     }
@@ -142,10 +146,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let teachers):
-            isShowErrorView = false
+            screenType = .success
             teacherViewModel.inputItems = transform(teachers: teachers)
         case .failure(let error):
-            isShowErrorView = true
+            screenType = .fail
             print(error)
         }
     }
