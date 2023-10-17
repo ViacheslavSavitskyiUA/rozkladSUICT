@@ -15,36 +15,31 @@ struct ScheduleView: View {
     @ObservedObject var viewModel: ScheduleViewModel
     
     var body: some View {
-        VStack {
-            DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
-                .background(Color.white)
-            
-            showLessons(!viewModel.selectDay.isEmpty)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle(viewModel.navigationTitle)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    mode.wrappedValue.dismiss()
-                } label: {
-                    Image("backArrow")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 24, height: 24)
-                        .foregroundStyle(Color.fennelFlower)
+        showView(isError: viewModel.isShowErrorView)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle(viewModel.navigationTitle)
+            .navigationBarHidden(viewModel.isShowLoader)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        mode.wrappedValue.dismiss()
+                    } label: {
+                        Image("backArrow")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(Color.fennelFlower)
+                    }
+                    .inactive(viewModel.isShowLoader)
                 }
-                .inactive(viewModel.isShowLoader)
             }
-        }
-        .popUpNavigationView(show: $viewModel.isShowLoader, content: {
-            LoaderView()
-        })
-        .task {
-            await viewModel.fetchRozklad()
-            await viewModel.setupDays()
-        }
+            .popUpNavigationView(show: $viewModel.isShowLoader, content: {
+                LoaderView()
+            })
+            .task {
+                viewModel.setupView()
+            }
     }
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
@@ -53,6 +48,20 @@ struct ScheduleView: View {
             RozkladListView(viewModel: viewModel.rozkladListViewModel)
         case false:
             EmptyLessonsView()
+        }
+    }
+    
+    @ViewBuilder func showView(isError: Bool) -> some View {
+        switch isError {
+        case true:
+            NetworkErrorView()
+        case false:
+            VStack {
+                DayCollectionView(viewModel: viewModel.dayCollectionViewModel)
+                    .background(Color.white)
+                
+                showLessons(!viewModel.selectDay.isEmpty)
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ final class SelectListViewModel: ObservableObject {
     @Published var isActiveNextButton = false
     
     @Published var isShowLoader = false
+    @Published var isShowErrorView = false
     @Published var isShowRozklad = false
     
     let userType: UserType
@@ -60,7 +61,7 @@ final class SelectListViewModel: ObservableObject {
          type: userType,
          title: userType == .student
          ? groupViewModel.selectedItem?.fullName ?? ""
-         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
+         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.shortName ?? "")")
     }
 }
 
@@ -76,8 +77,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let faculties):
+            isShowErrorView = false
             facultyViewModel.inputItems = transform(faculties: faculties)
         case .failure(let error):
+            isShowErrorView = true
             print(error)
         }
     }
@@ -90,8 +93,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let courses):
+            isShowErrorView = false
             courseViewModel.inputItems = transform(courses: courses)
         case .failure(let error):
+            isShowErrorView = true
             print(error)
         }
     }
@@ -105,8 +110,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let groups):
+            isShowErrorView = false
             groupViewModel.inputItems = transform(groups: groups)
         case .failure(let error):
+            isShowErrorView = true
             print(error)
         }
     }
@@ -119,8 +126,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let chairs):
+            isShowErrorView = false
             chairViewModel.inputItems = transform(chairs: chairs)
         case .failure(let error):
+            isShowErrorView = true
             print(error)
         }
     }
@@ -133,8 +142,10 @@ extension SelectListViewModel {
         
         switch models {
         case .success(let teachers):
+            isShowErrorView = false
             teacherViewModel.inputItems = transform(teachers: teachers)
         case .failure(let error):
+            isShowErrorView = true
             print(error)
         }
     }

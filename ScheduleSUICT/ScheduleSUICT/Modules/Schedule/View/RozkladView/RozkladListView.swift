@@ -16,7 +16,7 @@ struct RozkladListView: View {
         ScrollView(showsIndicators: false) {
             LazyVStack {
                 ForEach(viewModel.lessons) { lesson in
-                    RozkladCellView(viewModel: .init(lesson: lesson))
+                    RozkladCellView(viewModel: .init(lesson: lesson, type: viewModel.type))
                     .padding(.bottom, 12)
                     .dynamicTypeSize(...DynamicTypeSize.medium)
                 }
@@ -26,5 +26,5 @@ struct RozkladListView: View {
 }
 
 #Preview {
-    RozkladListView(viewModel: .init(lessons: []))
+    RozkladListView(viewModel: .init(lessons: [], type: .student))
 }

@@ -22,6 +22,8 @@ final class ScheduleViewModel: ObservableObject {
     @Published var dayCollectionViewModel: DayCollectionViewModel!
     
     @Published var isShowLoader = false
+    @Published var isShowErrorView = false
+    
     @Published var navigationTitle: String
     
     @Published var selectDay: RozkladEntity = .init()
@@ -41,8 +43,15 @@ final class ScheduleViewModel: ObservableObject {
         setupViewModels()
     }
     
+    func setupView() {
+        Task {
+            await fetchRozklad()
+            await setupDays()
+        }
+    }
+    
     private func setupViewModels() {
-        rozkladListViewModel = .init(lessons: [])
+        rozkladListViewModel = .init(lessons: [], type: type)
         
         dayCollectionViewModel = .init(completion: { rozklad in
             withAnimation(.easeIn) { [weak self] in
@@ -63,9 +72,10 @@ final class ScheduleViewModel: ObservableObject {
                 let models = try await network.getRozklad(groupId: searchId,
                                                           dateStart: transformRangeDateString().start,
                                                           dateEnd: transformRangeDateString().end).get()
+                isShowErrorView = false
                 await transformRozklad(models: models)
             } catch {
-                print(error)
+                isShowErrorView = true
             }
             
         case .teacher:
@@ -73,9 +83,10 @@ final class ScheduleViewModel: ObservableObject {
                 let models = try await network.getRozklad(teacherId: searchId,
                                                           dateStart: transformRangeDateString().start,
                                                           dateEnd: transformRangeDateString().end).get()
+                isShowErrorView = false
                 await transformRozklad(models: models)
             } catch {
-                print(error)
+                isShowErrorView = true
             }
         case .unowned: ()
         }

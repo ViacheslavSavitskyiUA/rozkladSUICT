@@ -10,8 +10,10 @@ import Combine
 final class RozkladCellViewModel: ObservableObject {
     
     @Published var lesson: LessonEntity
+    let type: UserType
     
-    init(lesson: LessonEntity) {
+    init(lesson: LessonEntity, type: UserType) {
         self.lesson = lesson
+        self.type = type
     }
 }

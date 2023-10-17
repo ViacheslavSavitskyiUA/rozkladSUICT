@@ -16,28 +16,7 @@ struct SelectListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView {
-                    fillScreen(userType: viewModel.userType)
-                }
-                .task {
-                    await viewModel.fetchFaculties()
-                }
-                
-                Spacer()
-                
-                Button {
-                    viewModel.isShowRozklad.toggle()
-                } label: {
-                    Text("Далі")
-                        .font(.gilroy(.semibold, size: 20))
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width - 40)
-                        .background(Color.fallGold)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                }
-                .inactive(!viewModel.isActiveNextButton)
-                .padding(.bottom)
+                setupView(isError: viewModel.isShowErrorView)
                 
                 NavigationLink(destination: ScheduleView(viewModel: .init(
                     searchId: viewModel.returnScheduleVMParameters().searchId,
@@ -85,6 +64,36 @@ struct SelectListView: View {
             case .unowned:
                 EmptyView()
             }
+        }
+    }
+    
+    @ViewBuilder func setupView(isError: Bool) -> some View {
+        switch isError {
+        case true:
+            NetworkErrorView()
+        case false:
+            ScrollView {
+                fillScreen(userType: viewModel.userType)
+            }
+            .task {
+                await viewModel.fetchFaculties()
+            }
+            
+            Spacer()
+            
+            Button {
+                viewModel.isShowRozklad.toggle()
+            } label: {
+                Text("Далі")
+                    .font(.gilroy(.semibold, size: 20))
+                    .padding()
+                    .frame(width: UIScreen.main.bounds.width - 40)
+                    .background(Color.fallGold)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+            }
+            .inactive(!viewModel.isActiveNextButton)
+            .padding(.bottom)
         }
     }
 }

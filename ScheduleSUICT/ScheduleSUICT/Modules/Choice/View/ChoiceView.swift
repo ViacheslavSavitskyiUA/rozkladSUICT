@@ -57,6 +57,7 @@ struct ChoiceView: View {
                         .foregroundColor(.white)
                         .cornerRadius(12)
                 }
+                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                 .inactive(viewModel.selectUserType != .unowned ? false : true)
                 .padding(.bottom)
             }

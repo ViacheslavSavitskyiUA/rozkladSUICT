@@ -13,12 +13,12 @@ extension View {
             .overlay {
                 if show.wrappedValue {
                     
-                    GeometryReader { proxy in
+//                    GeometryReader { proxy in
                         Color.primary
                             .opacity(0.15)
                             .ignoresSafeArea()
                         
-                        let size = proxy.size
+                    let size = UIScreen.main.bounds
                         
                         content()
                             .padding(.bottom, 44)
@@ -27,6 +27,6 @@ extension View {
                     }
                     
                 }
-            }
+//            }
     }
 }

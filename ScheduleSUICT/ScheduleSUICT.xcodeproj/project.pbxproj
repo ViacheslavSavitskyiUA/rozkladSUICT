@@ -57,6 +57,8 @@
 		679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856EF2ADC0ED900F25DCD /* animation10.json */; };
 		679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F02ADC0ED900F25DCD /* animation6.json */; };
 		679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F12ADC0ED900F25DCD /* animation9.json */; };
+		679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */ = {isa = PBXBuildFile; fileRef = 679857012ADC5D8000F25DCD /* animationNetrorkError.json */; };
+		679857042ADE5F5000F25DCD /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679857032ADE5F5000F25DCD /* NetworkErrorView.swift */; };
 		67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */; };
 		67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */; };
 		67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBE02AC6DF7100366366 /* NetworkManager.swift */; };
@@ -129,6 +131,8 @@
 		679856EF2ADC0ED900F25DCD /* animation10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation10.json; sourceTree = "<group>"; };
 		679856F02ADC0ED900F25DCD /* animation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation6.json; sourceTree = "<group>"; };
 		679856F12ADC0ED900F25DCD /* animation9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation9.json; sourceTree = "<group>"; };
+		679857012ADC5D8000F25DCD /* animationNetrorkError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationNetrorkError.json; sourceTree = "<group>"; };
+		679857032ADE5F5000F25DCD /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
 		67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		67B3FBE02AC6DF7100366366 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -304,6 +308,7 @@
 				67EDEC782AC7EE990003C3AD /* Lottie */,
 				67246B5F2ACD620D0067D009 /* LoaderView.swift */,
 				679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */,
+				679857032ADE5F5000F25DCD /* NetworkErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 		6760AF4A2AC5DFF0000434A6 /* LottieJSON */ = {
 			isa = PBXGroup;
 			children = (
+				679857002ADC5D6E00F25DCD /* NetworkError */,
 				679856CB2ADC045F00F25DCD /* EmptyLessons */,
 				6760AF4B2AC5E019000434A6 /* studentAnimation.json */,
 				6760AF4D2AC5E037000434A6 /* teacherAnimation.json */,
@@ -370,6 +376,14 @@
 				679856EE2ADC0ED900F25DCD /* animation13.json */,
 			);
 			path = EmptyLessons;
+			sourceTree = "<group>";
+		};
+		679857002ADC5D6E00F25DCD /* NetworkError */ = {
+			isa = PBXGroup;
+			children = (
+				679857012ADC5D8000F25DCD /* animationNetrorkError.json */,
+			);
+			path = NetworkError;
 			sourceTree = "<group>";
 		};
 		67B3FBDD2AC6AE0400366366 /* Network */ = {
@@ -538,6 +552,7 @@
 			files = (
 				6760AF332AC5D751000434A6 /* Gilroy-Regular.ttf in Resources */,
 				679856DB2ADC048800F25DCD /* animation1.json in Resources */,
+				679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */,
 				679856F82ADC0EDA00F25DCD /* animation11.json in Resources */,
 				679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */,
 				679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */,
@@ -592,6 +607,7 @@
 				671287CE2ACEB28D00EF5CF5 /* DayCellView.swift in Sources */,
 				67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */,
 				67246B5E2ACD59DF0067D009 /* View+Extension.swift in Sources */,
+				679857042ADE5F5000F25DCD /* NetworkErrorView.swift in Sources */,
 				67EDEC9A2AC9D8DF0003C3AD /* ChairModel.swift in Sources */,
 				679856C42AD7D59700F25DCD /* ScrollViewWithOffset.swift in Sources */,
 				674D5A202AD1946000558E5A /* RozkladCellView.swift in Sources */,

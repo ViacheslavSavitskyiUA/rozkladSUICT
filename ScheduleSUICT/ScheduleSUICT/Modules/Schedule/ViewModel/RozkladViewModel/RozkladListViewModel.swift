@@ -11,7 +11,10 @@ final class RozkladListViewModel: ObservableObject {
     
     @Published var lessons: [LessonEntity]
     
-    init(lessons: [LessonEntity]) {
+    let type: UserType
+    
+    init(lessons: [LessonEntity], type: UserType) {
         self.lessons = lessons
+        self.type = type
     }
 }

@@ -12,6 +12,7 @@ struct RozkladCellView: View {
     @ObservedObject var viewModel: RozkladCellViewModel
     
     var body: some View {
+        
         HStack {
             VStack {
                 Text("\(viewModel.lesson.lessonNumber) пара")
@@ -47,14 +48,14 @@ struct RozkladCellView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 12) {
                         
-                        Text(viewModel.lesson.disciplineShortName)
+                        Text("\(viewModel.lesson.disciplineShortName)[\(viewModel.lesson.typeStr)]")
                             .font(.gilroy(.medium, size: 20))
                             .fontWeight(.semibold)
                         
-                        Text(viewModel.lesson.classroom)
+                        Text("ауд. \(viewModel.lesson.classroom)")
                             .font(.gilroy(.medium, size: 16))
                         
-                        Text(viewModel.lesson.groups + " " + viewModel.lesson.teachersName )
+                        Text("\(viewModel.type == .student ? viewModel.lesson.teachersName : viewModel.lesson.groups)")
                             .font(.gilroy(.medium, size: 16))
                     }
                     .padding(.vertical, 20)
@@ -63,12 +64,12 @@ struct RozkladCellView: View {
                 .padding(.horizontal, 40)
             }
         }
-//        .shadow(color: .pastelBianca, radius: 8, x: 0, y: 3)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
 #Preview {
-    RozkladCellView(viewModel: .init(lesson: .init(lessonNumber: 3, disciplineFullName: "PRMddddddddddd", disciplineShortName: "PRM", classroom: "325", timeStart: "11.45", timeEnd: "13:20", teachersName: "Savitskyi", teachersNameFull: "Sav Vich Andr", groups: "PDM-31", type: 0, typeStr: "Lec")))
+    RozkladCellView(viewModel: .init(lesson: .init(lessonNumber: 3, disciplineFullName: "PRMddddddddddd", disciplineShortName: "PRM", classroom: "325", timeStart: "11.45", timeEnd: "13:20", teachersName: "Savitskyi", teachersNameFull: "Sav Vich Andr", groups: "PDM-31", type: 0, typeStr: "Lec"), type: .student))
         .previewLayout(.sizeThatFits)
 }
 
