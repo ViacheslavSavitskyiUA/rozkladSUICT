@@ -15,8 +15,11 @@ final class DayCellViewModel: ObservableObject {
         self.day = day
     }
     
+    func transformDate() -> String {
+        Transform.transformDateToString(date: Transform.transformStringToDate(day.date, dateFormat: .yyyyMMdd), dateFormat: .ddMMyyyy)
+    }
+    
     func foregroundColor() -> Color {
-        
         var color = Color.clear
         
         if day.isSelected {

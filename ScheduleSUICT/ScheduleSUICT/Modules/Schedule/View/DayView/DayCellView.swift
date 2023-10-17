@@ -20,10 +20,10 @@ struct DayCellView: View {
                 .cornerRadius(8)
 
             VStack(spacing: 8) {
-                Text(viewModel.day.dayWeek)
+                Text(viewModel.day.dayWeek.capitalized)
                     .foregroundColor(.black)
                     .font(.gilroy(.light, size: 12))
-                Text(viewModel.day.date)
+                Text(viewModel.transformDate())
                     .foregroundColor(.black)
                     .font(.gilroy(.light, size: 14))
             }
