@@ -14,12 +14,12 @@ enum SettingsKey: String {
 }
 
 class StorageService {
-    static func storageId(_ id: String?) {
+    static func storageId(_ id: Int?) {
         UserDefaults.standard.set(id, forKey: SettingsKey.id.rawValue)
     }
     
-    static func readStorageId() -> String? {
-         UserDefaults.standard.string(forKey: SettingsKey.id.rawValue)
+    static func readStorageId() -> Int? {
+         UserDefaults.standard.integer(forKey: SettingsKey.id.rawValue)
     }
     
     static func storageType(_ type: String?) {

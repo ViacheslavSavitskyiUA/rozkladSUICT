@@ -40,6 +40,16 @@ struct ScheduleView: View {
             .task {
                 viewModel.setupView()
             }
+            .alert(isPresented: $viewModel.isShowSaveAlert, content: {
+                Alert(title: Text("Запамʼятати?"),
+                      message: Text("Чи відкривати цей розклад при майбутніх входах у застосунок?"),
+                      primaryButton: .default(Text("Зберегти").foregroundColor(.red), action: {
+                    viewModel.saveUserData()
+                }), secondaryButton: Alert.Button.destructive(Text("Відмінити"),
+                                             action: {
+                    viewModel.isShowSaveAlert = false
+                }))
+            })
     }
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {

@@ -24,6 +24,8 @@ final class ScheduleViewModel: ObservableObject {
     
     @Published var selectDay: RozkladEntity = .init()
     
+    @Published var isShowSaveAlert: Bool = false
+    
     private let network = NetworkManager()
     private var rozklad: [RozkladEntity] = []
     private var days: [DayEntity] = []
@@ -44,6 +46,16 @@ final class ScheduleViewModel: ObservableObject {
             await fetchRozklad()
             await setupDays()
         }
+    }
+    
+    func saveUserData() {
+        StorageService.storageId(searchId)
+        StorageService.storageType(type.rawValue)
+        StorageService.storageTitle(navigationTitle)
+    }
+    
+    private func askedSaveQuestion() {
+        isShowSaveAlert = StorageService.readStorageTitle() == self.navigationTitle ? false : true
     }
     
     private func setupViewModels() {
@@ -70,6 +82,7 @@ final class ScheduleViewModel: ObservableObject {
                                                           dateEnd: transformRangeDateString().end).get()
                 isShowErrorView = false
                 await transformRozklad(models: models)
+                askedSaveQuestion()
             } catch {
                 isShowErrorView = true
             }
@@ -81,6 +94,7 @@ final class ScheduleViewModel: ObservableObject {
                                                           dateEnd: transformRangeDateString().end).get()
                 isShowErrorView = false
                 await transformRozklad(models: models)
+                askedSaveQuestion()
             } catch {
                 isShowErrorView = true
             }
