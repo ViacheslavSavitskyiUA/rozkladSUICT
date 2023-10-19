@@ -9,6 +9,9 @@ import Combine
 import Foundation
 import SwiftUI
 
+enum UserDataStatus {
+    case saved, unsaved
+}
 
 final class ScheduleViewModel: ObservableObject {
     
@@ -25,6 +28,8 @@ final class ScheduleViewModel: ObservableObject {
     @Published var selectDay: RozkladEntity = .init()
     
     @Published var isShowSaveAlert: Bool = false
+    
+    @Published var userDataStatus: UserDataStatus = .unsaved
     
     private let network = NetworkManager()
     private var rozklad: [RozkladEntity] = []
@@ -52,10 +57,36 @@ final class ScheduleViewModel: ObservableObject {
         StorageService.storageId(searchId)
         StorageService.storageType(type.rawValue)
         StorageService.storageTitle(navigationTitle)
+        
+        userDataStatus = .saved
     }
     
+    func unsaveUserData() {
+        StorageService.storageId(nil)
+        StorageService.storageType(nil)
+        StorageService.storageTitle(nil)
+        
+        userDataStatus = .unsaved
+    }
+    
+    func checkReturnSaveImage() -> String {
+        if userDataStatus == .saved && StorageService.readStorageTitle() == self.navigationTitle &&
+            StorageService.readStorageId() == searchId &&
+            StorageService.readStorageType() == type  {
+            return "star.fill"
+        } else {
+            return "star"
+        }
+    }
+    
+    
+    
     private func askedSaveQuestion() {
-        isShowSaveAlert = StorageService.readStorageTitle() == self.navigationTitle ? false : true
+        if StorageService.readStorageTitle() != self.navigationTitle &&
+            StorageService.readStorageId() != searchId &&
+            StorageService.readStorageType() != type {
+            isShowSaveAlert = true
+        }
     }
     
     private func setupViewModels() {
@@ -69,6 +100,14 @@ final class ScheduleViewModel: ObservableObject {
                 self.dayCollectionViewModel.day = rozklad
             }
         })
+        
+        if StorageService.readStorageId() != nil 
+            && StorageService.readStorageType() != nil
+            && StorageService.readStorageTitle() != nil {
+            userDataStatus = .saved
+        } else {
+            userDataStatus = .unsaved
+        }
     }
     
     @MainActor

@@ -27,4 +27,9 @@ enum LottieFile: String {
     enum NetworkError: String {
         case animation = "animationNetrorkError"
     }
+    
+    enum SavePopUp: String {
+        case checkmark = "checkmark"
+        case crissCross = "criss-cross"
+    }
 }

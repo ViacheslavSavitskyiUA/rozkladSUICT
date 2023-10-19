@@ -60,8 +60,21 @@ struct ChoiceView: View {
                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                 .inactive(viewModel.selectUserType != .unowned ? false : true)
                 .padding(.bottom)
+                
+                NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
+                                                                          type: StorageService.readStorageType() ?? .unowned,
+                                                                          title: StorageService.readStorageTitle() ?? "")),
+                               isActive: $viewModel.isToScheduleScreen) {
+                    EmptyView()
+                }
             }
             .navigationBarHidden(true)
+        }
+        .task {
+            viewModel.showSchedule()
+        }
+        .onAppear {
+            viewModel.isToScheduleScreen = false
         }
         .navigationViewStyle(.stack)
     }

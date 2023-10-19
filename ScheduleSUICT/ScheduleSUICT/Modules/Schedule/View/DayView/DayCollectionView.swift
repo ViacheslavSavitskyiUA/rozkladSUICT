@@ -36,7 +36,7 @@ struct DayCollectionView: View {
                 }
             })
         }
-        .frame(height: 70)
+        .frame(height: 60)
     }
 }
 

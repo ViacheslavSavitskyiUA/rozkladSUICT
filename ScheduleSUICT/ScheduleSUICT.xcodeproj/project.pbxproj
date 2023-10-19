@@ -21,6 +21,9 @@
 		672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 672142CF2ACC7ADB007FB14D /* loaderAnimation.json */; };
 		67246B5E2ACD59DF0067D009 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67246B5D2ACD59DF0067D009 /* View+Extension.swift */; };
 		67246B602ACD620D0067D009 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67246B5F2ACD620D0067D009 /* LoaderView.swift */; };
+		673014632AE0ED1300DC52E4 /* checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 673014622AE0ED1300DC52E4 /* checkmark.json */; };
+		673014652AE0ED4200DC52E4 /* criss-cross.json in Resources */ = {isa = PBXBuildFile; fileRef = 673014642AE0ED4200DC52E4 /* criss-cross.json */; };
+		673014672AE0EDA700DC52E4 /* SavePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673014662AE0EDA700DC52E4 /* SavePopUpView.swift */; };
 		674D5A1C2AD0026900558E5A /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1B2AD0026900558E5A /* DayEntity.swift */; };
 		674D5A202AD1946000558E5A /* RozkladCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1F2AD1946000558E5A /* RozkladCellView.swift */; };
 		674D5A222AD1A49400558E5A /* RozkladCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */; };
@@ -96,6 +99,9 @@
 		672142CF2ACC7ADB007FB14D /* loaderAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loaderAnimation.json; sourceTree = "<group>"; };
 		67246B5D2ACD59DF0067D009 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		67246B5F2ACD620D0067D009 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		673014622AE0ED1300DC52E4 /* checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkmark.json; sourceTree = "<group>"; };
+		673014642AE0ED4200DC52E4 /* criss-cross.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "criss-cross.json"; sourceTree = "<group>"; };
+		673014662AE0EDA700DC52E4 /* SavePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePopUpView.swift; sourceTree = "<group>"; };
 		674D5A1B2AD0026900558E5A /* DayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEntity.swift; sourceTree = "<group>"; };
 		674D5A1F2AD1946000558E5A /* RozkladCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellView.swift; sourceTree = "<group>"; };
 		674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellViewModel.swift; sourceTree = "<group>"; };
@@ -214,6 +220,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		673014612AE0ECFD00DC52E4 /* SavePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				673014622AE0ED1300DC52E4 /* checkmark.json */,
+				673014642AE0ED4200DC52E4 /* criss-cross.json */,
+			);
+			path = SavePopUp;
+			sourceTree = "<group>";
+		};
 		674D5A1D2AD1922500558E5A /* RozkladView */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +326,7 @@
 				67246B5F2ACD620D0067D009 /* LoaderView.swift */,
 				679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */,
 				679857032ADE5F5000F25DCD /* NetworkErrorView.swift */,
+				673014662AE0EDA700DC52E4 /* SavePopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +353,7 @@
 		6760AF4A2AC5DFF0000434A6 /* LottieJSON */ = {
 			isa = PBXGroup;
 			children = (
+				673014612AE0ECFD00DC52E4 /* SavePopUp */,
 				679857002ADC5D6E00F25DCD /* NetworkError */,
 				679856CB2ADC045F00F25DCD /* EmptyLessons */,
 				6760AF4B2AC5E019000434A6 /* studentAnimation.json */,
@@ -561,6 +578,7 @@
 				679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */,
 				6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */,
 				6760AF352AC5D75C000434A6 /* Gilroy-Medium.ttf in Resources */,
+				673014632AE0ED1300DC52E4 /* checkmark.json in Resources */,
 				679856F52ADC0EDA00F25DCD /* animation2.json in Resources */,
 				679856F72ADC0EDA00F25DCD /* animation8.json in Resources */,
 				67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */,
@@ -569,6 +587,7 @@
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
 				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
 				679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */,
+				673014652AE0ED4200DC52E4 /* criss-cross.json in Resources */,
 				6760AF382AC5D7FA000434A6 /* Gilroy-Light.ttf in Resources */,
 				6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */,
 				6760AF312AC5D716000434A6 /* Gilroy-Semibold.ttf in Resources */,
@@ -606,6 +625,7 @@
 				671361762AC69C4E00B78C42 /* SelectListViewModel.swift in Sources */,
 				67EDEC902AC8B2760003C3AD /* Inactive.swift in Sources */,
 				671287C22ACE878C00EF5CF5 /* Date+Extension.swift in Sources */,
+				673014672AE0EDA700DC52E4 /* SavePopUpView.swift in Sources */,
 				67D1867A2ACDD913003261BE /* ScheduleViewModel.swift in Sources */,
 				671287CE2ACEB28D00EF5CF5 /* DayCellView.swift in Sources */,
 				67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */,

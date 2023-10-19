@@ -16,11 +16,18 @@ final class ChoiceViewModel: ObservableObject {
     @Published var selectUserType: UserType = .unowned
     
     @Published var isToNextScreen = false
+    @Published var isToScheduleScreen = false
     
     
     init() {
         self.studentCardViewModel = ChoiceCardViewModel()
         self.teacherCardViewModel = ChoiceCardViewModel()
+    }
+    
+    func showSchedule() {
+        if StorageService.readStorageId() != nil && StorageService.readStorageType() != nil && StorageService.readStorageTitle() != nil {
+            isToScheduleScreen = true
+        }
     }
     
     func select(userType: UserType) {
