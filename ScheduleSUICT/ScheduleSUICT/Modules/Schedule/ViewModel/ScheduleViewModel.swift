@@ -70,7 +70,7 @@ final class ScheduleViewModel: ObservableObject {
     }
     
     func checkReturnSaveImage() -> String {
-        if userDataStatus == .saved && StorageService.readStorageTitle() == self.navigationTitle &&
+        if StorageService.readStorageTitle() == self.navigationTitle &&
             StorageService.readStorageId() == searchId &&
             StorageService.readStorageType() == type  {
             return "star.fill"
@@ -79,13 +79,13 @@ final class ScheduleViewModel: ObservableObject {
         }
     }
     
-    
-    
     private func askedSaveQuestion() {
         if StorageService.readStorageTitle() != self.navigationTitle &&
             StorageService.readStorageId() != searchId &&
             StorageService.readStorageType() != type {
-            isShowSaveAlert = true
+            withAnimation {
+                isShowSaveAlert = true
+            }
         }
     }
     
@@ -101,9 +101,9 @@ final class ScheduleViewModel: ObservableObject {
             }
         })
         
-        if StorageService.readStorageId() != nil 
-            && StorageService.readStorageType() != nil
-            && StorageService.readStorageTitle() != nil {
+        if StorageService.readStorageId() == searchId
+            && StorageService.readStorageType() == type
+            && StorageService.readStorageTitle() == navigationTitle {
             userDataStatus = .saved
         } else {
             userDataStatus = .unsaved

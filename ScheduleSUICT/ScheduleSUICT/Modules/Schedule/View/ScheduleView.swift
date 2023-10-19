@@ -42,7 +42,10 @@ struct ScheduleView: View {
                     HStack {
                         Spacer()
                         Button {
-                            viewModel.isShowSaveAlert = true
+                            withAnimation {
+                                viewModel.isShowSaveAlert = true
+                            }
+                            
                         } label: {
                             Image(systemName: viewModel.checkReturnSaveImage())
                         }
@@ -55,31 +58,28 @@ struct ScheduleView: View {
             }
             showView(isError: viewModel.isShowErrorView)
         }
-            .navigationBarHidden(true)
+        .navigationBarHidden(true)
         
-            .popUpNavigationView(show: $viewModel.isShowLoader, content: {
-                LoaderView()
-            })
-            .popUpNavigationView(show: $viewModel.isShowSaveAlert, content: {
-                SavePopUpView(savePopUpType: viewModel.userDataStatus == .unsaved ? .save : .remove) {
-                    viewModel.userDataStatus == .unsaved ? viewModel.saveUserData() : viewModel.unsaveUserData()
-                    viewModel.isShowSaveAlert = false
-                } cancel: {
-                    viewModel.isShowSaveAlert = false
-                }
-
-            })
-            .task {
-                viewModel.setupView()
+        .popUpNavigationView(show: $viewModel.isShowLoader, content: {
+            LoaderView()
+        })
+        .popUpNavigationView(show: $viewModel.isShowSaveAlert, content: {
+            SavePopUpView(savePopUpType: viewModel.userDataStatus == .unsaved ? .save : .remove) {
+                viewModel.userDataStatus == .unsaved ? viewModel.saveUserData() : viewModel.unsaveUserData()
+                viewModel.isShowSaveAlert = false
+            } cancel: {
+                viewModel.isShowSaveAlert = false
             }
+        })
+        .task {
+            viewModel.setupView()
+        }
     }
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
         switch hasLessons {
-        case true:
-            RozkladListView(viewModel: viewModel.rozkladListViewModel)
-        case false:
-            EmptyLessonsView()
+        case true: RozkladListView(viewModel: viewModel.rozkladListViewModel)
+        case false: EmptyLessonsView()
         }
     }
     
