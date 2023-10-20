@@ -63,6 +63,8 @@
 		679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F12ADC0ED900F25DCD /* animation9.json */; };
 		679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */ = {isa = PBXBuildFile; fileRef = 679857012ADC5D8000F25DCD /* animationNetrorkError.json */; };
 		679857042ADE5F5000F25DCD /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679857032ADE5F5000F25DCD /* NetworkErrorView.swift */; };
+		67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 67ACF9CD2AE19BE7005E54E4 /* auditoryAnimation.json */; };
+		67ACF9D02AE19BFC005E54E4 /* freeAuditoryAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 67ACF9CF2AE19BFC005E54E4 /* freeAuditoryAnimation.json */; };
 		67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */; };
 		67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */; };
 		67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B3FBE02AC6DF7100366366 /* NetworkManager.swift */; };
@@ -141,6 +143,8 @@
 		679856F12ADC0ED900F25DCD /* animation9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation9.json; sourceTree = "<group>"; };
 		679857012ADC5D8000F25DCD /* animationNetrorkError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationNetrorkError.json; sourceTree = "<group>"; };
 		679857032ADE5F5000F25DCD /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		67ACF9CD2AE19BE7005E54E4 /* auditoryAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = auditoryAnimation.json; sourceTree = "<group>"; };
+		67ACF9CF2AE19BFC005E54E4 /* freeAuditoryAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = freeAuditoryAnimation.json; sourceTree = "<group>"; };
 		67B3FBDB2AC6A3B500366366 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		67B3FBDE2AC6D02700366366 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		67B3FBE02AC6DF7100366366 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 				679857002ADC5D6E00F25DCD /* NetworkError */,
 				679856CB2ADC045F00F25DCD /* EmptyLessons */,
 				6760AF4B2AC5E019000434A6 /* studentAnimation.json */,
+				67ACF9CF2AE19BFC005E54E4 /* freeAuditoryAnimation.json */,
+				67ACF9CD2AE19BE7005E54E4 /* auditoryAnimation.json */,
 				6760AF4D2AC5E037000434A6 /* teacherAnimation.json */,
 				672142CF2ACC7ADB007FB14D /* loaderAnimation.json */,
 			);
@@ -586,12 +592,14 @@
 				672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */,
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
 				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
+				67ACF9D02AE19BFC005E54E4 /* freeAuditoryAnimation.json in Resources */,
 				679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */,
 				673014652AE0ED4200DC52E4 /* criss-cross.json in Resources */,
 				6760AF382AC5D7FA000434A6 /* Gilroy-Light.ttf in Resources */,
 				6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */,
 				6760AF312AC5D716000434A6 /* Gilroy-Semibold.ttf in Resources */,
 				6760AF242AC5C06C000434A6 /* Assets.xcassets in Resources */,
+				67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

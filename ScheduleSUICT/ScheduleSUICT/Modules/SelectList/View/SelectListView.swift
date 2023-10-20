@@ -64,7 +64,7 @@ struct SelectListView: View {
             case .teacher:
                 SelectItemView(viewModel: viewModel.chairViewModel)
                 SelectItemView(viewModel: viewModel.teacherViewModel)
-            case .unowned:
+            default:
                 EmptyView()
             }
         }

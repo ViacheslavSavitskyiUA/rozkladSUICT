@@ -176,7 +176,7 @@ private extension SelectListViewModel {
                         self.chairViewModel.isInactive = false
                     }
                     
-                case .unowned: ()
+                default: ()
                 }
             }
             
@@ -320,6 +320,10 @@ private extension SelectListViewModel {
                 
                 isActiveNextButton = false
             case .unowned: ()
+            case .auditory:
+                ()
+            case .freeAuditory:
+                ()
             }
         case .course:
             groupViewModel.isOpen = false

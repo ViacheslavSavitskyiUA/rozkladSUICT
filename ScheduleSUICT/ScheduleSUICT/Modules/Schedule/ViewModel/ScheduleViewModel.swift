@@ -137,7 +137,7 @@ final class ScheduleViewModel: ObservableObject {
             } catch {
                 isShowErrorView = true
             }
-        case .unowned: ()
+        default: ()
         }
         isShowLoader = false
     }

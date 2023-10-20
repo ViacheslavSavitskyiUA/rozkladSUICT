@@ -11,6 +11,8 @@ enum LottieFile: String {
     case student = "studentAnimation"
     case teacher = "teacherAnimation"
     case loader = "loaderAnimation"
+    case auditory = "auditoryAnimation"
+    case freeAuditory = "freeAuditoryAnimation"
     
     enum EmptyLessons: String, CaseIterable {
         case a1 = "animation1"
