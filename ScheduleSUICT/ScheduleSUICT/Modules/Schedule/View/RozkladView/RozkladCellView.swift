@@ -52,7 +52,7 @@ struct RozkladCellView: View {
                             .font(.gilroy(.medium, size: 20))
                             .fontWeight(.semibold)
                         
-                        Text("ауд. \(viewModel.lesson.classroom)")
+                        Text(viewModel.type == .auditory ? "\(viewModel.lesson.teachersName)" : "ауд. \(viewModel.lesson.classroom)")
                             .font(.gilroy(.medium, size: 16))
                         
                         Text("\(viewModel.type == .student ? viewModel.lesson.teachersName : viewModel.lesson.groups)")

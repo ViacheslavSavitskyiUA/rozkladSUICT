@@ -41,17 +41,7 @@ struct ScheduleView: View {
                     
                     HStack {
                         Spacer()
-                        Button {
-                            withAnimation {
-                                viewModel.isShowSaveAlert = true
-                            }
-                            
-                        } label: {
-                            Image(systemName: viewModel.checkReturnSaveImage())
-                        }
-                        .frame(width: 24, height: 24)
-                        .padding(.trailing, 16)
-                        .opacity(viewModel.isShowErrorView ? 0 : 1)
+                        showFavorite(type: viewModel.type)
                     }
                 }
                 .frame(height: 48)
@@ -94,6 +84,24 @@ struct ScheduleView: View {
                 
                 showLessons(!viewModel.selectDay.isEmpty)
             }
+        }
+    }
+    
+    @ViewBuilder func showFavorite(type: UserType) -> some View {
+        switch type {
+        case .student, .teacher:
+            Button {
+                withAnimation {
+                    viewModel.isShowSaveAlert = true
+                }
+                
+            } label: {
+                Image(systemName: viewModel.checkReturnSaveImage())
+            }
+            .frame(width: 24, height: 24)
+            .padding(.trailing, 16)
+            .opacity(viewModel.isShowErrorView ? 0 : 1)
+        default: EmptyView()
         }
     }
 }

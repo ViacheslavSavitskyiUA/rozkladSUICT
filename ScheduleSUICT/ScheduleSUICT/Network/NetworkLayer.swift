@@ -25,6 +25,7 @@ enum APIEndpoints {
     case teachers
     case groupRozklad
     case teacherRozklad
+    case classroom
     
     var endpointString: String {
         switch self {
@@ -35,6 +36,7 @@ enum APIEndpoints {
         case .teachers: return "list/teachers-by-chair"
         case .groupRozklad: return "time-table/group"
         case .teacherRozklad: return "time-table/teacher"
+        case .classroom: return "time-table/classroom"
         }
     }
 }

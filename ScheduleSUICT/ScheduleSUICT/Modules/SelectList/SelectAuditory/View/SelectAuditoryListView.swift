@@ -17,6 +17,14 @@ struct SelectAuditoryListView: View {
         NavigationView {
             VStack {
                 setupView(type: viewModel.screenType)
+                
+                NavigationLink(destination: ScheduleView(viewModel: .init(
+                    searchId: Int(viewModel.auditoryViewModel.selectedItem?.id ?? "0") ?? 0,
+                    type: .auditory,
+                    title: viewModel.auditoryViewModel.selectedItem?.number ?? "")),
+                               isActive: $viewModel.isShowRozklad) {
+                    EmptyView()
+                }
             }
             .popUpNavigationView(show: $viewModel.isShowLoader, content: {
                 LoaderView()

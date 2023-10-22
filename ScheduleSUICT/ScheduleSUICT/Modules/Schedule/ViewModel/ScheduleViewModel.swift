@@ -36,12 +36,16 @@ final class ScheduleViewModel: ObservableObject {
     private var days: [DayEntity] = []
     
     private let searchId: Int
-    private let type: UserType
+    let type: UserType
     
     init(searchId: Int, type: UserType, title: String) {
         self.searchId = searchId
         self.type = type
         self.navigationTitle = title
+        
+        if type == .auditory {
+            self.navigationTitle = "\(title) аудиторія"
+        }
         
         setupViewModels()
     }
@@ -134,6 +138,14 @@ final class ScheduleViewModel: ObservableObject {
                 isShowErrorView = false
                 await transformRozklad(models: models)
                 askedSaveQuestion()
+            } catch {
+                isShowErrorView = true
+            }
+        case .auditory:
+            do {
+                let models = try await network.getRozklad(classroomId: searchId, dateStart: transformRangeDateString().start, dateEnd: transformRangeDateString().end).get()
+                isShowErrorView = false
+                await transformRozklad(models: models)
             } catch {
                 isShowErrorView = true
             }

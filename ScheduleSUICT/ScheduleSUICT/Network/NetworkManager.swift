@@ -61,4 +61,12 @@ struct NetworkManager {
                                      "dateStart" : dateStart,
                                      "dateEnd" : dateEnd])
     }
+    
+    func getRozklad(classroomId: Int, dateStart: String, dateEnd: String) async -> Result<[RozkladModel], Error> {
+        await network.request(endpoint: .classroom,
+                              method: .post,
+                              body: ["classroomId" : "\(classroomId)",
+                                     "dateStart" : dateStart,
+                                     "dateEnd" : dateEnd])
+    }
 }
