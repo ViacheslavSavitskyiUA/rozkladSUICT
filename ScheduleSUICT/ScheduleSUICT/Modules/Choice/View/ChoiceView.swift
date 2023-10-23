@@ -82,6 +82,15 @@ struct ChoiceView: View {
             }
             .padding(.bottom)
             .ignoresSafeArea()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
+            .task {
+                viewModel.showSchedule()
+            }
+            .onAppear {
+                viewModel.isToScheduleScreen = false
+            }
+            .navigationViewStyle(.stack)
         }
         
         NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
@@ -90,15 +99,6 @@ struct ChoiceView: View {
                        isActive: $viewModel.isToScheduleScreen) {
             EmptyView()
         }
-                       .navigationBarTitleDisplayMode(.inline)
-                       .navigationBarHidden(true)
-                       .task {
-                           viewModel.showSchedule()
-                       }
-                       .onAppear {
-                           viewModel.isToScheduleScreen = false
-                       }
-                       .navigationViewStyle(.stack)
     }
 }
 

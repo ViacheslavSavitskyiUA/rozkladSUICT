@@ -39,8 +39,17 @@ struct ScheduleView: View {
                         .font(.system(size: 16))
                         .bold()
                     
-                    HStack {
+                    HStack(spacing: 8) {
                         Spacer()
+                        Button {
+                            viewModel.isShareSheetPresented = true
+                        } label: {
+                            Image(systemName: "square.and.arrow.up")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                                .padding(.leading, 16)
+                        }
                         showFavorite(type: viewModel.type)
                     }
                 }
@@ -64,6 +73,9 @@ struct ScheduleView: View {
         .task {
             viewModel.setupView()
         }
+        .sheet(isPresented: $viewModel.isShareSheetPresented, content: {
+            ShareSheetView(activityItems: [viewModel.activityText()])
+        })
     }
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
@@ -107,5 +119,5 @@ struct ScheduleView: View {
 }
 
 #Preview {
-    ScheduleView(viewModel: .init(searchId: 569, type: .unowned, title: "zamriy"))
+    ScheduleView(viewModel: .init(searchId: 569, type: .student  , title: "zamriy"))
 }

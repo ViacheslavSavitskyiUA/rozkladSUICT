@@ -3,4 +3,191 @@
    uuid = "F950278D-F041-406E-AFCB-D01436E854B1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBE95A56-ABC4-41D1-8F3E-B51AC752746B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "showSchedule()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8DBD320-9960-4FE4-B470-392E28ACEC07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "showSchedule()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "ChoiceViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 4ad10074d20881f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of ScheduleSUICT.ChoiceViewModel.isToScheduleScreen : Swift.Bool"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - d02d72c726a2ad9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.isToScheduleScreen.getter : Swift.Bool"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 8ed6ef1260a809af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.isToScheduleScreen.setter : Swift.Bool"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 2902c895bd0f2aae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.isToScheduleScreen.modify : Swift.Bool"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 511c3cab2c64e1c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.isToScheduleScreen.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - a5e52a22d3588d80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.$isToScheduleScreen.getter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Choice/ViewModel/ChoiceViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - aaf736ae1278760b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.$isToScheduleScreen.setter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 4308d6ab1da91844"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.$isToScheduleScreen.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "24EA8D9C-A3E9-4800-BD09-A7D570DB082E - 81639c5015419633"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleSUICT.ChoiceViewModel.$isToScheduleScreen.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

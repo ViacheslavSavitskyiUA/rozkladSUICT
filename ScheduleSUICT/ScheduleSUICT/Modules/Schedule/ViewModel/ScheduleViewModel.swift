@@ -31,6 +31,8 @@ final class ScheduleViewModel: ObservableObject {
     
     @Published var userDataStatus: UserDataStatus = .unsaved
     
+    @Published var isShareSheetPresented: Bool = false
+    
     private let network = NetworkManager()
     private var rozklad: [RozkladEntity] = []
     private var days: [DayEntity] = []
@@ -55,6 +57,43 @@ final class ScheduleViewModel: ObservableObject {
             await fetchRozklad()
             await setupDays()
         }
+    }
+    
+    func activityText() -> String {
+        var text = ""
+        
+        if selectDay.lessons.count == 0 {
+            text = "\(navigationTitle)\n\(Transform.transformDateToString(date: Transform.transformStringToDate(selectDay.date, dateFormat: .yyyyMMdd), dateFormat: .ddMMyyyy))\nнемає занять"
+        } else {
+            text = "\(navigationTitle)\n\(Transform.transformDateToString(date: Transform.transformStringToDate(selectDay.date, dateFormat: .yyyyMMdd), dateFormat: .ddMMyyyy))\n\n"
+            
+            for lesson in selectDay.lessons {
+                text.append("\(lesson.lessonNumber) пара \(lesson.timeStart)-\(lesson.timeEnd)")
+                text.append("\n")
+                text.append(lesson.disciplineShortName)
+                text.append("\n")
+                
+                switch type {
+                case .student:
+                    text.append(lesson.teachersName)
+                    text.append("\n")
+                    text.append("\(lesson.classroom) ауд.")
+                case .teacher:
+                    text.append(lesson.groups)
+                    text.append("\n")
+                    text.append("\(lesson.classroom) ауд.")
+                case .auditory:
+                    text.append(lesson.groups)
+                    text.append("\n")
+                    text.append(lesson.teachersName)
+                case .unowned: ()
+                }
+                
+                text.append("\n\n")
+            }
+        }
+
+        return text
     }
     
     func saveUserData() {
