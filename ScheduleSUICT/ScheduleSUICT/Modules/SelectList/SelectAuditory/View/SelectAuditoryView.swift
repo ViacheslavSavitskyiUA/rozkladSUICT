@@ -41,6 +41,7 @@ struct SelectAuditoryView: View {
                     .font(.gilroy(.bold, size: 16))
                     .padding(.bottom, viewModel.isOpen ? 12 : 0)
                     .focused($isFocusState)
+                    .modifier(TextFieldClearButton(text: $viewModel.textFieldText))
             })
         }
         .background(Color.pastelBianca)
