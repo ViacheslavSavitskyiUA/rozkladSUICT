@@ -29,6 +29,7 @@ struct SelectItemView: View {
                                     }
                                 }
                         }
+                        .frame(width: UIScreen.main.bounds.width - 80)
                     }
                 }
             }, label: {
