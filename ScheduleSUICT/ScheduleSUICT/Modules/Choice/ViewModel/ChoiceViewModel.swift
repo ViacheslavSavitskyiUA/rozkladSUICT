@@ -13,7 +13,6 @@ final class ChoiceViewModel: ObservableObject {
     @Published var studentCardViewModel: ChoiceCardViewModel
     @Published var teacherCardViewModel: ChoiceCardViewModel
     @Published var auditoryCardViewModel: ChoiceCardViewModel
-    @Published var freeAuditoryCardViewModel: ChoiceCardViewModel
     
     @Published var selectUserType: UserType = .unowned
     
@@ -26,15 +25,10 @@ final class ChoiceViewModel: ObservableObject {
             if selectUserType == .student || selectUserType == .teacher {
                 isToNextScreen = true
                 isToNextScreenAuditory = false
-                isToNextScreenFreeAuditory = false
             } else if selectUserType == .auditory {
                 isToNextScreen = false
                 isToNextScreenAuditory = true
                 isToNextScreenFreeAuditory = false
-            } else if selectUserType == .freeAuditory {
-                isToNextScreen = false
-                isToNextScreenAuditory = false
-                isToNextScreenFreeAuditory = true
             } else {
                 isToNextScreen = false
                 isToNextScreenAuditory = false
@@ -49,7 +43,6 @@ final class ChoiceViewModel: ObservableObject {
         self.studentCardViewModel = ChoiceCardViewModel()
         self.teacherCardViewModel = ChoiceCardViewModel()
         self.auditoryCardViewModel = ChoiceCardViewModel()
-        self.freeAuditoryCardViewModel = ChoiceCardViewModel()
     }
     
     func showSchedule() {
@@ -68,23 +61,15 @@ final class ChoiceViewModel: ObservableObject {
                 studentCardViewModel.isSelect = true
                 teacherCardViewModel.isSelect = false
                 auditoryCardViewModel.isSelect = false
-                freeAuditoryCardViewModel.isSelect = false
             case .teacher:
                 studentCardViewModel.isSelect = false
                 teacherCardViewModel.isSelect = true
                 auditoryCardViewModel.isSelect = false
-                freeAuditoryCardViewModel.isSelect = false
             case .unowned: ()
             case .auditory:
                 studentCardViewModel.isSelect = false
                 teacherCardViewModel.isSelect = false
                 auditoryCardViewModel.isSelect = true
-                freeAuditoryCardViewModel.isSelect = false
-            case .freeAuditory:
-                studentCardViewModel.isSelect = false
-                teacherCardViewModel.isSelect = false
-                auditoryCardViewModel.isSelect = false
-                freeAuditoryCardViewModel.isSelect = true
             }
         }
     }

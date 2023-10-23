@@ -320,10 +320,7 @@ private extension SelectListViewModel {
                 
                 isActiveNextButton = false
             case .unowned: ()
-            case .auditory:
-                ()
-            case .freeAuditory:
-                ()
+            case .auditory: ()
             }
         case .course:
             groupViewModel.isOpen = false

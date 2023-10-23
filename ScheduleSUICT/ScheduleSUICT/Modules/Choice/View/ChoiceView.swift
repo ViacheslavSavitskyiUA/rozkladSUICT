@@ -26,6 +26,15 @@ struct ChoiceView: View {
                     Spacer().frame(height: 8)
                     
                         Group {
+                            
+                            HStack {
+                                ChoiceCardView(viewModel: viewModel.auditoryCardViewModel, userType: .auditory)
+                                    .onTapGesture {
+                                        viewModel.select(userType: .auditory)
+                                    }
+                            }
+                            Spacer().frame(height: 20)
+                            
                             HStack {
                                 ChoiceCardView(viewModel: viewModel.studentCardViewModel,
                                                userType: .student)
@@ -35,27 +44,13 @@ struct ChoiceView: View {
                                 
                                 Spacer().frame(width: 20)
                                 
-                                ChoiceCardView(viewModel: viewModel.auditoryCardViewModel, userType: .auditory)
-                                    .onTapGesture {
-                                        viewModel.select(userType: .auditory)
-                                    }
-                            }
-                            Spacer().frame(height: 20)
-                            
-                            HStack {
                                 ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
                                                userType: .teacher)
                                 .onTapGesture {
                                     viewModel.select(userType: .teacher)
                                 }
-                                
-                                Spacer().frame(width: 20)
-                                
-                                ChoiceCardView(viewModel: viewModel.freeAuditoryCardViewModel, userType: .freeAuditory)
-                                    .onTapGesture {
-                                        viewModel.select(userType: .freeAuditory)
-                                    }
                             }
+                            
                         }
 
                     Spacer()
@@ -95,7 +90,7 @@ struct ChoiceView: View {
                        isActive: $viewModel.isToScheduleScreen) {
             EmptyView()
         }
-        
+                       .navigationBarTitleDisplayMode(.inline)
                        .navigationBarHidden(true)
                        .task {
                            viewModel.showSchedule()

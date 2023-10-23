@@ -93,7 +93,7 @@ struct SelectListView: View {
                     .cornerRadius(12)
             }
             .inactive(!viewModel.isActiveNextButton)
-            .padding(.bottom)
+//            .padding(.bottom)
         case .firstLoading:
             Color.clear
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

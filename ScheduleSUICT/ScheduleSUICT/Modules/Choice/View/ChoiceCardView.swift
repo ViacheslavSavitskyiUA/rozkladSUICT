@@ -11,7 +11,7 @@ struct ChoiceCardView: View {
     
     @ObservedObject var viewModel: ChoiceCardViewModel
     
-    private let constantSize: CGFloat = UIScreen.main.bounds.size.width / 2 - 40
+    private let constantSize: CGFloat = UIScreen.main.bounds.size.width / 2 - 20
     let userType: UserType
     
     var body: some View {
@@ -29,7 +29,7 @@ struct ChoiceCardView: View {
                     .scaleEffect(userType == .student || userType == .teacher ? 0.10 : 0.2)
                     .frame(width: 100, height: 100)
                 Text(userType.title)
-                    .font(.gilroy(.light, size: 8))
+                    .font(.gilroy(.light, size: 12))
                     .padding(.bottom, 4)
             }
         }

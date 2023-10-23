@@ -80,7 +80,7 @@ struct SelectAuditoryListView: View {
                     .cornerRadius(12)
             }
             .inactive(!viewModel.isActiveNextButton)
-            .padding(.bottom)
+//            .padding(.bottom)
         case .fail:
             NetworkErrorView()
         case .firstLoading:
