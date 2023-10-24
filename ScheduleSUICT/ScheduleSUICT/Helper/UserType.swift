@@ -22,7 +22,7 @@ enum UserType: String {
     
     var backgroundColor: Color {
         switch self {
-        case .student:      return .pastelBianca
+        case .student:      return .pastelFirstSnow//pastelBianca
         case .teacher:      return .pastelFirstSnow
         case .auditory:     return .pastelFirstSnow
         default:            return .clear
@@ -40,7 +40,7 @@ enum UserType: String {
     
     var borderColor: Color {
         switch self {
-        case .student:      return .fennelFlower
+        case .student:      return .fallGold//fennelFlower
         case .teacher:      return .fallGold
         case .auditory:     return .fallGold
         default:            return .clear

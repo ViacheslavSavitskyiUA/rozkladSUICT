@@ -42,7 +42,7 @@ struct ChoiceView: View {
                                     viewModel.select(userType: .student)
                                 }
                                 
-                                Spacer().frame(width: 20)
+                                Spacer().frame(width: 16)
                                 
                                 ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
                                                userType: .teacher)
@@ -67,7 +67,7 @@ struct ChoiceView: View {
                             .cornerRadius(12)
                     }
                     .inactive(viewModel.selectUserType != .unowned ? false : true)
-                    .padding(.bottom)
+//                    .padding(.bottom)
                 }
                 
                 NavigationLink(destination: SelectListView(viewModel: .init(userType: viewModel.selectUserType)),
@@ -81,7 +81,7 @@ struct ChoiceView: View {
                 }
             }
             .padding(.bottom)
-            .ignoresSafeArea()
+//            .ignoresSafeArea()
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
