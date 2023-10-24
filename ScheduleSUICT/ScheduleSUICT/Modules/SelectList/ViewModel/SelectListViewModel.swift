@@ -65,7 +65,7 @@ final class SelectListViewModel: ObservableObject {
          type: userType,
          title: userType == .student
          ? groupViewModel.selectedItem?.fullName ?? ""
-         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.shortName ?? "")")
+         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
     }
 }
 
@@ -290,7 +290,7 @@ private extension SelectListViewModel {
             choicesEntity.append(ChoiceEntity(id: teacher.id,
                                               shortName: "\(teacher.firstName + " " + teacher.secondName)",
                                               fullName: teacher.lastName,
-                                              initials: "\(teacher.firstName.first ?? "|"). \(teacher.lastName.first ?? "|")."))
+                                              initials: "\(teacher.firstName.first ?? "|"). \(teacher.secondName.first ?? "|")."))
         }
         return choicesEntity
     }

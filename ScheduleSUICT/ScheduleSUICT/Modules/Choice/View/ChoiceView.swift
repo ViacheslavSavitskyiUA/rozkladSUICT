@@ -95,7 +95,9 @@ struct ChoiceView: View {
         
         NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
                                                                   type: StorageService.readStorageType() ?? .unowned,
-                                                                  title: StorageService.readStorageTitle() ?? "")),
+                                                                  title: StorageService.readStorageTitle() ?? ""),
+                                                 type: StorageService.readStorageType() ?? .unowned,
+                                                 searchId: StorageService.readStorageId() ?? 0),
                        isActive: $viewModel.isToScheduleScreen) {
             EmptyView()
         }

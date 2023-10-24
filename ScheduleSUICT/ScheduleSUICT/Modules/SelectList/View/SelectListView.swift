@@ -21,7 +21,9 @@ struct SelectListView: View {
                 NavigationLink(destination: ScheduleView(viewModel: .init(
                     searchId: viewModel.returnScheduleVMParameters().searchId,
                     type: viewModel.returnScheduleVMParameters().type,
-                    title: viewModel.returnScheduleVMParameters().title)),
+                    title: viewModel.returnScheduleVMParameters().title),
+                                                         type: viewModel.returnScheduleVMParameters().type,
+                                                         searchId: viewModel.returnScheduleVMParameters().searchId),
                                isActive: $viewModel.isShowRozklad) {
                     EmptyView()
                 }

@@ -21,7 +21,8 @@ struct SelectAuditoryListView: View {
                 NavigationLink(destination: ScheduleView(viewModel: .init(
                     searchId: Int(viewModel.auditoryViewModel.selectedItem?.id ?? "0") ?? 0,
                     type: .auditory,
-                    title: viewModel.auditoryViewModel.selectedItem?.number ?? "")),
+                    title: viewModel.auditoryViewModel.selectedItem?.number ?? ""), type: .auditory,
+                                                         searchId: Int(viewModel.auditoryViewModel.selectedItem?.id ?? "0") ?? 0),
                                isActive: $viewModel.isShowRozklad) {
                     EmptyView()
                 }
