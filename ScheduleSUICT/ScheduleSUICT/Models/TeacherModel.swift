@@ -11,4 +11,10 @@ import Foundation
 struct TeacherModel: Codable {
     let id: Int
     let firstName, secondName, lastName: String
+    
+}
+
+struct SelectTeacherModel: Codable {
+    let id: Int
+    let firstName, secondName, lastName, chairName: String
 }

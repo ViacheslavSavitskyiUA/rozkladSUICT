@@ -69,4 +69,10 @@ struct NetworkManager {
                                      "dateStart" : dateStart,
                                      "dateEnd" : dateEnd])
     }
+    
+    func searchTeachers(name: String) async -> Result<[SelectTeacherModel], Error> {
+        await network.request(endpoint: .teacherName,
+                              method: .post,
+                              body: ["name" : name.trimmed()])
+    }
 }

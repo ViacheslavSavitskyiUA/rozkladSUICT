@@ -1,15 +1,15 @@
 //
-//  SelectAuditoryView.swift
+//  SelectTeacherView.swift
 //  ScheduleSUICT
 //
-//  Created by Viacheslav Savitskyi on 20.10.2023.
+//  Created by Viacheslav Savitskyi on 25.10.2023.
 //
 
 import SwiftUI
 
-struct SelectAuditoryView: View {
+struct SelectTeacherView: View {
     
-    @ObservedObject var viewModel: SelectAuditoryViewModel
+    @ObservedObject var viewModel: SelectTeacherViewModel
     
     @FocusState private var isFocusState: Bool
     
@@ -18,7 +18,7 @@ struct SelectAuditoryView: View {
             DisclosureGroup(isExpanded: $viewModel.isOpen,
                             content: {
                 VStack(spacing: 16) {
-                    ForEach(viewModel.viewEntities) { item in
+                    ForEach(viewModel.teachers) { item in
                         VStack {
                             Divider()
                             Text(viewModel.setupItemTitle(item))
@@ -27,7 +27,7 @@ struct SelectAuditoryView: View {
                                 .onTapGesture {
                                     withAnimation(.easeInOut) {
                                         viewModel.selectedItem = item
-                                        viewModel.textFieldText = item.number
+                                        viewModel.searchText = viewModel.setupItemTitle(item)
                                         viewModel.isOpen = false
                                         isFocusState = false
                                     }
@@ -36,25 +36,37 @@ struct SelectAuditoryView: View {
                     }
                 }
             }, label: {
-                TextField("Введіть № аудиторії", text: $viewModel.textFieldText)
+                TextField("Введіть прізвище", text: $viewModel.searchText)
                     .foregroundStyle(Color.black)
                     .font(.gilroy(.bold, size: 16))
-//                    .padding(.bottom, viewModel.isOpen ? 12 : 0)
                     .focused($isFocusState)
-                    .modifier(TextFieldClearButton(text: $viewModel.textFieldText))
+                    .modifier(TextFieldClearButton(text: $viewModel.searchText))
+                    .onChange(of: viewModel.searchText) { value in
+                        Task {
+                            if !value.isEmpty && value.count > 0 {
+                                await viewModel.search(teachers: value)
+                            } else {
+                                viewModel.teachers.removeAll()
+                            }
+                        }
+                    }
                     .padding(.all, 6)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.fallGold.opacity(0.5), lineWidth: 2)
+                            .stroke(Color.fallGold.opacity(0.25), lineWidth: 2)
                     )
             })
         }
         .background(Color.pastelBianca)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .padding([.leading, .trailing])
+        EmptyView()
+            .task {
+                await viewModel.search(teachers: "")
+            }
     }
 }
 
 #Preview {
-    SelectAuditoryView(viewModel: .init(title: "Title", inputItems: [.init(id: "", number: "325"), .init(id: "", number: "301"), .init(id: "", number: "323"), .init(id: "", number: "324")], completion: {_ in }, scrollToTop: { _ in}))
+    SelectTeacherView(viewModel: .init(action: { }))
 }

@@ -32,6 +32,7 @@ final class SelectListViewModel: ObservableObject {
     
     @Published var chairViewModel: SelectItemViewModel!
     @Published var teacherViewModel: SelectItemViewModel!
+    @Published var selectTeacherViewModel: SelectTeacherViewModel!
     
     @Published var isActiveNextButton = false
     
@@ -39,33 +40,69 @@ final class SelectListViewModel: ObservableObject {
     @Published var screenType: ScreenType = .firstLoading
     @Published var isShowRozklad = false
     
+    @Published var tag = 0 {
+        didSet {
+            withAnimation {
+                teacherViewModel.selectedItem = nil
+                selectTeacherViewModel.selectedItem = nil
+                isActiveNextButton = false
+            }
+        }
+    }
+    
     let userType: UserType
     
     private let network = NetworkManager()
-
+    
     init(userType: UserType) {
         self.userType = userType
         self.setupViewModels(type: userType)
+        
+        selectTeacherViewModel = .init(action: {
+            self.setupChoicesView(type: .teacher)
+        })
     }
     
     func setupRozkladViewModel() -> ScheduleViewModel {
-        ScheduleViewModel(searchId: userType == .student
-                          ? groupViewModel.selectedItem?.id ?? 0
-                          : teacherViewModel.selectedItem?.id ?? 0,
-                          type: userType,
-                          title: userType == .student 
-                          ? groupViewModel.selectedItem?.fullName ?? ""
-                          : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
+        var id = 0
+        var title = ""
+        
+        if tag == 0 {
+            id = selectTeacherViewModel.selectedItem?.id ?? 0
+            title = "\(selectTeacherViewModel.selectedItem?.fullName ?? "") \(selectTeacherViewModel.selectedItem?.initials ?? "")"
+        } else if tag == 1 {
+            id = teacherViewModel.selectedItem?.id ?? 0
+            title = "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")"
+        }
+        
+        return ScheduleViewModel(searchId: userType == .student
+                                 ? groupViewModel.selectedItem?.id ?? 0
+                                 : id,
+                                 type: userType,
+                                 title: userType == .student
+                                 ? groupViewModel.selectedItem?.fullName ?? ""
+                                 : title)
     }
     
     func returnScheduleVMParameters() -> (searchId: Int, type: UserType, title: String) {
-        (searchId: userType == .student
-         ? groupViewModel.selectedItem?.id ?? 0
-         : teacherViewModel.selectedItem?.id ?? 0,
-         type: userType,
-         title: userType == .student
-         ? groupViewModel.selectedItem?.fullName ?? ""
-         : "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")")
+        var id = 0
+        var title = ""
+        
+        if tag == 0 {
+            id = selectTeacherViewModel.selectedItem?.id ?? 0
+            title = "\(selectTeacherViewModel.selectedItem?.fullName ?? "") \(selectTeacherViewModel.selectedItem?.initials ?? "")"
+        } else if tag == 1 {
+            id = teacherViewModel.selectedItem?.id ?? 0
+            title = "\(teacherViewModel.selectedItem?.fullName ?? "") \(teacherViewModel.selectedItem?.initials ?? "")"
+        }
+        
+        return (searchId: userType == .student
+                ? groupViewModel.selectedItem?.id ?? 0
+                : id,
+                type: userType,
+                title: userType == .student
+                ? groupViewModel.selectedItem?.fullName ?? ""
+                : title)
     }
 }
 
@@ -156,7 +193,7 @@ extension SelectListViewModel {
 }
 
 // MARK: Private
-private extension SelectListViewModel {
+extension SelectListViewModel {
     func setupViewModels(type: UserType) {
         self.facultyViewModel = .init(type: .faculty,
                                       inputsItem: [],
@@ -310,15 +347,22 @@ private extension SelectListViewModel {
                 
                 isActiveNextButton = false
             case .teacher:
-                chairViewModel.isOpen = false
-                chairViewModel.selectedItem = nil
-                chairViewModel.isInactive = true
                 
-                teacherViewModel.isOpen = false
-                teacherViewModel.selectedItem = nil
-                teacherViewModel.isInactive = true
-                
-                isActiveNextButton = false
+                if tag == 0 {
+                    selectTeacherViewModel.isOpen = false
+                    selectTeacherViewModel.selectedItem = nil
+                    isActiveNextButton = false
+                } else {
+                    chairViewModel.isOpen = false
+                    chairViewModel.selectedItem = nil
+                    chairViewModel.isInactive = true
+                    
+                    teacherViewModel.isOpen = false
+                    teacherViewModel.selectedItem = nil
+                    teacherViewModel.isInactive = true
+                    
+                    isActiveNextButton = false
+                }
             case .unowned: ()
             case .auditory: ()
             }
@@ -334,7 +378,9 @@ private extension SelectListViewModel {
             teacherViewModel.isInactive = true
             
             isActiveNextButton = false
-        case .group, .teacher:
+        case .group:
+            isActiveNextButton = true
+        case .teacher:
             isActiveNextButton = true
         }
     }

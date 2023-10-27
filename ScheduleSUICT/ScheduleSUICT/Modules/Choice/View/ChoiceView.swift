@@ -25,34 +25,34 @@ struct ChoiceView: View {
                     
                     Spacer().frame(height: 8)
                     
-                        Group {
-                            
-                            HStack {
-                                ChoiceCardView(viewModel: viewModel.auditoryCardViewModel, userType: .auditory)
-                                    .onTapGesture {
-                                        viewModel.select(userType: .auditory)
-                                    }
-                            }
-                            Spacer().frame(height: 20)
-                            
-                            HStack {
-                                ChoiceCardView(viewModel: viewModel.studentCardViewModel,
-                                               userType: .student)
+                    Group {
+                        
+                        HStack {
+                            ChoiceCardView(viewModel: viewModel.auditoryCardViewModel, userType: .auditory)
                                 .onTapGesture {
-                                    viewModel.select(userType: .student)
+                                    viewModel.select(userType: .auditory)
                                 }
-                                
-                                Spacer().frame(width: 16)
-                                
-                                ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
-                                               userType: .teacher)
-                                .onTapGesture {
-                                    viewModel.select(userType: .teacher)
-                                }
-                            }
-                            
                         }
-
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            ChoiceCardView(viewModel: viewModel.studentCardViewModel,
+                                           userType: .student)
+                            .onTapGesture {
+                                viewModel.select(userType: .student)
+                            }
+                            
+                            Spacer().frame(width: 16)
+                            
+                            ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
+                                           userType: .teacher)
+                            .onTapGesture {
+                                viewModel.select(userType: .teacher)
+                            }
+                        }
+                        
+                    }
+                    
                     Spacer()
                     
                     Button {
@@ -67,7 +67,7 @@ struct ChoiceView: View {
                             .cornerRadius(12)
                     }
                     .inactive(viewModel.selectUserType != .unowned ? false : true)
-//                    .padding(.bottom)
+                    //                    .padding(.bottom)
                 }
                 
                 NavigationLink(destination: SelectListView(viewModel: .init(userType: viewModel.selectUserType)),
@@ -81,7 +81,7 @@ struct ChoiceView: View {
                 }
             }
             .padding(.bottom)
-//            .ignoresSafeArea()
+            //            .ignoresSafeArea()
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {

@@ -57,17 +57,24 @@ struct SelectListView: View {
     
     @ViewBuilder func fillScreen(userType: UserType) -> some View {
         VStack {
-            SelectItemView(viewModel: viewModel.facultyViewModel)
             
-            switch userType {
-            case .student:
+            if userType == .teacher {
+                if userType == .teacher {
+                    Picker("", selection: $viewModel.tag) {
+                        Label("Пошук за прізвищем", systemImage: "pencil.line").tag(0)
+                        Label("Обрати зі списку", systemImage: "list.dash").tag(1)
+                    }.pickerStyle(.segmented)
+                        .padding(.horizontal, 20)
+                    Divider().frame(height: 2)
+                    Spacer()
+                        .frame(height: 20)
+                }
+                setupSlider(tag: viewModel.tag)
+                
+            } else if userType == .student {
+                SelectItemView(viewModel: viewModel.facultyViewModel)
                 SelectItemView(viewModel: viewModel.courseViewModel)
                 SelectItemView(viewModel: viewModel.groupViewModel)
-            case .teacher:
-                SelectItemView(viewModel: viewModel.chairViewModel)
-                SelectItemView(viewModel: viewModel.teacherViewModel)
-            default:
-                EmptyView()
             }
         }
     }
@@ -98,7 +105,23 @@ struct SelectListView: View {
             .padding(.bottom)
         case .firstLoading:
             Color.clear
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .frame(width: UIScreen.main.bounds.width,
+                       height: UIScreen.main.bounds.height)
+        }
+    }
+    
+    @ViewBuilder func setupSlider(tag: Int) -> some View {
+        switch tag {
+        case 0:
+            SelectTeacherView(viewModel: viewModel.selectTeacherViewModel)
+        case 1:
+            VStack {
+                SelectItemView(viewModel: viewModel.facultyViewModel)
+                SelectItemView(viewModel: viewModel.chairViewModel)
+                SelectItemView(viewModel: viewModel.teacherViewModel)
+            }
+        default:
+            EmptyView()
         }
     }
 }

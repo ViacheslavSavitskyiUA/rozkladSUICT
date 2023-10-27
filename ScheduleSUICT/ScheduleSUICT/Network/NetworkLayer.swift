@@ -26,17 +26,19 @@ enum APIEndpoints {
     case groupRozklad
     case teacherRozklad
     case classroom
+    case teacherName
     
     var endpointString: String {
         switch self {
-        case .faculties: return "list/faculties"
-        case .courses: return "list/courses"
-        case .groups: return "list/groups"
-        case .chairs: return "list/chairs"
-        case .teachers: return "list/teachers-by-chair"
-        case .groupRozklad: return "time-table/group"
-        case .teacherRozklad: return "time-table/teacher"
-        case .classroom: return "time-table/classroom"
+        case .faculties:        return "list/faculties"
+        case .courses:          return "list/courses"
+        case .groups:           return "list/groups"
+        case .chairs:           return "list/chairs"
+        case .teachers:         return "list/teachers-by-chair"
+        case .groupRozklad:     return "time-table/group"
+        case .teacherRozklad:   return "time-table/teacher"
+        case .classroom:        return "time-table/classroom"
+        case .teacherName:      return "other/search-teachers"
         }
     }
 }

@@ -25,7 +25,7 @@ struct ScheduleView: View {
     @State var selectDay: RozkladEntity = .init()
     
     let type: UserType
-    let searchId: Int
+    var searchId: Int = 0
     
     var body: some View {
         VStack {
@@ -160,6 +160,7 @@ struct ScheduleView: View {
                 text.append("\(lesson.lessonNumber) пара \(lesson.timeStart)-\(lesson.timeEnd)")
                 text.append("\n")
                 text.append(lesson.disciplineShortName)
+                text.append("[\(lesson.typeStr)]")
                 text.append("\n")
                 
                 switch type {
@@ -311,6 +312,6 @@ struct ScheduleView: View {
     }
 }
 
-//#Preview {
-////    ScheduleView(viewModel: .init(searchId: 569, type: .student, title: "zamriy"), type: .auditory, searchId: 1)
-//}
+#Preview {
+    ScheduleView(viewModel: .init(searchId: 569, type: .student, title: "zamriy"), type: .auditory, searchId: 1)
+}
