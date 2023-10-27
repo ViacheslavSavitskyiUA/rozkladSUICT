@@ -42,11 +42,7 @@ struct SelectAuditoryView: View {
                     .focused($isFocusState)
                     .modifier(TextFieldClearButton(text: $viewModel.textFieldText))
                     .padding(.all, 6)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.fallGold.opacity(0.5), lineWidth: 2)
-                    )
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 10)
             })
         }
         .background(Color.pastelBianca)

@@ -23,6 +23,7 @@ struct TextFieldClearButton: ViewModifier {
                             .padding(.trailing)
                     }
                 )
+                .frame(width: 28, height: 17.5)
             }
         }
     }
