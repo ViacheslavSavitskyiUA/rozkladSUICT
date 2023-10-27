@@ -39,7 +39,6 @@ struct SelectAuditoryView: View {
                 TextField("Введіть № аудиторії", text: $viewModel.textFieldText)
                     .foregroundStyle(Color.black)
                     .font(.gilroy(.bold, size: 16))
-//                    .padding(.bottom, viewModel.isOpen ? 12 : 0)
                     .focused($isFocusState)
                     .modifier(TextFieldClearButton(text: $viewModel.textFieldText))
                     .padding(.all, 6)
@@ -47,6 +46,7 @@ struct SelectAuditoryView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.fallGold.opacity(0.5), lineWidth: 2)
                     )
+                    .padding(.trailing, 20)
             })
         }
         .background(Color.pastelBianca)
