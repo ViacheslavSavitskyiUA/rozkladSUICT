@@ -46,9 +46,14 @@ final class ChoiceViewModel: ObservableObject {
     }
     
     func showSchedule() {
-        if StorageService.readStorageId() != nil && StorageService.readStorageType() != nil && StorageService.readStorageTitle() != nil {
-            isToScheduleScreen = true
+        guard (StorageService.readStorageId() != nil),
+              (StorageService.readStorageType() != nil),
+              (StorageService.readStorageTitle() != nil) else {
+            print("та бля")
+            return
         }
+        isToScheduleScreen = true
+        print("isToScheduleScreen")
     }
     
     func select(userType: UserType) {

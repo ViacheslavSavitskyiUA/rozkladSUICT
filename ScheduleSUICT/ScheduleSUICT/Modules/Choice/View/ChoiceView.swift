@@ -67,7 +67,15 @@ struct ChoiceView: View {
                             .cornerRadius(12)
                     }
                     .inactive(viewModel.selectUserType != .unowned ? false : true)
-                    //                    .padding(.bottom)
+                    
+                    NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
+                                                                              type: StorageService.readStorageType() ?? .unowned,
+                                                                              title: StorageService.readStorageTitle() ?? ""),
+                                                             type: StorageService.readStorageType() ?? .unowned,
+                                                             searchId: StorageService.readStorageId() ?? 0),
+                                   isActive: $viewModel.isToScheduleScreen) {
+                        EmptyView()
+                    }
                 }
                 
                 NavigationLink(destination: SelectListView(viewModel: .init(userType: viewModel.selectUserType)),
@@ -81,25 +89,12 @@ struct ChoiceView: View {
                 }
             }
             .padding(.bottom)
-            //            .ignoresSafeArea()
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
                 viewModel.showSchedule()
             }
-            .onAppear {
-                viewModel.isToScheduleScreen = false
-            }
             .navigationViewStyle(.stack)
-        }
-        
-        NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
-                                                                  type: StorageService.readStorageType() ?? .unowned,
-                                                                  title: StorageService.readStorageTitle() ?? ""),
-                                                 type: StorageService.readStorageType() ?? .unowned,
-                                                 searchId: StorageService.readStorageId() ?? 0),
-                       isActive: $viewModel.isToScheduleScreen) {
-            EmptyView()
         }
     }
 }
