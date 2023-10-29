@@ -12,6 +12,8 @@ enum DateFormat {
     case ddMMyyyy // 01.12.2022
     case yyyyMMdd
     case iso
+    case HHdd
+    case MMddyyyyHHmm
     
     var description: String {
         switch self {
@@ -23,6 +25,10 @@ enum DateFormat {
             return "yyyy-MM-dd"
         case .iso:
             return "yyyy-MM-dd'T'HH:mm:ssZ"
+        case .HHdd:
+            return "HH:dd"
+        case .MMddyyyyHHmm:
+            return "MM-dd-yyyy HH:mm"
         }
     }
 }

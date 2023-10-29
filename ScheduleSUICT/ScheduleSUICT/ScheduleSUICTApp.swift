@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct ScheduleSUICTApp: App {
+
+    init() {
+        UIApplication.shared.applicationIconBadgeNumber = 1
+    }
+    
     var body: some Scene {
         WindowGroup {
             ChoiceView(viewModel: .init())

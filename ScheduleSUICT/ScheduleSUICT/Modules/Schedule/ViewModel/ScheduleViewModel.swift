@@ -99,6 +99,8 @@ final class ScheduleViewModel: ObservableObject {
         StorageService.storageTitle(navigationTitle)
         
         userDataStatus = .saved
+        NotificationService.scheduleNotifications(models: rozklad,
+                                                  userType: type)
     }
     
     func unsaveUserData() {
@@ -106,6 +108,7 @@ final class ScheduleViewModel: ObservableObject {
         StorageService.storageType(nil)
         StorageService.storageTitle(nil)
         
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         userDataStatus = .unsaved
     }
     

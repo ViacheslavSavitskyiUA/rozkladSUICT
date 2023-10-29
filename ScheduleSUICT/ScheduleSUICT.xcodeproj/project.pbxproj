@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6702DCA02AED20040066FAE9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702DC9F2AED20040066FAE9 /* NotificationService.swift */; };
+		6702DCA32AED86FB0066FAE9 /* LessonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702DCA22AED86FB0066FAE9 /* LessonType.swift */; };
 		671287C22ACE878C00EF5CF5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287C12ACE878C00EF5CF5 /* Date+Extension.swift */; };
 		671287C82ACE910000EF5CF5 /* RozkladModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287C72ACE910000EF5CF5 /* RozkladModel.swift */; };
 		671287CE2ACEB28D00EF5CF5 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287CD2ACEB28D00EF5CF5 /* DayCellView.swift */; };
@@ -97,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6702DC9F2AED20040066FAE9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		6702DCA22AED86FB0066FAE9 /* LessonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonType.swift; sourceTree = "<group>"; };
 		671287C12ACE878C00EF5CF5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		671287C72ACE910000EF5CF5 /* RozkladModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladModel.swift; sourceTree = "<group>"; };
 		671287CD2ACEB28D00EF5CF5 /* DayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6702DC9E2AED1FE20066FAE9 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				6702DC9F2AED20040066FAE9 /* NotificationService.swift */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 		671287D42ACED86E00EF5CF5 /* DayView */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +312,7 @@
 				67EDEC8E2AC8B1280003C3AD /* Modifiers */,
 				67EDEC882AC8753E0003C3AD /* Entities */,
 				67B3FBE62AC6F4C100366366 /* Models */,
+				6702DC9E2AED1FE20066FAE9 /* NotificationService */,
 				67B3FBDD2AC6AE0400366366 /* Network */,
 				6760AF4F2AC5E086000434A6 /* Helper */,
 				6760AF392AC5D893000434A6 /* Extensions */,
@@ -400,6 +413,7 @@
 				67E9398C2AC602E100AB47ED /* UserType.swift */,
 				67F67D562ACF26D20005534A /* TransformDate.swift */,
 				678ED20A2ADEFBF7001F4E79 /* StorageService.swift */,
+				6702DCA22AED86FB0066FAE9 /* LessonType.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -694,6 +708,7 @@
 				6760AF222AC5C06A000434A6 /* ContentView.swift in Sources */,
 				6760AF492AC5DEAD000434A6 /* ChoiceCardView.swift in Sources */,
 				67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */,
+				6702DCA32AED86FB0066FAE9 /* LessonType.swift in Sources */,
 				67ACF9E32AE417BE005E54E4 /* SelectAuditoryListView.swift in Sources */,
 				67C186AA2AE920AF0028B922 /* SelectTeacherViewModel.swift in Sources */,
 				67ACF9E12AE2E137005E54E4 /* SelectAuditoryViewModel.swift in Sources */,
@@ -718,6 +733,7 @@
 				67EDEC9A2AC9D8DF0003C3AD /* ChairModel.swift in Sources */,
 				679856C42AD7D59700F25DCD /* ScrollViewWithOffset.swift in Sources */,
 				674D5A202AD1946000558E5A /* RozkladCellView.swift in Sources */,
+				6702DCA02AED20040066FAE9 /* NotificationService.swift in Sources */,
 				671361722AC69C3300B78C42 /* SelectListView.swift in Sources */,
 				67246B602ACD620D0067D009 /* LoaderView.swift in Sources */,
 				671287D82ACED9BD00EF5CF5 /* DayCollectionViewModel.swift in Sources */,

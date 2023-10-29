@@ -266,6 +266,9 @@ struct ScheduleView: View {
             dayCollectionViewModel.days.append(rozkladObject)
             rozkladObject = .init()
         }
+        
+        NotificationService.scheduleNotifications(models: viewModel.rozklad,
+                                                  userType: viewModel.type)
     }
     
     @MainActor
@@ -278,6 +281,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
+                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
@@ -290,6 +294,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
+                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
