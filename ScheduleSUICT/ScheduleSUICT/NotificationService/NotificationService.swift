@@ -27,8 +27,9 @@ class NotificationService {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         for model in models {
-            for lesson in model.lessons {
+            for (index, lesson) in model.lessons.enumerated() {
                 setupNotification(date: model.date, lesson: lesson)
+//                mock(date: model.date, lesson: lesson, index: index)
             }
         }
         
@@ -48,16 +49,32 @@ class NotificationService {
             dateComponents.hour = Int(LessonType(rawValue: lesson.lessonNumber)?.timeNotification.hour ?? 0)
             dateComponents.minute = Int(LessonType(rawValue: lesson.lessonNumber)?.timeNotification.minute ?? 0)
             
-//            dateComponents.year = 2023
-//            dateComponents.month = 10
-//            dateComponents.day = 29
-//
-//            dateComponents.hour = 15
-//            dateComponents.minute = 44
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
+                                                        repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString,
+                                                content: content,
+                                                trigger: trigger)
 
-            print(dateComponents)
-            print("------")
-            print(Calendar.current.component(.hour, from: Date()))
+            UNUserNotificationCenter.current().add(request)
+        }
+        
+        func mock(date: String, lesson: LessonEntity, index: Int) {
+            let content = UNMutableNotificationContent()
+            var dateComponents = DateComponents()
+            
+            content.title = "Через 5 хвилин початок пари"
+    //        content.body = "\(lesson.disciplineShortName), \(lesson.classroom) ауд., \(userType == .student ? lesson.teachersName : lesson.groups)"
+            content.body = "\(lesson.disciplineShortName)"
+            content.badge = 1
+            content.sound = .default
+            
+            dateComponents.year = 2023
+            dateComponents.month = 10
+            dateComponents.day = 30
+
+            dateComponents.hour = 15
+            dateComponents.minute = 49 + index//Int(LessonType(rawValue: lesson.lessonNumber)?.timeNotification.minute ?? 0)
+            dateComponents.second = 0 + index
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
                                                         repeats: false)

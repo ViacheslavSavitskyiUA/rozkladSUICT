@@ -12,6 +12,8 @@ struct RozkladListView: View {
     
     @ObservedObject var viewModel: RozkladListViewModel
     
+    var completion: (((lesson: LessonEntity, type: UserType)) -> Void)
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack {
@@ -19,6 +21,9 @@ struct RozkladListView: View {
                     RozkladCellView(viewModel: .init(lesson: lesson, type: viewModel.type))
                     .padding(.bottom, 12)
                     .dynamicTypeSize(...DynamicTypeSize.medium)
+                    .onTapGesture {
+                        completion((lesson, viewModel.type))
+                    }
                 }
             }
         }
@@ -26,5 +31,5 @@ struct RozkladListView: View {
 }
 
 #Preview {
-    RozkladListView(viewModel: .init(lessons: [], type: .student))
+    RozkladListView(viewModel: .init(lessons: [], type: .student), completion: { _ in})
 }

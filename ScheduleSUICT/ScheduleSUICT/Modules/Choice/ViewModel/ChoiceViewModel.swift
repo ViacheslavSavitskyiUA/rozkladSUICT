@@ -49,7 +49,6 @@ final class ChoiceViewModel: ObservableObject {
         guard (StorageService.readStorageId() != nil),
               (StorageService.readStorageType() != nil),
               (StorageService.readStorageTitle() != nil) else {
-            print("та бля")
             return
         }
         isToScheduleScreen = true

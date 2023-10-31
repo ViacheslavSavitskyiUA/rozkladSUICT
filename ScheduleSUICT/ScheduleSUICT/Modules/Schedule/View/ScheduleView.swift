@@ -24,6 +24,9 @@ struct ScheduleView: View {
     
     @State var selectDay: RozkladEntity = .init()
     
+    @State private var detailInfo: (LessonEntity, UserType) = (.init(), .auditory)
+    @State private var isShowDetailView: Bool = false
+    
     let type: UserType
     var searchId: Int = 0
     
@@ -69,6 +72,11 @@ struct ScheduleView: View {
         }
         .navigationBarHidden(true)
         
+        .popUpNavigationView(show: $isShowDetailView) {
+            RozkladDetailView(lesson: detailInfo.0, type: detailInfo.1, completion: {
+                    isShowDetailView = false
+            })
+        }
         .popUpNavigationView(show: $viewModel.isShowLoader, content: {
             LoaderView()
         })
@@ -92,8 +100,15 @@ struct ScheduleView: View {
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
         switch hasLessons {
-        case true: RozkladListView(viewModel: rozkladListViewModel)
-        case false: EmptyLessonsView()
+        case true: 
+            RozkladListView(viewModel: rozkladListViewModel, completion: { (lesson, type) in
+                detailInfo = (lesson, type)
+                withAnimation {
+                    isShowDetailView = true
+                }
+            })
+        case false:
+            EmptyLessonsView()
         }
     }
     
@@ -132,7 +147,6 @@ struct ScheduleView: View {
         
         dayCollectionViewModel = .init(completion: { rozklad in
             withAnimation(.easeIn) {
-                //                guard let self = self else { return }
                 self.selectDay = rozklad
                 self.rozkladListViewModel.lessons = rozklad.lessons
                 self.dayCollectionViewModel.day = rozklad
@@ -194,7 +208,9 @@ struct ScheduleView: View {
         var rozkladObject: RozkladEntity = .init()
         
         for date in dates {
-            datesString.append(Transform.transformDateToString(date: date, dateFormat: .yyyyMMdd))
+            datesString.append(Transform
+                .transformDateToString(date: date,
+                                       dateFormat: .yyyyMMdd))
         }
         print("datesString \(datesString)")
         
@@ -267,8 +283,13 @@ struct ScheduleView: View {
             rozkladObject = .init()
         }
         
-        NotificationService.scheduleNotifications(models: viewModel.rozklad,
-                                                  userType: viewModel.type)
+        if !isShowErrorView,
+           StorageService.readStorageTitle() == viewModel.navigationTitle,
+           StorageService.readStorageId() == searchId,
+           StorageService.readStorageType() == viewModel.type {
+            NotificationService.scheduleNotifications(models: viewModel.rozklad,
+                                                      userType: viewModel.type)
+        }
     }
     
     @MainActor

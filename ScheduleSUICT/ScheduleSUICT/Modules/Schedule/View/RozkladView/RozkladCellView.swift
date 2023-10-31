@@ -60,8 +60,15 @@ struct RozkladCellView: View {
                     }
                     .padding(.vertical, 20)
                     Spacer()
+                    Image("arrow")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 12,
+                               height: 12)
+                        
                 }
-                .padding(.horizontal, 40)
+                .padding(.horizontal,
+                         40)
             }
         }
         .fixedSize(horizontal: false, vertical: true)

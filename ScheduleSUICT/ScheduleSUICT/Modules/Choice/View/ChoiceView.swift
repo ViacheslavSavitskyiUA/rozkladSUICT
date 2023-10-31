@@ -92,6 +92,14 @@ struct ChoiceView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
+                let center = UNUserNotificationCenter.current()
+                center.getPendingNotificationRequests { (notifications) in
+                        print("Count: \(notifications.count)")
+                        for item in notifications {
+                          print(item.trigger)
+                        }
+                    }
+                
                 viewModel.showSchedule()
             }
             .navigationViewStyle(.stack)

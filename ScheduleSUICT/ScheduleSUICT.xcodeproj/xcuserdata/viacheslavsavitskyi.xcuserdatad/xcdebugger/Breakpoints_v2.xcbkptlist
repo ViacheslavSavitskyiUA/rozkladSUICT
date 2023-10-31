@@ -14,72 +14,26 @@
             filePath = "ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "fetchRozklad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0A92A4F7-F53F-43A8-BD47-2439F53E591A - ab2ce7b0bda01b93"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(9) suspend resume partial function for ScheduleSUICT.ScheduleView.fetchRozklad() async -&gt; Swift.Bool"
-                  moduleName = "ScheduleSUICT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "0A92A4F7-F53F-43A8-BD47-2439F53E591A - 598766215cae2751"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for ScheduleSUICT.ScheduleView.fetchRozklad() async -&gt; Swift.Bool"
-                  moduleName = "ScheduleSUICT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  uuid = "0A92A4F7-F53F-43A8-BD47-2439F53E591A - 6a5e461d303f11f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(8) await resume partial function for ScheduleSUICT.ScheduleView.fetchRozklad() async -&gt; Swift.Bool"
-                  moduleName = "ScheduleSUICT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "0A92A4F7-F53F-43A8-BD47-2439F53E591A - ab2ce7b0bda01bbc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(9) suspend resume partial function for ScheduleSUICT.ScheduleView.fetchRozklad() async -&gt; Swift.Bool"
-                  moduleName = "ScheduleSUICT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4FF2373-D802-4080-B965-2ED259CF0ED0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Choice/View/ChoiceView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
