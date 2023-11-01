@@ -31,7 +31,9 @@ struct SelectAuditoryListView: View {
                 LoaderView()
             })
             .task {
-                await viewModel.getRozklad()
+                if viewModel.cabinets.isEmpty {
+                    await viewModel.getRozklad()
+                }
             }
             
             .navigationTitle(viewModel.title)

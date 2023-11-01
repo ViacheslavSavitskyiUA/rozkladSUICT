@@ -50,7 +50,6 @@ struct ChoiceView: View {
                                 viewModel.select(userType: .teacher)
                             }
                         }
-                        
                     }
                     
                     Spacer()

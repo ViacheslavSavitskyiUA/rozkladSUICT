@@ -112,17 +112,19 @@ extension SelectListViewModel {
     
     @MainActor
     func fetchFaculties() async {
-        isShowLoader = true
-        let models = await network.getFaculties()
-        isShowLoader = false
-        
-        switch models {
-        case .success(let faculties):
-            screenType = .success
-            facultyViewModel.inputItems = transform(faculties: faculties)
-        case .failure(let error):
-            screenType = .fail
-            print(error)
+        if facultyViewModel.inputItems.isEmpty {
+            isShowLoader = true
+            let models = await network.getFaculties()
+            isShowLoader = false
+            
+            switch models {
+            case .success(let faculties):
+                screenType = .success
+                facultyViewModel.inputItems = transform(faculties: faculties)
+            case .failure(let error):
+                screenType = .fail
+                print(error)
+            }
         }
     }
     
