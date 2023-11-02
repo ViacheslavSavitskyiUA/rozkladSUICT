@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6702DCA02AED20040066FAE9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702DC9F2AED20040066FAE9 /* NotificationService.swift */; };
 		6702DCA32AED86FB0066FAE9 /* LessonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6702DCA22AED86FB0066FAE9 /* LessonType.swift */; };
+		670DBBD22AF3CBA600172D72 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670DBBD12AF3CBA600172D72 /* SplashView.swift */; };
+		670DBBD42AF3CE8B00172D72 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670DBBD32AF3CE8B00172D72 /* SplashViewModel.swift */; };
 		671287C22ACE878C00EF5CF5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287C12ACE878C00EF5CF5 /* Date+Extension.swift */; };
 		671287C82ACE910000EF5CF5 /* RozkladModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287C72ACE910000EF5CF5 /* RozkladModel.swift */; };
 		671287CE2ACEB28D00EF5CF5 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671287CD2ACEB28D00EF5CF5 /* DayCellView.swift */; };
@@ -109,6 +111,8 @@
 /* Begin PBXFileReference section */
 		6702DC9F2AED20040066FAE9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		6702DCA22AED86FB0066FAE9 /* LessonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonType.swift; sourceTree = "<group>"; };
+		670DBBD12AF3CBA600172D72 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		670DBBD32AF3CE8B00172D72 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		671287C12ACE878C00EF5CF5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		671287C72ACE910000EF5CF5 /* RozkladModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladModel.swift; sourceTree = "<group>"; };
 		671287CD2ACEB28D00EF5CF5 /* DayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
@@ -226,6 +230,15 @@
 				6702DC9F2AED20040066FAE9 /* NotificationService.swift */,
 			);
 			path = NotificationService;
+			sourceTree = "<group>";
+		};
+		670DBBD02AF3CB9800172D72 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				670DBBD12AF3CBA600172D72 /* SplashView.swift */,
+				670DBBD32AF3CE8B00172D72 /* SplashViewModel.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		671287D42ACED86E00EF5CF5 /* DayView */ = {
@@ -405,6 +418,7 @@
 		6760AF442AC5DE16000434A6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				670DBBD02AF3CB9800172D72 /* Splash */,
 				67B7D3882AEEBB6B00764B87 /* Onboarding */,
 				6760AF452AC5DE79000434A6 /* Choice */,
 				6713616E2AC69BC600B78C42 /* SelectList */,
@@ -764,6 +778,7 @@
 				67ACF9E32AE417BE005E54E4 /* SelectAuditoryListView.swift in Sources */,
 				67C186AA2AE920AF0028B922 /* SelectTeacherViewModel.swift in Sources */,
 				67ACF9E12AE2E137005E54E4 /* SelectAuditoryViewModel.swift in Sources */,
+				670DBBD22AF3CBA600172D72 /* SplashView.swift in Sources */,
 				67EDEC952AC996DD0003C3AD /* URLRequest+Extension.swift in Sources */,
 				67B7D3CA2AEECA1C00764B87 /* OnboardingView.swift in Sources */,
 				67B3FBE52AC6E62D00366366 /* SelectItemViewModel.swift in Sources */,
@@ -782,6 +797,7 @@
 				671287CE2ACEB28D00EF5CF5 /* DayCellView.swift in Sources */,
 				67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */,
 				67246B5E2ACD59DF0067D009 /* View+Extension.swift in Sources */,
+				670DBBD42AF3CE8B00172D72 /* SplashViewModel.swift in Sources */,
 				67C186AC2AE98CC70028B922 /* String+Extension.swift in Sources */,
 				679857042ADE5F5000F25DCD /* NetworkErrorView.swift in Sources */,
 				67EDEC9A2AC9D8DF0003C3AD /* ChairModel.swift in Sources */,

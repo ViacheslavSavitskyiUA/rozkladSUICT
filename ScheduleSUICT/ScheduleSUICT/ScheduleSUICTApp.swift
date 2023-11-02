@@ -17,7 +17,7 @@ struct ScheduleSUICTApp: App {
     var body: some Scene {
         WindowGroup {
 //            OnboardingView()
-            ChoiceView(viewModel: .init())
+            SplashView(viewModel: .init())
             
             
 //            SelectAuditoryListView(viewModel: .init())
