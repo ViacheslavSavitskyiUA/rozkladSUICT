@@ -22,9 +22,6 @@ extension Date {
         let startOfWeek = Calendar(identifier: .iso8601).date(from: dateComponents)!
         let startOfWeekNoon = Calendar(identifier: .iso8601).date(bySettingHour: 12, minute: 0, second: 0, of: startOfWeek)!
         let weekDays = (0...30).map { Calendar(identifier: .iso8601).date(byAdding: .day, value: $0, to: startOfWeekNoon)! }
-        
-        print("week days \(weekDays)")
-        
         return weekDays
     }
     

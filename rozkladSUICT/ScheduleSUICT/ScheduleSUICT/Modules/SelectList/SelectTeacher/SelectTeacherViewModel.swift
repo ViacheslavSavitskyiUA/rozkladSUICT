@@ -36,20 +36,17 @@ class SelectTeacherViewModel: ObservableObject {
     
     @MainActor
     func search(teachers: String) async {
-        if self.teachers.isEmpty {
+        do {
+            let models = await network.searchTeachers(name: teachers)
             
-            do {
-                let models = await network.searchTeachers(name: teachers)
-                
-                switch models {
-                case .success(let teachers):
-                    self.teachers = transform(teachers: teachers)
-                case .failure(let failure):
-                    print(failure)
-                }
-            } catch {
-                print(error)
+            switch models {
+            case .success(let teachers):
+                self.teachers = transform(teachers: teachers)
+            case .failure(let failure):
+                print(failure)
             }
+        } catch {
+            print(error)
         }
     }
     

@@ -16,8 +16,12 @@ class NotificationService {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { isSuccess, error in
             if isSuccess {
                    print("User Accepted")
-                DispatchQueue.main.async {
-                    UIApplication.shared.applicationIconBadgeNumber = 0
+                
+                for model in models {
+                    for (index, lesson) in model.lessons.enumerated() {
+                        setupNotification(date: model.date, lesson: lesson)
+        //                mock(date: model.date, lesson: lesson, index: index)
+                    }
                 }
                } else if let error = error {
                    print(error.localizedDescription)

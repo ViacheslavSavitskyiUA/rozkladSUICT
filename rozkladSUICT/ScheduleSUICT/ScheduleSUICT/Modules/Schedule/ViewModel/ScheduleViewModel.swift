@@ -94,13 +94,14 @@ final class ScheduleViewModel: ObservableObject {
 //    }
     
     func saveUserData() {
+        NotificationService.scheduleNotifications(models: rozklad,
+                                                  userType: type)
+        
         StorageService.storageId(searchId)
         StorageService.storageType(type.rawValue)
         StorageService.storageTitle(navigationTitle)
         
         userDataStatus = .saved
-        NotificationService.scheduleNotifications(models: rozklad,
-                                                  userType: type)
     }
     
     func unsaveUserData() {
@@ -113,9 +114,7 @@ final class ScheduleViewModel: ObservableObject {
     }
     
     func checkReturnSaveImage() -> String {
-        if StorageService.readStorageTitle() == self.navigationTitle &&
-            StorageService.readStorageId() == searchId &&
-            StorageService.readStorageType() == type  {
+        if userDataStatus == .saved  {
             return "star.fill"
         } else {
             return "star"
