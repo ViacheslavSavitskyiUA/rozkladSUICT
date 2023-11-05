@@ -22,8 +22,6 @@ class SelectAuditoryViewModel: ObservableObject {
             if selectedItem != nil {
                 isOpen = false
             }
-            
-            print(selectedItem?.number)
         }
     }
     
