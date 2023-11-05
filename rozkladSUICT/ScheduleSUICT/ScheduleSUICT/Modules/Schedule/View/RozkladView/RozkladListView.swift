@@ -22,6 +22,7 @@ struct RozkladListView: View {
                     .padding(.bottom, 12)
                     .dynamicTypeSize(...DynamicTypeSize.medium)
                     .onTapGesture {
+                        print(viewModel.lessons)
                         completion((lesson, viewModel.type))
                     }
                 }

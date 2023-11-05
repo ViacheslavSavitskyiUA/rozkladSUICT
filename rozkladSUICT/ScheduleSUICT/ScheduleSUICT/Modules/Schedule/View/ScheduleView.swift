@@ -212,7 +212,7 @@ struct ScheduleView: View {
                 .transformDateToString(date: date,
                                        dateFormat: .yyyyMMdd))
         }
-        print("datesString \(datesString)")
+//        print("datesString \(datesString)")
         
         var haveDates: [String] = .init()
         var haventDates: [String] = .init()
@@ -224,8 +224,8 @@ struct ScheduleView: View {
                 haventDates.append(d)
             }
         }
-        print("haveDates \(haveDates)")
-        print("haventDates \(haventDates)")
+//        print("haveDates \(haveDates)")
+//        print("haventDates \(haventDates)")
         
         for date in datesString {
             for r in viewModel.rozklad {
@@ -302,7 +302,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-                print(models)
+//                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
@@ -315,7 +315,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-                print(models)
+//                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {

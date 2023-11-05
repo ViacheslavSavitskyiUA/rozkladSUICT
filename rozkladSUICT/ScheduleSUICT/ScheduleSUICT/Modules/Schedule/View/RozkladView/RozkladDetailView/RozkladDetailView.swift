@@ -39,6 +39,9 @@ struct RozkladDetailView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12, corners: [.bottomLeft, .bottomRight])
             }
+            .task {
+                print("lesson1 \(lesson)")
+            }
         }
         .background(.white)
         

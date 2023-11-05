@@ -3,4 +3,309 @@
    uuid = "F950278D-F041-406E-AFCB-D01436E854B1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C78DFEA-0AC4-438D-AD9C-AE36E1DFA896"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "showLessons(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0C78DFEA-0AC4-438D-AD9C-AE36E1DFA896 - d3acf31b4b288ae0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity, ScheduleSUICT.UserType) -&gt; () in ScheduleSUICT.ScheduleView.showLessons(Swift.Bool) -&gt; some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "0C78DFEA-0AC4-438D-AD9C-AE36E1DFA896 - d3acf31b4b288ae0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity, ScheduleSUICT.UserType) -&gt; () in ScheduleSUICT.ScheduleView.showLessons(Swift.Bool) -&gt; some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39354DFD-B512-46F3-80FA-BF474F2D1940"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "39354DFD-B512-46F3-80FA-BF474F2D1940 - 266bda861936b9ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in ScheduleSUICT.RozkladListView.body.getter : some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "39354DFD-B512-46F3-80FA-BF474F2D1940 - 266bda861936b9ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in ScheduleSUICT.RozkladListView.body.getter : some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2E10273-6652-4403-96EC-A0EF228B36D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C2E10273-6652-4403-96EC-A0EF228B36D6 - 266bda861936bef6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in ScheduleSUICT.RozkladListView.body.getter : some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "1080">
+               </Location>
+               <Location
+                  uuid = "C2E10273-6652-4403-96EC-A0EF228B36D6 - 266bda861936bef6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ScheduleSUICT.LessonEntity) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in ScheduleSUICT.RozkladListView.body.getter : some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "976">
+               </Location>
+               <Location
+                  uuid = "C2E10273-6652-4403-96EC-A0EF228B36D6 - b50ef9ac3e47c2b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (ScheduleSUICT.LessonEntity) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;ScheduleSUICT.LessonEntity&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in ScheduleSUICT.RozkladListView.body.getter : some"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/RozkladView/RozkladListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43CDCA1C-1654-4847-8CA5-A018FE68E739"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "setupDays()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "43CDCA1C-1654-4847-8CA5-A018FE68E739 - e1b15a65b9db83f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleView.setupDays() async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "3156">
+               </Location>
+               <Location
+                  uuid = "43CDCA1C-1654-4847-8CA5-A018FE68E739 - e1b15a65b9db83f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleView.setupDays() async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/View/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "2616">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7000DE15-BF03-412A-B195-EA1A5BB19C74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "transformRozklad(models:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7000DE15-BF03-412A-B195-EA1A5BB19C74 - 9ea2154fbfbd3d41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleViewModel.transformRozklad(models: Swift.Array&lt;ScheduleSUICT.RozkladModel&gt;) async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "1296">
+               </Location>
+               <Location
+                  uuid = "7000DE15-BF03-412A-B195-EA1A5BB19C74 - 9ea2154fbfbd3d62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleViewModel.transformRozklad(models: Swift.Array&lt;ScheduleSUICT.RozkladModel&gt;) async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "1728">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FB18503-A48A-4D9E-AC9A-861DB55CAA55"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "transformRozklad(models:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6FB18503-A48A-4D9E-AC9A-861DB55CAA55 - 9ea2154fbfbd3d41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleViewModel.transformRozklad(models: Swift.Array&lt;ScheduleSUICT.RozkladModel&gt;) async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "1296">
+               </Location>
+               <Location
+                  uuid = "6FB18503-A48A-4D9E-AC9A-861DB55CAA55 - 9ea2154fbfbd3d62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ScheduleSUICT.ScheduleViewModel.transformRozklad(models: Swift.Array&lt;ScheduleSUICT.RozkladModel&gt;) async -&gt; ()"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Modules/Schedule/ViewModel/ScheduleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "1728">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

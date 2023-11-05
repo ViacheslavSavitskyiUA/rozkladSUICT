@@ -289,6 +289,7 @@ final class ScheduleViewModel: ObservableObject {
             rozkladObject.date = model.date
             for lesson in model.lessons {
                 for period in lesson.periods {
+                    print(period)
                     rozkladObject.lessons.append(
                         .init(lessonNumber: lesson.number,
                               disciplineFullName: period.disciplineFullName,
@@ -297,7 +298,7 @@ final class ScheduleViewModel: ObservableObject {
                               timeStart: period.timeStart,
                               timeEnd: period.timeEnd,
                               teachersName: period.teachersName,
-                              teachersNameFull: period.teachersName,
+                              teachersNameFull: period.teachersNameFull,
                               groups: period.groups,
                               type: period.type,
                               typeStr: period.typeStr))
