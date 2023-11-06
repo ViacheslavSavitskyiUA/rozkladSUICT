@@ -13,13 +13,20 @@ class NotificationService {
 
     static func scheduleNotifications(models: [RozkladEntity], userType: UserType) {
         
+        var registeredNotifications = 0
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { isSuccess, error in
             if isSuccess {
                    print("User Accepted")
                 
                 for model in models {
                     for (index, lesson) in model.lessons.enumerated() {
-                        setupNotification(date: model.date, lesson: lesson)
+                        
+                        if registeredNotifications < 64 {
+                            setupNotification(date: model.date, lesson: lesson)
+                        } else {
+                            print("sorry limit")
+                        }
         //                mock(date: model.date, lesson: lesson, index: index)
                     }
                 }
@@ -29,11 +36,15 @@ class NotificationService {
         }
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        var limit = 64
         
         for model in models {
             for (index, lesson) in model.lessons.enumerated() {
-                setupNotification(date: model.date, lesson: lesson)
-//                mock(date: model.date, lesson: lesson, index: index)
+                if registeredNotifications < limit {
+                    print(registeredNotifications)
+                    setupNotification(date: model.date, lesson: lesson)
+    //                mock(date: model.date, lesson: lesson, index: index)
+                }
             }
         }
         
@@ -60,6 +71,7 @@ class NotificationService {
                                                 trigger: trigger)
 
             UNUserNotificationCenter.current().add(request)
+            registeredNotifications += 1
         }
         
         func mock(date: String, lesson: LessonEntity, index: Int) {
