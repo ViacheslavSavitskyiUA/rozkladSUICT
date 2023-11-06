@@ -14,23 +14,28 @@ class SelectTeacherViewModel: ObservableObject {
     @Published var teachers: [ChoiceEntity] = []
     @Published var searchText = "" {
         didSet {
-            isOpen = searchText.isEmpty ? false : true
+            if searchText == "\(selectedItem?.fullName ?? "") \(selectedItem?.shortName ?? "") (каф: \(selectedItem?.cafedraFull ?? ""))" {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
     }
     
     @Published var selectedItem: ChoiceEntity? = nil {
         didSet {
             if selectedItem != nil {
-                completion()
+                completion(selectedItem != nil ? true : false)
+                isOpen = false
             }
         }
     }
     
-    private var completion: (() -> Void)
+    private var completion: ((Bool) -> Void)
     
     @Published var isOpen: Bool = false
     
-    init(action: @escaping (() -> Void)) {
+    init(action: @escaping ((Bool) -> Void)) {
         self.completion = action
     }
     

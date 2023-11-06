@@ -92,6 +92,16 @@ struct ScheduleView: View {
             setupViewModels()
             isShowErrorView = await fetchRozklad()
             await setupDays()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                let center = UNUserNotificationCenter.current()
+                center.getPendingNotificationRequests { (notifications) in
+                        print("Count: \(notifications.count)")
+                        for item in notifications {
+                          print(item.trigger)
+                        }
+                    }
+            })
         }
         .sheet(isPresented: $isShareSheetPresented, content: {
             ShareSheetView(activityItems: [activityText()])

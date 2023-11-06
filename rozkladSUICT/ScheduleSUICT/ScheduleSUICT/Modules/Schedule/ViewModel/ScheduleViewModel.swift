@@ -289,7 +289,7 @@ final class ScheduleViewModel: ObservableObject {
             rozkladObject.date = model.date
             for lesson in model.lessons {
                 for period in lesson.periods {
-                    print(period)
+//                    print(period)
                     rozkladObject.lessons.append(
                         .init(lessonNumber: lesson.number,
                               disciplineFullName: period.disciplineFullName,

@@ -52,7 +52,6 @@ final class ChoiceViewModel: ObservableObject {
             return
         }
         isToScheduleScreen = true
-        print("isToScheduleScreen")
     }
     
     func select(userType: UserType) {

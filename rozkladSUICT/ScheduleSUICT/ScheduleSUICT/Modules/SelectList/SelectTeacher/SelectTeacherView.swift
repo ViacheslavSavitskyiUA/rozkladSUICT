@@ -41,7 +41,11 @@ struct SelectTeacherView: View {
                     .font(.gilroy(.bold, size: 16))
                     .focused($isFocusState)
                     .modifier(TextFieldClearButton(text: $viewModel.searchText))
+                    .padding(.all, 6)
                     .onChange(of: viewModel.searchText) { value in
+                        if value.count > 0 && value.count < 12 {
+                            viewModel.isOpen = true
+                        }
                         Task {
                             if !value.isEmpty && value.count > 0 {
                                 await viewModel.search(teachers: value)
@@ -64,5 +68,5 @@ struct SelectTeacherView: View {
 }
 
 #Preview {
-    SelectTeacherView(viewModel: .init(action: { }))
+    SelectTeacherView(viewModel: .init(action: { _ in }))
 }

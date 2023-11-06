@@ -14,7 +14,7 @@ final class RozkladListViewModel: ObservableObject {
     let type: UserType
     
     init(lessons: [LessonEntity], type: UserType) {
-        print(lessons)
+//        print(lessons)
         self.lessons = lessons
         self.type = type
     }

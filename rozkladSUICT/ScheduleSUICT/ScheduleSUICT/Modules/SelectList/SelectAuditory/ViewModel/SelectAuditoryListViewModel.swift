@@ -67,7 +67,7 @@ extension SelectAuditoryListViewModel {
             let document = try SwiftSoup.parse(html)
             
             let option: Elements = try document.select("option")
-            print(option.array())
+//            print(option.array())
             cabinets = getElements(elements: option)
         } catch {
             print(error)
@@ -92,7 +92,7 @@ extension SelectAuditoryListViewModel {
             screenType = .fail
         }
         
-        print(returnArray)
+//        print(returnArray)
         auditoryViewModel.basicEntities = returnArray
         auditoryViewModel.viewEntities = returnArray
         isShowLoader = false

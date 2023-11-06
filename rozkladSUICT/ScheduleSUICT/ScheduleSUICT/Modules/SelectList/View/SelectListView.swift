@@ -50,6 +50,7 @@ struct SelectListView: View {
             }
             .task {
                 await viewModel.fetchFaculties()
+
             }
         }
         .navigationBarHidden(true)

@@ -58,8 +58,10 @@ final class SelectListViewModel: ObservableObject {
         self.userType = userType
         self.setupViewModels(type: userType)
         
-        selectTeacherViewModel = .init(action: {
+        selectTeacherViewModel = .init(action: { [weak self] isActive in
+            guard let self = self else { return }
             self.setupChoicesView(type: .teacher)
+            self.isActiveNextButton = isActive
         })
     }
     
