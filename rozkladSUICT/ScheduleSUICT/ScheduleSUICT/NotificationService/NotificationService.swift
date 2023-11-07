@@ -14,6 +14,7 @@ class NotificationService {
     static func scheduleNotifications(models: [RozkladEntity], userType: UserType) {
         
         var registeredNotifications = 0
+        var limit = 64
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { isSuccess, error in
             if isSuccess {
@@ -22,7 +23,7 @@ class NotificationService {
                 for model in models {
                     for (index, lesson) in model.lessons.enumerated() {
                         
-                        if registeredNotifications < 64 {
+                        if registeredNotifications < limit {
                             setupNotification(date: model.date, lesson: lesson)
                         } else {
                             print("sorry limit")
@@ -36,7 +37,7 @@ class NotificationService {
         }
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        var limit = 64
+       
         
         for model in models {
             for (index, lesson) in model.lessons.enumerated() {
