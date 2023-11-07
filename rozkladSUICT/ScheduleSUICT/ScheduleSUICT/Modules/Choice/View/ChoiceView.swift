@@ -11,6 +11,35 @@ struct ChoiceView: View {
     
     @ObservedObject var viewModel: ChoiceViewModel
     
+    @State var studentCardViewModel: ChoiceCardViewModel = .init()
+    @State var teacherCardViewModel: ChoiceCardViewModel = .init()
+    @State var auditoryCardViewModel: ChoiceCardViewModel = .init()
+    
+    @State var selectUserType: UserType = .unowned
+    
+    @State var isToNextScreen = false
+    @State var isToNextScreenAuditory = false
+    @State var isToNextScreenFreeAuditory = false
+    
+    @State var isToNextMain = false {
+        didSet {
+            if selectUserType == .student || selectUserType == .teacher {
+                isToNextScreen = true
+                isToNextScreenAuditory = false
+            } else if selectUserType == .auditory {
+                isToNextScreen = false
+                isToNextScreenAuditory = true
+                isToNextScreenFreeAuditory = false
+            } else {
+                isToNextScreen = false
+                isToNextScreenAuditory = false
+                isToNextScreenFreeAuditory = false
+            }
+        }
+    }
+    
+    @State var isToScheduleScreen = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,26 +57,26 @@ struct ChoiceView: View {
                     Group {
                         
                         HStack {
-                            ChoiceCardView(viewModel: viewModel.auditoryCardViewModel, userType: .auditory)
+                            ChoiceCardView(viewModel: auditoryCardViewModel, userType: .auditory)
                                 .onTapGesture {
-                                    viewModel.select(userType: .auditory)
+                                    select(userType: .auditory)
                                 }
                         }
                         Spacer().frame(height: 20)
                         
                         HStack {
-                            ChoiceCardView(viewModel: viewModel.studentCardViewModel,
+                            ChoiceCardView(viewModel: studentCardViewModel,
                                            userType: .student)
                             .onTapGesture {
-                                viewModel.select(userType: .student)
+                                select(userType: .student)
                             }
                             
                             Spacer().frame(width: 16)
                             
-                            ChoiceCardView(viewModel: viewModel.teacherCardViewModel,
+                            ChoiceCardView(viewModel: teacherCardViewModel,
                                            userType: .teacher)
                             .onTapGesture {
-                                viewModel.select(userType: .teacher)
+                                select(userType: .teacher)
                             }
                         }
                     }
@@ -55,7 +84,7 @@ struct ChoiceView: View {
                     Spacer()
                     
                     Button {
-                        viewModel.isToNextMain = true
+                        isToNextMain = true
                     } label: {
                         Text("Далі")
                             .font(.gilroy(.semibold, size: 20))
@@ -65,25 +94,25 @@ struct ChoiceView: View {
                             .foregroundColor(.white)
                             .cornerRadius(12)
                     }
-                    .inactive(viewModel.selectUserType != .unowned ? false : true)
+                    .inactive(selectUserType != .unowned ? false : true)
                     
                     NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
                                                                               type: StorageService.readStorageType() ?? .unowned,
                                                                               title: StorageService.readStorageTitle() ?? ""),
                                                              type: StorageService.readStorageType() ?? .unowned,
                                                              searchId: StorageService.readStorageId() ?? 0),
-                                   isActive: $viewModel.isToScheduleScreen) {
+                                   isActive: $isToScheduleScreen) {
                         EmptyView()
                     }
                 }
                 
-                NavigationLink(destination: SelectListView(viewModel: .init(userType: viewModel.selectUserType)),
-                               isActive: $viewModel.isToNextScreen) {
+                NavigationLink(destination: SelectListView(viewModel: .init(userType: selectUserType)),
+                               isActive: $isToNextScreen) {
                     EmptyView()
                 }
                 
-                NavigationLink(destination: SelectAuditoryListView(viewModel: .init(title: viewModel.selectUserType.titleSelectItemsView)),
-                               isActive: $viewModel.isToNextScreenAuditory) {
+                NavigationLink(destination: SelectAuditoryListView(viewModel: .init(title: selectUserType.titleSelectItemsView)),
+                               isActive: $isToNextScreenAuditory) {
                     EmptyView()
                 }
             }
@@ -91,21 +120,45 @@ struct ChoiceView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
-//                let center = UNUserNotificationCenter.current()
-//                center.getPendingNotificationRequests { (notifications) in
-//                        print("Count: \(notifications.count)")
-//                        for item in notifications {
-//                          print(item.trigger)
-//                        }
-//                    }
-                
-                viewModel.showSchedule()
+                showSchedule()
             }
             .navigationViewStyle(.stack)
         }
     }
+    
+    func showSchedule() {
+        guard (StorageService.readStorageId() != nil),
+              (StorageService.readStorageType() != nil),
+              (StorageService.readStorageTitle() != nil) else {
+            return
+        }
+        isToScheduleScreen = true
+    }
+    
+    func select(userType: UserType) {
+        withAnimation(.easeInOut) {
+
+            self.selectUserType = userType
+            
+            switch userType {
+            case .student:
+                studentCardViewModel.isSelect = true
+                teacherCardViewModel.isSelect = false
+                auditoryCardViewModel.isSelect = false
+            case .teacher:
+                studentCardViewModel.isSelect = false
+                teacherCardViewModel.isSelect = true
+                auditoryCardViewModel.isSelect = false
+            case .unowned: ()
+            case .auditory:
+                studentCardViewModel.isSelect = false
+                teacherCardViewModel.isSelect = false
+                auditoryCardViewModel.isSelect = true
+            }
+        }
+    }
 }
 
-#Preview {
-    ChoiceView(viewModel: .init())
-}
+//#Preview {
+//    ChoiceView(viewModel: .init())
+//}
