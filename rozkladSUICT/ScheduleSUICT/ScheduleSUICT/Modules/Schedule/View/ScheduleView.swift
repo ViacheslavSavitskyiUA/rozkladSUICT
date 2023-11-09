@@ -74,7 +74,7 @@ struct ScheduleView: View {
         
         .popUpNavigationView(show: $isShowDetailView) {
             RozkladDetailView(lesson: detailInfo.0, type: detailInfo.1, completion: {
-                    isShowDetailView = false
+                isShowDetailView = false
             })
         }
         .popUpNavigationView(show: $viewModel.isShowLoader, content: {
@@ -96,11 +96,11 @@ struct ScheduleView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                 let center = UNUserNotificationCenter.current()
                 center.getPendingNotificationRequests { (notifications) in
-                        print("Count: \(notifications.count)")
-                        for item in notifications {
-                          print(item.trigger)
-                        }
+                    print("Count: \(notifications.count)")
+                    for item in notifications {
+                        print(item.trigger)
                     }
+                }
             })
         }
         .sheet(isPresented: $isShareSheetPresented, content: {
@@ -110,7 +110,7 @@ struct ScheduleView: View {
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
         switch hasLessons {
-        case true: 
+        case true:
             RozkladListView(viewModel: rozkladListViewModel, completion: { (lesson, type) in
                 detailInfo = (lesson, type)
                 withAnimation {
@@ -153,7 +153,7 @@ struct ScheduleView: View {
     }
     
     private func setupViewModels() {
-                rozkladListViewModel = .init(lessons: [], type: type)
+        rozkladListViewModel = .init(lessons: [], type: type)
         
         dayCollectionViewModel = .init(completion: { rozklad in
             withAnimation(.easeIn) {
@@ -222,7 +222,7 @@ struct ScheduleView: View {
                 .transformDateToString(date: date,
                                        dateFormat: .yyyyMMdd))
         }
-//        print("datesString \(datesString)")
+        //        print("datesString \(datesString)")
         
         var haveDates: [String] = .init()
         var haventDates: [String] = .init()
@@ -234,8 +234,8 @@ struct ScheduleView: View {
                 haventDates.append(d)
             }
         }
-//        print("haveDates \(haveDates)")
-//        print("haventDates \(haventDates)")
+        //        print("haveDates \(haveDates)")
+        //        print("haventDates \(haventDates)")
         
         for date in datesString {
             for r in viewModel.rozklad {
@@ -297,8 +297,8 @@ struct ScheduleView: View {
            StorageService.readStorageTitle() == viewModel.navigationTitle,
            StorageService.readStorageId() == searchId,
            StorageService.readStorageType() == viewModel.type {
-            NotificationService.scheduleNotifications(models: viewModel.rozklad,
-                                                      userType: viewModel.type)
+            viewModel.notificationService.scheduleNotifications(models: viewModel.rozklad,
+                                                                userType: viewModel.type)
         }
     }
     
@@ -312,7 +312,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-//                print(models)
+                //                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
@@ -325,7 +325,7 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-//                print(models)
+                //                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {

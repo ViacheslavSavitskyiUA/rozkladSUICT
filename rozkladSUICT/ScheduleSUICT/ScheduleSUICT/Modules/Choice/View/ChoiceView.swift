@@ -96,6 +96,11 @@ struct ChoiceView: View {
                     }
                     .inactive(selectUserType != .unowned ? false : true)
                     
+                    NavigationLink(destination: SelectListView(viewModel: .init(userType: selectUserType)),
+                                   isActive: $isToNextScreen) {
+                        EmptyView()
+                    }.isDetailLink(false)
+                    
                     NavigationLink(destination: ScheduleView(viewModel: .init(searchId: StorageService.readStorageId() ?? 0,
                                                                               type: StorageService.readStorageType() ?? .unowned,
                                                                               title: StorageService.readStorageTitle() ?? ""),
@@ -106,15 +111,10 @@ struct ChoiceView: View {
                     }
                 }
                 
-                NavigationLink(destination: SelectListView(viewModel: .init(userType: selectUserType)),
-                               isActive: $isToNextScreen) {
-                    EmptyView()
-                }
-                
                 NavigationLink(destination: SelectAuditoryListView(viewModel: .init(title: selectUserType.titleSelectItemsView)),
                                isActive: $isToNextScreenAuditory) {
                     EmptyView()
-                }
+                }.isDetailLink(false)
             }
             .padding(.bottom)
             .navigationBarTitleDisplayMode(.inline)
