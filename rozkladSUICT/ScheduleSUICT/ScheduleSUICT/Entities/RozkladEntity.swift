@@ -72,8 +72,6 @@ struct LessonEntity: Identifiable, Hashable, Equatable {
         self.type = type
         self.typeStr = typeStr
     }
-    
-    
 }
 
 // MARK: -  RozkladEntity empty init

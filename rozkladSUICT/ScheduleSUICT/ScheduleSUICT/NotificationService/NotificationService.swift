@@ -27,6 +27,8 @@ class NotificationService: NSObject {
             if isSuccess {
                 print("User Accepted")
                 
+                self.notificationCenter.removeAllPendingNotificationRequests()
+                
                 for model in models {
                     for lesson in model.lessons {
                         registeredNotifications < limit 

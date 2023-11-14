@@ -42,7 +42,7 @@ struct RozkladCellView: View {
             ZStack {
                 Rectangle()
                     .cornerRadius(12)
-                    .foregroundStyle(Color.pastelBianca)
+                    .foregroundStyle(viewModel.setupBackground())
                     .padding(.horizontal, 20)
                 
                 HStack {
