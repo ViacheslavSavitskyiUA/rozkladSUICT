@@ -222,8 +222,7 @@ struct ScheduleView: View {
                 .transformDateToString(date: date,
                                        dateFormat: .yyyyMMdd))
         }
-        //        print("datesString \(datesString)")
-        
+    
         var haveDates: [String] = .init()
         var haventDates: [String] = .init()
         
@@ -234,8 +233,6 @@ struct ScheduleView: View {
                 haventDates.append(d)
             }
         }
-        //        print("haveDates \(haveDates)")
-        //        print("haventDates \(haventDates)")
         
         for date in datesString {
             for r in viewModel.rozklad {
@@ -291,6 +288,27 @@ struct ScheduleView: View {
             }
             dayCollectionViewModel.days.append(rozkladObject)
             rozkladObject = .init()
+            
+            if haveDates.isEmpty {
+                rozkladObject.date = date
+                rozkladObject.dayWeek = Transform
+                    .transformDateToString(date:
+                                            Transform.transformStringToDate(date,
+                                                                            dateFormat: .yyyyMMdd),
+                                           dateFormat: .eeee)
+                rozkladObject.isEmpty = true
+                rozkladObject.lessons = []
+                rozkladObject.isToday = Calendar.current.isDateInToday(Transform.transformStringToDate(date, dateFormat: .yyyyMMdd))
+                rozkladObject.isSelected = rozkladObject.isToday
+                
+                if rozkladObject.isToday {
+                    withAnimation(.easeIn) {
+                        selectDay = rozkladObject
+                        dayCollectionViewModel.day = rozkladObject
+                        rozkladListViewModel.lessons = rozkladObject.lessons
+                    }
+                }
+            }
         }
         
         if !isShowErrorView,
@@ -312,7 +330,6 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-                //                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
@@ -325,7 +342,6 @@ struct ScheduleView: View {
                                                                     dateStart: viewModel.transformRangeDateString().start,
                                                                     dateEnd: viewModel.transformRangeDateString().end).get()
                 isShowErrorView = false
-                //                print(models)
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
             } catch {
