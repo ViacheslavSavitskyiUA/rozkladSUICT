@@ -45,6 +45,8 @@ final class SelectListViewModel: ObservableObject {
             withAnimation {
                 teacherViewModel.selectedItem = nil
                 selectTeacherViewModel.selectedItem = nil
+                selectTeacherViewModel.searchText = ""
+                selectTeacherViewModel.teachers = []
                 isActiveNextButton = false
             }
         }
