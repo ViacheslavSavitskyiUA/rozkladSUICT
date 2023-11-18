@@ -94,7 +94,7 @@ struct ScheduleView: View {
             await setupDays()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                let center = UNUserNotificationCenter.current()
+                let center = viewModel.notificationService.notificationCenter
                 center.getPendingNotificationRequests { (notifications) in
                     print("Count: \(notifications.count)")
                     for item in notifications {
