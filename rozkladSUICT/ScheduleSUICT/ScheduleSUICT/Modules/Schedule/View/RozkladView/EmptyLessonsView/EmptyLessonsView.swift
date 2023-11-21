@@ -15,7 +15,7 @@ struct EmptyLessonsView: View {
                 .cornerRadius(16)
                 .padding(20)
             VStack {
-                Text("Сьогодні немає пар")
+                Text("Немає занять")
                     .font(.gilroy(.bold, size: 28))
                     .foregroundStyle(Color.black.opacity(0.7))
                     .padding(.bottom, 40)
