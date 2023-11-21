@@ -59,8 +59,6 @@
 		6764D6D32AF7B33200BBA300 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 6764D6D22AF7B33200BBA300 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		6764D6E92AF7B33200BBA300 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6764D6E82AF7B33200BBA300 /* FirebaseFirestoreSwift */; };
 		6764D7042AF7B3A400BBA300 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6764D7032AF7B3A400BBA300 /* FirebaseCrashlytics */; };
-		6764D70A2AF7B67300BBA300 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6764D7092AF7B67300BBA300 /* Lottie */; };
-		6764D7122AF7C5AB00BBA300 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6764D70E2AF7C46D00BBA300 /* GoogleService-Info.plist */; };
 		678ED20B2ADEFBF7001F4E79 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678ED20A2ADEFBF7001F4E79 /* StorageService.swift */; };
 		679856C22AD6A81300F25DCD /* ScrollIndicatorHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C12AD6A81300F25DCD /* ScrollIndicatorHidden.swift */; };
 		679856C42AD7D59700F25DCD /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */; };
@@ -112,6 +110,8 @@
 		67EDEC9C2AC9DD1A0003C3AD /* TeacherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */; };
 		67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F581262AC7DF7B003EC9F2 /* CourseModel.swift */; };
 		67F67D572ACF26D20005534A /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F67D562ACF26D20005534A /* TransformDate.swift */; };
+		67FB38AC2B0A8D6B00885BAB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 67FB38AB2B0A8D6B00885BAB /* Lottie */; };
+		67FB38B22B0A8F2600885BAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,7 +164,6 @@
 		6760AF4B2AC5E019000434A6 /* studentAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentAnimation.json; sourceTree = "<group>"; };
 		6760AF4D2AC5E037000434A6 /* teacherAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teacherAnimation.json; sourceTree = "<group>"; };
 		6760AF502AC5E0A6000434A6 /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
-		6764D70E2AF7C46D00BBA300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		678ED20A2ADEFBF7001F4E79 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		679856C12AD6A81300F25DCD /* ScrollIndicatorHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollIndicatorHidden.swift; sourceTree = "<group>"; };
 		679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
@@ -215,6 +214,7 @@
 		67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		67F581262AC7DF7B003EC9F2 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		67F67D562ACF26D20005534A /* TransformDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
+		67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6764D70A2AF7B67300BBA300 /* Lottie in Frameworks */,
 				6764D6D12AF7B33200BBA300 /* FirebaseAnalyticsSwift in Frameworks */,
 				67ACF9D32AE2401B005E54E4 /* SwiftSoup in Frameworks */,
 				6764D6CF2AF7B33200BBA300 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -230,6 +229,7 @@
 				6764D6CD2AF7B33200BBA300 /* FirebaseAnalytics in Frameworks */,
 				6764D7042AF7B3A400BBA300 /* FirebaseCrashlytics in Frameworks */,
 				6764D6E92AF7B33200BBA300 /* FirebaseFirestoreSwift in Frameworks */,
+				67FB38AC2B0A8D6B00885BAB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				6760AF1E2AC5C06A000434A6 /* ScheduleSUICT */,
-				6764D70E2AF7C46D00BBA300 /* GoogleService-Info.plist */,
 				6760AF1D2AC5C06A000434A6 /* Products */,
 				6764D7022AF7B3A400BBA300 /* Frameworks */,
 			);
@@ -377,6 +376,7 @@
 				6760AF2D2AC5D6E3000434A6 /* Fonts */,
 				6760AF252AC5C06C000434A6 /* Preview Content */,
 				6760AF362AC5D7A0000434A6 /* Info.plist */,
+				67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */,
 			);
 			path = ScheduleSUICT;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				6764D6D22AF7B33200BBA300 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				6764D6E82AF7B33200BBA300 /* FirebaseFirestoreSwift */,
 				6764D7032AF7B3A400BBA300 /* FirebaseCrashlytics */,
-				6764D7092AF7B67300BBA300 /* Lottie */,
+				67FB38AB2B0A8D6B00885BAB /* Lottie */,
 			);
 			productName = ScheduleSUICT;
 			productReference = 6760AF1C2AC5C06A000434A6 /* ScheduleSUICT.app */;
@@ -736,7 +736,7 @@
 			packageReferences = (
 				67ACF9D12AE2401B005E54E4 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6764D6CB2AF7B33200BBA300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				6764D7082AF7B67300BBA300 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				67FB38AA2B0A8D6A00885BAB /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 6760AF1D2AC5C06A000434A6 /* Products */;
 			projectDirPath = "";
@@ -752,7 +752,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6764D7122AF7C5AB00BBA300 /* GoogleService-Info.plist in Resources */,
+				67FB38B22B0A8F2600885BAB /* GoogleService-Info.plist in Resources */,
 				6760AF332AC5D751000434A6 /* Gilroy-Regular.ttf in Resources */,
 				679856DB2ADC048800F25DCD /* animation1.json in Resources */,
 				679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */,
@@ -791,11 +791,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
 				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+				"",
 			);
 			outputFileListPaths = (
 			);
@@ -1037,7 +1039,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.ScheduleSUICT;
+				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1076,7 +1078,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.ScheduleSUICT;
+				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1119,20 +1121,20 @@
 				minimumVersion = 10.17.0;
 			};
 		};
-		6764D7082AF7B67300BBA300 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.3;
-			};
-		};
 		67ACF9D12AE2401B005E54E4 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.6.1;
+			};
+		};
+		67FB38AA2B0A8D6A00885BAB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1168,15 +1170,15 @@
 			package = 6764D6CB2AF7B33200BBA300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		6764D7092AF7B67300BBA300 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6764D7082AF7B67300BBA300 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
 		67ACF9D22AE2401B005E54E4 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 67ACF9D12AE2401B005E54E4 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		67FB38AB2B0A8D6B00885BAB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67FB38AA2B0A8D6A00885BAB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

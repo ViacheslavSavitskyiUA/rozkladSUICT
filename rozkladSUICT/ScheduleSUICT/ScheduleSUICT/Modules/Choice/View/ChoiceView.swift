@@ -85,6 +85,7 @@ struct ChoiceView: View {
                     
                     Button {
                         isToNextMain = true
+//                        fatalError("Crash was triggered")
                     } label: {
                         Text("Далі")
                             .font(.gilroy(.semibold, size: 20))

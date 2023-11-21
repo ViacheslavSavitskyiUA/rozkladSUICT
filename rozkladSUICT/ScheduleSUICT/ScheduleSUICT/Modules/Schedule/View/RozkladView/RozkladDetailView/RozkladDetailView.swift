@@ -19,7 +19,6 @@ struct RozkladDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text("Назва: \(lesson.disciplineFullName)(\(lesson.disciplineShortName))")
                     .padding(.top, 16)
-                    .lineLimit(4)
                 Text("Тип: \(lesson.typeStr)")
                 Text("Номер пари: \(lesson.lessonNumber)")
                 Text("Аудиторія: \(lesson.classroom)")
@@ -41,7 +40,6 @@ struct RozkladDetailView: View {
             }
         }
         .background(.white)
-        
         .cornerRadius(12)
         .padding(.horizontal)
     }

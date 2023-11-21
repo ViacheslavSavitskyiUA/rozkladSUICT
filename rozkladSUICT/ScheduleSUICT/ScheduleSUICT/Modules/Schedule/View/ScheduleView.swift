@@ -92,16 +92,7 @@ struct ScheduleView: View {
             setupViewModels()
             isShowErrorView = await fetchRozklad()
             await setupDays()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                let center = viewModel.notificationService.notificationCenter
-                center.getPendingNotificationRequests { (notifications) in
-                    print("Count: \(notifications.count)")
-                    for item in notifications {
-                        print(item.trigger)
-                    }
-                }
-            })
+            viewModel.checkPush()
         }
         .sheet(isPresented: $isShareSheetPresented, content: {
             ShareSheetView(activityItems: [activityText()])
@@ -143,7 +134,7 @@ struct ScheduleView: View {
                     viewModel.isShowSaveAlert = true
                 }
             } label: {
-                Image(systemName: viewModel.checkReturnSaveImage())
+                Image(systemName: viewModel.saveImageFlag ? "star.fill" : "star" )
             }
             .frame(width: 24, height: 24)
             .padding(.trailing, 16)
@@ -317,7 +308,10 @@ struct ScheduleView: View {
            StorageService.readStorageType() == viewModel.type {
             viewModel.notificationService.scheduleNotifications(models: viewModel.rozklad,
                                                                 userType: viewModel.type)
+            viewModel.checkReturnSaveImage()
         }
+        
+        viewModel.checkPush()
     }
     
     @MainActor

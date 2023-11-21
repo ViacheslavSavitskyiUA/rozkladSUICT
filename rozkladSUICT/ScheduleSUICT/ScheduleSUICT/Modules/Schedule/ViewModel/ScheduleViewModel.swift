@@ -15,27 +15,16 @@ enum UserDataStatus {
 
 final class ScheduleViewModel: ObservableObject {
     
-//    @Published var rozkladListViewModel: RozkladListViewModel! {
-//        didSet {
-//            print("rozkladListViewModel \(rozkladListViewModel)")
-//        }
-//    }
-//    @Published var dayCollectionViewModel: DayCollectionViewModel! {
-//        didSet {
-//            print("dayCollectionViewModel \(dayCollectionViewModel)")
-//        }
-//    }
-    
     @Published var isShowLoader = false
     private var isShowErrorView = false
     
     @Published var navigationTitle: String
     
-//    @Published var selectDay: RozkladEntity = .init()
-    
     @Published var isShowSaveAlert: Bool = false
     
     @Published var userDataStatus: UserDataStatus = .unsaved
+    
+    @Published var saveImageFlag: Bool = false
     
     let network = NetworkManager()
     @Published var rozklad: [RozkladEntity] = []
@@ -56,6 +45,9 @@ final class ScheduleViewModel: ObservableObject {
         }
         
         notificationService = NotificationService()
+        
+        notificationService.scheduleNotifications(models: rozklad,
+                                                  userType: type)
     }
     
     func saveUserData() {
@@ -67,6 +59,11 @@ final class ScheduleViewModel: ObservableObject {
         StorageService.storageTitle(navigationTitle)
         
         userDataStatus = .saved
+        checkReturnSaveImage()
+        
+        Task {
+            await checkPush()
+        }
     }
     
     func unsaveUserData() {
@@ -76,14 +73,15 @@ final class ScheduleViewModel: ObservableObject {
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         userDataStatus = .unsaved
+        checkReturnSaveImage()
+        
+        Task {
+            await checkPush()
+        }
     }
     
-    func checkReturnSaveImage() -> String {
-        if userDataStatus == .saved  {
-            return "star.fill"
-        } else {
-            return "star"
-        }
+    func checkReturnSaveImage() {
+        saveImageFlag = userDataStatus == .saved ? true : false
     }
     
     func askedSaveQuestion() {
@@ -130,6 +128,19 @@ final class ScheduleViewModel: ObservableObject {
             rozklad.append(rozkladObject)
             rozkladObject = .init()
         }
+    }
+    
+    @MainActor
+    func checkPush() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            let center = self.notificationService.notificationCenter
+            center.getPendingNotificationRequests { (notifications) in
+                print("Count: \(notifications.count)")
+                for item in notifications {
+                    print(item.trigger)
+                }
+            }
+        })
     }
 }
 
