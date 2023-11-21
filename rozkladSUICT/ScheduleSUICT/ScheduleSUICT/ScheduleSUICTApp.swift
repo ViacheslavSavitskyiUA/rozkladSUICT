@@ -29,10 +29,6 @@ struct ScheduleSUICTApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    init() {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-    }
-    
     var body: some Scene {
         WindowGroup {
 //            OnboardingView()

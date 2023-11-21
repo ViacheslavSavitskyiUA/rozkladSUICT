@@ -121,6 +121,7 @@ struct ChoiceView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
+
                 showSchedule()
             }
             .navigationViewStyle(.stack)
