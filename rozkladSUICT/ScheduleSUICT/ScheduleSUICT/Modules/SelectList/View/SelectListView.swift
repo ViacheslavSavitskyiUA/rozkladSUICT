@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectListView: View {
     
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     @ObservedObject var viewModel: SelectListViewModel
     
@@ -34,7 +34,7 @@ struct SelectListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        dismiss()
+                        mode.wrappedValue.dismiss()
                     } label: {
                         Image("backArrow")
                             .resizable()

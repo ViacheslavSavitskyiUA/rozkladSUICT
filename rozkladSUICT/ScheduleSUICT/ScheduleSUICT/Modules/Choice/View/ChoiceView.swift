@@ -121,7 +121,7 @@ struct ChoiceView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .task {
-
+                UIApplication.shared.applicationIconBadgeNumber = 0
                 showSchedule()
             }
             .navigationViewStyle(.stack)
