@@ -31,7 +31,7 @@ struct DayCellView: View {
             
             haveLessons(!viewModel.day.lessons.isEmpty)
         }
-        .frame(width: 80, height: 54)
+        .frame(width: 94, height: 54)
         .onTapGesture {
             viewModel.day.isSelected = true
             selected(viewModel.day)

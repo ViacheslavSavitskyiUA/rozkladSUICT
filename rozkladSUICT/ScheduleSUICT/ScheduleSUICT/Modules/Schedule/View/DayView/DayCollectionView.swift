@@ -10,7 +10,7 @@ import Combine
 
 struct DayCollectionView: View {
     
-    private let dayColumns: [GridItem] = [GridItem(.fixed(54))]
+    private let dayColumns: [GridItem] = [GridItem(.fixed(60))]
     
     @ObservedObject var viewModel: DayCollectionViewModel
     
