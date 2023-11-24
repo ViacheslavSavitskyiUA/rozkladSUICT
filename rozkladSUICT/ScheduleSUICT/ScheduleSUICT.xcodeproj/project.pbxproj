@@ -98,6 +98,8 @@
 		67C186AA2AE920AF0028B922 /* SelectTeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A92AE920AF0028B922 /* SelectTeacherViewModel.swift */; };
 		67C186AC2AE98CC70028B922 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186AB2AE98CC70028B922 /* String+Extension.swift */; };
 		67D1867A2ACDD913003261BE /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D186792ACDD913003261BE /* ScheduleViewModel.swift */; };
+		67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 67D841B92B10C3E70059BC5B /* newYear_cat.json */; };
+		67D841BD2B10CECD0059BC5B /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 67D841BC2B10CECD0059BC5B /* EffectsLibrary */; };
 		67DF92592AD3FDEA004A5A14 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF92582AD3FDEA004A5A14 /* Margin.swift */; };
 		67E9398D2AC602E100AB47ED /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9398C2AC602E100AB47ED /* UserType.swift */; };
 		67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */; };
@@ -202,6 +204,7 @@
 		67C186A92AE920AF0028B922 /* SelectTeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeacherViewModel.swift; sourceTree = "<group>"; };
 		67C186AB2AE98CC70028B922 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		67D186792ACDD913003261BE /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		67D841B92B10C3E70059BC5B /* newYear_cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear_cat.json; sourceTree = "<group>"; };
 		67DF92582AD3FDEA004A5A14 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		67E9398C2AC602E100AB47ED /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCardViewModel.swift; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 				6764D6CF2AF7B33200BBA300 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				6764D6D32AF7B33200BBA300 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				6764D6CD2AF7B33200BBA300 /* FirebaseAnalytics in Frameworks */,
+				67D841BD2B10CECD0059BC5B /* EffectsLibrary in Frameworks */,
 				6764D7042AF7B3A400BBA300 /* FirebaseCrashlytics in Frameworks */,
 				6764D6E92AF7B33200BBA300 /* FirebaseFirestoreSwift in Frameworks */,
 				67FB38AC2B0A8D6B00885BAB /* Lottie in Frameworks */,
@@ -453,6 +457,7 @@
 		6760AF4A2AC5DFF0000434A6 /* LottieJSON */ = {
 			isa = PBXGroup;
 			children = (
+				67D841B82B10C3450059BC5B /* NewYear */,
 				673014612AE0ECFD00DC52E4 /* SavePopUp */,
 				679857002ADC5D6E00F25DCD /* NetworkError */,
 				679856CB2ADC045F00F25DCD /* EmptyLessons */,
@@ -629,6 +634,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		67D841B82B10C3450059BC5B /* NewYear */ = {
+			isa = PBXGroup;
+			children = (
+				67D841B92B10C3E70059BC5B /* newYear_cat.json */,
+			);
+			path = NewYear;
+			sourceTree = "<group>";
+		};
 		67E9398E2AC6082400AB47ED /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +717,7 @@
 				6764D6E82AF7B33200BBA300 /* FirebaseFirestoreSwift */,
 				6764D7032AF7B3A400BBA300 /* FirebaseCrashlytics */,
 				67FB38AB2B0A8D6B00885BAB /* Lottie */,
+				67D841BC2B10CECD0059BC5B /* EffectsLibrary */,
 			);
 			productName = ScheduleSUICT;
 			productReference = 6760AF1C2AC5C06A000434A6 /* ScheduleSUICT.app */;
@@ -738,6 +752,7 @@
 				67ACF9D12AE2401B005E54E4 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6764D6CB2AF7B33200BBA300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				67FB38AA2B0A8D6A00885BAB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				67D841BB2B10CECD0059BC5B /* XCRemoteSwiftPackageReference "effects-library" */,
 			);
 			productRefGroup = 6760AF1D2AC5C06A000434A6 /* Products */;
 			projectDirPath = "";
@@ -767,6 +782,7 @@
 				679856F72ADC0EDA00F25DCD /* animation8.json in Resources */,
 				67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */,
 				679856FA2ADC0EDA00F25DCD /* animation13.json in Resources */,
+				67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */,
 				672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */,
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
 				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
@@ -1130,6 +1146,14 @@
 				minimumVersion = 2.6.1;
 			};
 		};
+		67D841BB2B10CECD0059BC5B /* XCRemoteSwiftPackageReference "effects-library" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/effects-library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		67FB38AA2B0A8D6A00885BAB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1175,6 +1199,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 67ACF9D12AE2401B005E54E4 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		67D841BC2B10CECD0059BC5B /* EffectsLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67D841BB2B10CECD0059BC5B /* XCRemoteSwiftPackageReference "effects-library" */;
+			productName = EffectsLibrary;
 		};
 		67FB38AB2B0A8D6B00885BAB /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

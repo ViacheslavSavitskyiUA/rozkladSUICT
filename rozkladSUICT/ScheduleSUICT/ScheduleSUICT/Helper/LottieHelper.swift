@@ -34,4 +34,8 @@ enum LottieFile: String {
         case checkmark = "checkmark"
         case crissCross = "criss-cross"
     }
+    
+    enum NewYear: String {
+        case cat = "newYear_cat"
+    }
 }

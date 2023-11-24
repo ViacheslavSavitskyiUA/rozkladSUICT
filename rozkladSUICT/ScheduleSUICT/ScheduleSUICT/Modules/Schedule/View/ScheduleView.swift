@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import EffectsLibrary
 
 struct ScheduleView: View {
     
@@ -31,72 +32,86 @@ struct ScheduleView: View {
     var searchId: Int = 0
     
     var body: some View {
-        VStack {
+        ZStack {
+//            SnowView(config: SnowConfig(content: [.shape(.circle, .blue, 3.0), .shape(.circle, .blue, 5)], intensity: .low, lifetime: .long))
+//                .foregroundColor(.red)
+            SnowView()
+                .offset(y: -80)
             VStack {
-                ZStack {
-                    Color.white
-                    HStack {
-                        Button {
-                            mode.wrappedValue.dismiss()
-                        } label: {
-                            Image("backArrow")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                                .padding(.leading, 16)
+                VStack {
+                    ZStack {
+                        Color.clear
+                        HStack {
+                            Button {
+                                mode.wrappedValue.dismiss()
+                            } label: {
+                                Image("backArrow")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 24, height: 24)
+                                    .padding(.leading, 16)
+                            }
+                            Spacer()
                         }
-                        Spacer()
-                    }
-                    
-                    Text(viewModel.navigationTitle)
-                        .font(.system(size: 16))
-                        .bold()
-                    
-                    HStack(spacing: 12) {
-                        Spacer()
-                        Button {
-                            isShareSheetPresented = true
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                                .padding(.horizontal, type == .auditory ? 16 : 0)
+                        
+                        Text(viewModel.navigationTitle)
+                            .font(.system(size: 16))
+                            .bold()
+                        
+                        HStack(spacing: 12) {
+                            Spacer()
+                            Button {
+                                isShareSheetPresented = true
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 24, height: 24)
+                                    .padding(.horizontal, type == .auditory ? 16 : 0)
+                            }
+                            showFavorite(type: type)
                         }
-                        showFavorite(type: type)
                     }
+                    .frame(height: 48)
+                    showView(isError: isShowErrorView)
                 }
-                .frame(height: 48)
-                showView(isError: isShowErrorView)
             }
-        }
-        .navigationBarHidden(true)
-        
-        .popUpNavigationView(show: $isShowDetailView) {
-            RozkladDetailView(lesson: detailInfo.0, type: detailInfo.1, completion: {
-                isShowDetailView = false
+            .navigationBarHidden(true)
+            .overlay(content: {
+                LottieView(loopMode: .loop,
+                                               lottieFile: LottieFile.NewYear.cat.rawValue )
+                                    .scaleEffect(0.03)
+                                    .scaledToFit()
+                                    .offset(x: UIScreen.main.bounds.width / 2 - 40,
+                                            y: UIScreen.main.bounds.height / 2 - 40)
             })
-        }
-        .popUpNavigationView(show: $viewModel.isShowLoader, content: {
-            LoaderView()
-        })
-        .popUpNavigationView(show: $viewModel.isShowSaveAlert, content: {
-            SavePopUpView(savePopUpType: viewModel.userDataStatus == .unsaved ? .save : .remove) {
-                viewModel.userDataStatus == .unsaved ? viewModel.saveUserData() : viewModel.unsaveUserData()
-                viewModel.isShowSaveAlert = false
-            } cancel: {
-                viewModel.isShowSaveAlert = false
+            
+            .popUpNavigationView(show: $isShowDetailView) {
+                RozkladDetailView(lesson: detailInfo.0, type: detailInfo.1, completion: {
+                    isShowDetailView = false
+                })
             }
+            .popUpNavigationView(show: $viewModel.isShowLoader, content: {
+                LoaderView()
+            })
+            .popUpNavigationView(show: $viewModel.isShowSaveAlert, content: {
+                SavePopUpView(savePopUpType: viewModel.userDataStatus == .unsaved ? .save : .remove) {
+                    viewModel.userDataStatus == .unsaved ? viewModel.saveUserData() : viewModel.unsaveUserData()
+                    viewModel.isShowSaveAlert = false
+                } cancel: {
+                    viewModel.isShowSaveAlert = false
+                }
+            })
+            .task {
+                setupViewModels()
+                isShowErrorView = await fetchRozklad()
+                await setupDays()
+                viewModel.checkPush()
+            }
+            .sheet(isPresented: $isShareSheetPresented, content: {
+                ShareSheetView(activityItems: [activityText()])
         })
-        .task {
-            setupViewModels()
-            isShowErrorView = await fetchRozklad()
-            await setupDays()
-            viewModel.checkPush()
         }
-        .sheet(isPresented: $isShareSheetPresented, content: {
-            ShareSheetView(activityItems: [activityText()])
-        })
     }
     
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
