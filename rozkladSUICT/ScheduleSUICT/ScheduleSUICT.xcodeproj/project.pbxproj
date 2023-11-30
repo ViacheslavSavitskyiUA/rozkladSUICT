@@ -92,6 +92,22 @@
 		67B7D3C32AEEC6D200764B87 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7D3C22AEEC6D200764B87 /* OnboardingPageView.swift */; };
 		67B7D3C52AEEC6F200764B87 /* OnboardingPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7D3C42AEEC6F200764B87 /* OnboardingPageData.swift */; };
 		67B7D3CA2AEECA1C00764B87 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7D3C92AEECA1C00764B87 /* OnboardingView.swift */; };
+		67C06B9A2B13CE43008A9B45 /* ny_animation5.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B8E2B13CE43008A9B45 /* ny_animation5.json */; };
+		67C06B9B2B13CE43008A9B45 /* ny_animation6.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B8F2B13CE43008A9B45 /* ny_animation6.json */; };
+		67C06B9C2B13CE43008A9B45 /* ny_animation12.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B902B13CE43008A9B45 /* ny_animation12.json */; };
+		67C06B9D2B13CE43008A9B45 /* ny_animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B912B13CE43008A9B45 /* ny_animation4.json */; };
+		67C06B9E2B13CE43008A9B45 /* ny_animation7.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B922B13CE43008A9B45 /* ny_animation7.json */; };
+		67C06B9F2B13CE43008A9B45 /* ny_animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B932B13CE43008A9B45 /* ny_animation3.json */; };
+		67C06BA02B13CE43008A9B45 /* ny_animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B942B13CE43008A9B45 /* ny_animation1.json */; };
+		67C06BA12B13CE43008A9B45 /* ny_animation8.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B952B13CE43008A9B45 /* ny_animation8.json */; };
+		67C06BA22B13CE43008A9B45 /* ny_animation9.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B962B13CE43008A9B45 /* ny_animation9.json */; };
+		67C06BA32B13CE43008A9B45 /* ny_animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B972B13CE43008A9B45 /* ny_animation2.json */; };
+		67C06BA42B13CE43008A9B45 /* ny_animation10.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B982B13CE43008A9B45 /* ny_animation10.json */; };
+		67C06BA52B13CE43008A9B45 /* ny_animation11.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06B992B13CE43008A9B45 /* ny_animation11.json */; };
+		67C06BAA2B149BA6008A9B45 /* ny_animation14.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06BA62B149BA6008A9B45 /* ny_animation14.json */; };
+		67C06BAB2B149BA6008A9B45 /* ny_animation16.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06BA72B149BA6008A9B45 /* ny_animation16.json */; };
+		67C06BAC2B149BA6008A9B45 /* ny_animation13.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06BA82B149BA6008A9B45 /* ny_animation13.json */; };
+		67C06BAD2B149BA6008A9B45 /* ny_animation15.json in Resources */ = {isa = PBXBuildFile; fileRef = 67C06BA92B149BA6008A9B45 /* ny_animation15.json */; };
 		67C186A22AE63C5C0028B922 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A12AE63C5C0028B922 /* TextFieldClearButton.swift */; };
 		67C186A52AE6874D0028B922 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A42AE6874D0028B922 /* ShareSheetView.swift */; };
 		67C186A82AE920A50028B922 /* SelectTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A72AE920A50028B922 /* SelectTeacherView.swift */; };
@@ -100,6 +116,7 @@
 		67D1867A2ACDD913003261BE /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D186792ACDD913003261BE /* ScheduleViewModel.swift */; };
 		67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 67D841B92B10C3E70059BC5B /* newYear_cat.json */; };
 		67D841BD2B10CECD0059BC5B /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 67D841BC2B10CECD0059BC5B /* EffectsLibrary */; };
+		67D841C22B11D0260059BC5B /* newYear_lights.json in Resources */ = {isa = PBXBuildFile; fileRef = 67D841C12B11D0250059BC5B /* newYear_lights.json */; };
 		67DF92592AD3FDEA004A5A14 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF92582AD3FDEA004A5A14 /* Margin.swift */; };
 		67E9398D2AC602E100AB47ED /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9398C2AC602E100AB47ED /* UserType.swift */; };
 		67E939912AC6086400AB47ED /* ChoiceCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */; };
@@ -198,6 +215,22 @@
 		67B7D3C22AEEC6D200764B87 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		67B7D3C42AEEC6F200764B87 /* OnboardingPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageData.swift; sourceTree = "<group>"; };
 		67B7D3C92AEECA1C00764B87 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		67C06B8E2B13CE43008A9B45 /* ny_animation5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation5.json; sourceTree = "<group>"; };
+		67C06B8F2B13CE43008A9B45 /* ny_animation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation6.json; sourceTree = "<group>"; };
+		67C06B902B13CE43008A9B45 /* ny_animation12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation12.json; sourceTree = "<group>"; };
+		67C06B912B13CE43008A9B45 /* ny_animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation4.json; sourceTree = "<group>"; };
+		67C06B922B13CE43008A9B45 /* ny_animation7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation7.json; sourceTree = "<group>"; };
+		67C06B932B13CE43008A9B45 /* ny_animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation3.json; sourceTree = "<group>"; };
+		67C06B942B13CE43008A9B45 /* ny_animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation1.json; sourceTree = "<group>"; };
+		67C06B952B13CE43008A9B45 /* ny_animation8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation8.json; sourceTree = "<group>"; };
+		67C06B962B13CE43008A9B45 /* ny_animation9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation9.json; sourceTree = "<group>"; };
+		67C06B972B13CE43008A9B45 /* ny_animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation2.json; sourceTree = "<group>"; };
+		67C06B982B13CE43008A9B45 /* ny_animation10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation10.json; sourceTree = "<group>"; };
+		67C06B992B13CE43008A9B45 /* ny_animation11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation11.json; sourceTree = "<group>"; };
+		67C06BA62B149BA6008A9B45 /* ny_animation14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation14.json; sourceTree = "<group>"; };
+		67C06BA72B149BA6008A9B45 /* ny_animation16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation16.json; sourceTree = "<group>"; };
+		67C06BA82B149BA6008A9B45 /* ny_animation13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation13.json; sourceTree = "<group>"; };
+		67C06BA92B149BA6008A9B45 /* ny_animation15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ny_animation15.json; sourceTree = "<group>"; };
 		67C186A12AE63C5C0028B922 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		67C186A42AE6874D0028B922 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		67C186A72AE920A50028B922 /* SelectTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeacherView.swift; sourceTree = "<group>"; };
@@ -205,6 +238,7 @@
 		67C186AB2AE98CC70028B922 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		67D186792ACDD913003261BE /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		67D841B92B10C3E70059BC5B /* newYear_cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear_cat.json; sourceTree = "<group>"; };
+		67D841C12B11D0250059BC5B /* newYear_lights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear_lights.json; sourceTree = "<group>"; };
 		67DF92582AD3FDEA004A5A14 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		67E9398C2AC602E100AB47ED /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		67E939902AC6086400AB47ED /* ChoiceCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCardViewModel.swift; sourceTree = "<group>"; };
@@ -588,6 +622,29 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		67C06B8D2B13CE17008A9B45 /* EmptyLessons */ = {
+			isa = PBXGroup;
+			children = (
+				67C06B942B13CE43008A9B45 /* ny_animation1.json */,
+				67C06B972B13CE43008A9B45 /* ny_animation2.json */,
+				67C06B932B13CE43008A9B45 /* ny_animation3.json */,
+				67C06B912B13CE43008A9B45 /* ny_animation4.json */,
+				67C06B8E2B13CE43008A9B45 /* ny_animation5.json */,
+				67C06B8F2B13CE43008A9B45 /* ny_animation6.json */,
+				67C06B922B13CE43008A9B45 /* ny_animation7.json */,
+				67C06B952B13CE43008A9B45 /* ny_animation8.json */,
+				67C06B962B13CE43008A9B45 /* ny_animation9.json */,
+				67C06B982B13CE43008A9B45 /* ny_animation10.json */,
+				67C06B992B13CE43008A9B45 /* ny_animation11.json */,
+				67C06B902B13CE43008A9B45 /* ny_animation12.json */,
+				67C06BA82B149BA6008A9B45 /* ny_animation13.json */,
+				67C06BA62B149BA6008A9B45 /* ny_animation14.json */,
+				67C06BA92B149BA6008A9B45 /* ny_animation15.json */,
+				67C06BA72B149BA6008A9B45 /* ny_animation16.json */,
+			);
+			path = EmptyLessons;
+			sourceTree = "<group>";
+		};
 		67C186A32AE6873E0028B922 /* ShareSheetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,7 +694,9 @@
 		67D841B82B10C3450059BC5B /* NewYear */ = {
 			isa = PBXGroup;
 			children = (
+				67D841C12B11D0250059BC5B /* newYear_lights.json */,
 				67D841B92B10C3E70059BC5B /* newYear_cat.json */,
+				67C06B8D2B13CE17008A9B45 /* EmptyLessons */,
 			);
 			path = NewYear;
 			sourceTree = "<group>";
@@ -771,29 +830,46 @@
 				67FB38B22B0A8F2600885BAB /* GoogleService-Info.plist in Resources */,
 				6760AF332AC5D751000434A6 /* Gilroy-Regular.ttf in Resources */,
 				679856DB2ADC048800F25DCD /* animation1.json in Resources */,
+				67C06BA02B13CE43008A9B45 /* ny_animation1.json in Resources */,
+				67C06B9F2B13CE43008A9B45 /* ny_animation3.json in Resources */,
+				67C06BAB2B149BA6008A9B45 /* ny_animation16.json in Resources */,
+				67C06BA12B13CE43008A9B45 /* ny_animation8.json in Resources */,
 				679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */,
 				679856F82ADC0EDA00F25DCD /* animation11.json in Resources */,
+				67C06B9D2B13CE43008A9B45 /* ny_animation4.json in Resources */,
 				679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */,
 				679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */,
 				6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */,
+				67C06BAA2B149BA6008A9B45 /* ny_animation14.json in Resources */,
+				67C06BA32B13CE43008A9B45 /* ny_animation2.json in Resources */,
 				6760AF352AC5D75C000434A6 /* Gilroy-Medium.ttf in Resources */,
+				67C06BA22B13CE43008A9B45 /* ny_animation9.json in Resources */,
 				673014632AE0ED1300DC52E4 /* checkmark.json in Resources */,
 				679856F52ADC0EDA00F25DCD /* animation2.json in Resources */,
 				679856F72ADC0EDA00F25DCD /* animation8.json in Resources */,
 				67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */,
 				679856FA2ADC0EDA00F25DCD /* animation13.json in Resources */,
 				67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */,
+				67C06B9A2B13CE43008A9B45 /* ny_animation5.json in Resources */,
 				672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */,
+				67C06BA42B13CE43008A9B45 /* ny_animation10.json in Resources */,
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
 				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
 				67ACF9D02AE19BFC005E54E4 /* freeAuditoryAnimation.json in Resources */,
+				67C06B9B2B13CE43008A9B45 /* ny_animation6.json in Resources */,
+				67C06B9E2B13CE43008A9B45 /* ny_animation7.json in Resources */,
+				67C06BAC2B149BA6008A9B45 /* ny_animation13.json in Resources */,
+				67C06BA52B13CE43008A9B45 /* ny_animation11.json in Resources */,
 				679856FB2ADC0EDA00F25DCD /* animation10.json in Resources */,
 				673014652AE0ED4200DC52E4 /* criss-cross.json in Resources */,
 				6760AF382AC5D7FA000434A6 /* Gilroy-Light.ttf in Resources */,
 				6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */,
 				6760AF312AC5D716000434A6 /* Gilroy-Semibold.ttf in Resources */,
 				6760AF242AC5C06C000434A6 /* Assets.xcassets in Resources */,
+				67D841C22B11D0260059BC5B /* newYear_lights.json in Resources */,
 				67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */,
+				67C06BAD2B149BA6008A9B45 /* ny_animation15.json in Resources */,
+				67C06B9C2B13CE43008A9B45 /* ny_animation12.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,7 +1131,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1094,7 +1170,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

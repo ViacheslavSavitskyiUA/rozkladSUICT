@@ -20,6 +20,8 @@ struct ScheduleView: View {
     @State private var isPulsing = false
     @State private var isShowErrorView = false
     
+    @State private var isHideLights = true
+    
     @State var rozkladListViewModel: RozkladListViewModel = .init(lessons: [], type: .unowned)
     @State var dayCollectionViewModel: DayCollectionViewModel = .init(completion: { _ in })
     
@@ -33,8 +35,6 @@ struct ScheduleView: View {
     
     var body: some View {
         ZStack {
-//            SnowView(config: SnowConfig(content: [.shape(.circle, .blue, 3.0), .shape(.circle, .blue, 5)], intensity: .low, lifetime: .long))
-//                .foregroundColor(.red)
             SnowView()
                 .offset(y: -80)
             VStack {
@@ -44,6 +44,11 @@ struct ScheduleView: View {
                         HStack {
                             Button {
                                 mode.wrappedValue.dismiss()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                                    withAnimation {
+                                        isHideLights.toggle()
+                                    }
+                                })
                             } label: {
                                 Image("backArrow")
                                     .resizable()
@@ -79,11 +84,11 @@ struct ScheduleView: View {
             .navigationBarHidden(true)
             .overlay(content: {
                 LottieView(loopMode: .loop,
-                                               lottieFile: LottieFile.NewYear.cat.rawValue )
+                                               lottieFile: LottieFile.NewYear.cat.rawValue)
                                     .scaleEffect(0.03)
                                     .scaledToFit()
-                                    .offset(x: UIScreen.main.bounds.width / 2 - 40,
-                                            y: UIScreen.main.bounds.height / 2 - 40)
+                                    .offset(x: UIScreen.main.bounds.width / 2 - 54,
+                                            y: UIScreen.main.bounds.height / 2 - 32)
             })
             
             .popUpNavigationView(show: $isShowDetailView) {
@@ -107,6 +112,7 @@ struct ScheduleView: View {
                 isShowErrorView = await fetchRozklad()
                 await setupDays()
                 viewModel.checkPush()
+                isHideLights = false
             }
             .sheet(isPresented: $isShareSheetPresented, content: {
                 ShareSheetView(activityItems: [activityText()])
@@ -134,8 +140,13 @@ struct ScheduleView: View {
             NetworkErrorView()
         case false:
             VStack {
+                LottieView(loopMode: .loop, lottieFile: LottieFile.NewYear.light.rawValue)
+                    .scaleEffect(0.2)
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width, height: 8)
+                    .opacity(isHideLights ? 0 : 1)
                 DayCollectionView(viewModel: dayCollectionViewModel)
-                    .background(Color.white)
+//                    .background(Color.white)
                 showLessons(!selectDay.isEmpty)
             }
         }
