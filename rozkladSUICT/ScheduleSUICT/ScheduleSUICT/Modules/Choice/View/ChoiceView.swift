@@ -20,6 +20,7 @@ struct ChoiceView: View {
     @State var isToNextScreen = false
     @State var isToNextScreenAuditory = false
     @State var isToNextScreenFreeAuditory = false
+    @State var isShowLinks = false
     
     @State var isToNextMain = false {
         didSet {
@@ -43,6 +44,15 @@ struct ChoiceView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Button {
+                    isShowLinks = true
+                } label: {
+                    Image("logoIPZ")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                        .padding(.top, 16)
+                }
+
                 VStack(spacing: 0) {
                     
                     Spacer()
@@ -125,6 +135,20 @@ struct ChoiceView: View {
                 showSchedule()
             }
             .navigationViewStyle(.stack)
+        }
+        .sheet(isPresented: $isShowLinks) {
+            print("Sheet dismissed!")
+        } content: {
+            if #available(iOS 16.0, *) {
+                ChoiceLinksView {
+                    isShowLinks = false
+                }
+                .presentationDetents([.height(240)])
+            } else {
+                ChoiceLinksView {
+                    isShowLinks = false
+                }
+            }
         }
     }
     

@@ -24,6 +24,8 @@ enum LottieFile: String {
         case a11 = "animation11"
         case a12 = "animation12"
         case a13 = "animation13"
+        case a14 = "animation14"
+        case a15 = "animation15"
     }
     
     enum NetworkError: String {

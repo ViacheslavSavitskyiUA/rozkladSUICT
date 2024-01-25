@@ -35,8 +35,7 @@ struct ScheduleView: View {
     
     var body: some View {
         ZStack {
-            SnowView()
-                .offset(y: -80)
+
             VStack {
                 VStack {
                     ZStack {
@@ -82,14 +81,14 @@ struct ScheduleView: View {
                 }
             }
             .navigationBarHidden(true)
-            .overlay(content: {
-                LottieView(loopMode: .loop,
-                                               lottieFile: LottieFile.NewYear.cat.rawValue)
-                                    .scaleEffect(0.03)
-                                    .scaledToFit()
-                                    .offset(x: UIScreen.main.bounds.width / 2 - 54,
-                                            y: UIScreen.main.bounds.height / 2 - 32)
-            })
+//            .overlay(content: {
+//                LottieView(loopMode: .loop,
+//                                               lottieFile: LottieFile.NewYear.cat.rawValue)
+//                                    .scaleEffect(0.03)
+//                                    .scaledToFit()
+//                                    .offset(x: UIScreen.main.bounds.width / 2 - 54,
+//                                            y: UIScreen.main.bounds.height / 2 - 32)
+//            })
             
             .popUpNavigationView(show: $isShowDetailView) {
                 RozkladDetailView(lesson: detailInfo.0, type: detailInfo.1, completion: {
@@ -140,11 +139,11 @@ struct ScheduleView: View {
             NetworkErrorView()
         case false:
             VStack {
-                LottieView(loopMode: .loop, lottieFile: LottieFile.NewYear.light.rawValue)
-                    .scaleEffect(0.2)
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width, height: 8)
-                    .opacity(isHideLights ? 0 : 1)
+//                LottieView(loopMode: .loop, lottieFile: LottieFile.EmptyLessons.)
+//                    .scaleEffect(0.2)
+//                    .scaledToFill()
+//                    .frame(width: UIScreen.main.bounds.width, height: 8)
+//                    .opacity(isHideLights ? 0 : 1)
                 DayCollectionView(viewModel: dayCollectionViewModel)
 //                    .background(Color.white)
                 showLessons(!selectDay.isEmpty)
