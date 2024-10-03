@@ -13,6 +13,7 @@ struct ChoiceCardView: View {
     
     private let constantSize: CGFloat = UIScreen.main.bounds.size.width / 2 - 20
     let userType: UserType
+    let isHero: Bool
     
     var body: some View {
         ZStack {
@@ -25,18 +26,24 @@ struct ChoiceCardView: View {
                 }
             
             VStack {
-                LottieView(loopMode: .loop, lottieFile: userType.lottieFile.rawValue)
-                    .scaleEffect(userType == .student || userType == .teacher ? 0.10 : 0.2)
-                    .frame(width: 100, height: 100)
+                if isHero {
+                    EmptyView()
+                } else {
+                    LottieView(loopMode: .loop, lottieFile: userType.lottieFile.rawValue)
+                        .scaleEffect(userType == .student || userType == .teacher ? 0.10 : 0.2)
+                        .frame(width: 100, height: 100)
+                }
+                
                 Text(userType.title)
-                    .font(.gilroy(.light, size: 12))
-                    .padding(.bottom, 4)
+                    .font(isHero ? .system(size: 18, weight: .bold) : .gilroy(.light, size: 12))
+                    .foregroundStyle(isHero ? .fallGold : .black)
+                    .padding(.bottom, isHero ? -4 : 4)
             }
         }
         .frame(width: constantSize, height: constantSize)
     }
 }
 
-#Preview {
-    ChoiceCardView(viewModel: .init(), userType: .teacher)
-}
+//#Preview {
+//    ChoiceCardView(viewModel: .init(), userType: .teacher)
+//}

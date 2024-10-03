@@ -14,6 +14,7 @@ struct ChoiceView: View {
     @State var studentCardViewModel: ChoiceCardViewModel = .init()
     @State var teacherCardViewModel: ChoiceCardViewModel = .init()
     @State var auditoryCardViewModel: ChoiceCardViewModel = .init()
+    @State var heroCardViewModel: ChoiceCardViewModel = .init()
     
     @State var selectUserType: UserType = .unowned
     
@@ -21,20 +22,29 @@ struct ChoiceView: View {
     @State var isToNextScreenAuditory = false
     @State var isToNextScreenFreeAuditory = false
     @State var isShowLinks = false
+    @State var isToNextScreenHero = false
     
     @State var isToNextMain = false {
         didSet {
             if selectUserType == .student || selectUserType == .teacher {
                 isToNextScreen = true
                 isToNextScreenAuditory = false
+                isToNextScreenHero = false
             } else if selectUserType == .auditory {
                 isToNextScreen = false
                 isToNextScreenAuditory = true
                 isToNextScreenFreeAuditory = false
+                isToNextScreenHero = false
+            } else if selectUserType == .hero {
+                isToNextScreen = false
+                isToNextScreenHero = false
+                isToNextScreenFreeAuditory = false
+                isToNextScreenHero = true
             } else {
                 isToNextScreen = false
                 isToNextScreenAuditory = false
                 isToNextScreenFreeAuditory = false
+                isToNextScreenHero = false
             }
         }
     }
@@ -67,16 +77,24 @@ struct ChoiceView: View {
                     Group {
                         
                         HStack {
-                            ChoiceCardView(viewModel: auditoryCardViewModel, userType: .auditory)
+                            ChoiceCardView(viewModel: auditoryCardViewModel, userType: .auditory, isHero: false)
                                 .onTapGesture {
                                     select(userType: .auditory)
                                 }
+                            
+                            Spacer().frame(width: 16)
+                            
+                            ChoiceCardView(viewModel: heroCardViewModel, userType: .hero, isHero: true)
+                                .onTapGesture {
+                                    select(userType: .hero)
+                                }
+                            
                         }
                         Spacer().frame(height: 20)
                         
                         HStack {
                             ChoiceCardView(viewModel: studentCardViewModel,
-                                           userType: .student)
+                                           userType: .student, isHero: false)
                             .onTapGesture {
                                 select(userType: .student)
                             }
@@ -84,7 +102,7 @@ struct ChoiceView: View {
                             Spacer().frame(width: 16)
                             
                             ChoiceCardView(viewModel: teacherCardViewModel,
-                                           userType: .teacher)
+                                           userType: .teacher, isHero: false)
                             .onTapGesture {
                                 select(userType: .teacher)
                             }
@@ -126,6 +144,10 @@ struct ChoiceView: View {
                                isActive: $isToNextScreenAuditory) {
                     EmptyView()
                 }.isDetailLink(false)
+                
+                NavigationLink(destination: HeroView(), isActive: $isToNextScreenHero) {
+                    EmptyView()
+                }
             }
             .padding(.bottom)
             .navigationBarTitleDisplayMode(.inline)
@@ -171,20 +193,28 @@ struct ChoiceView: View {
                 studentCardViewModel.isSelect = true
                 teacherCardViewModel.isSelect = false
                 auditoryCardViewModel.isSelect = false
+                heroCardViewModel.isSelect = false
             case .teacher:
                 studentCardViewModel.isSelect = false
                 teacherCardViewModel.isSelect = true
                 auditoryCardViewModel.isSelect = false
+                heroCardViewModel.isSelect = false
             case .unowned: ()
             case .auditory:
                 studentCardViewModel.isSelect = false
                 teacherCardViewModel.isSelect = false
                 auditoryCardViewModel.isSelect = true
+                heroCardViewModel.isSelect = false
+            case .hero:
+                studentCardViewModel.isSelect = false
+                teacherCardViewModel.isSelect = false
+                auditoryCardViewModel.isSelect = false
+                heroCardViewModel.isSelect = true
             }
         }
     }
 }
 
-//#Preview {
-//    ChoiceView(viewModel: .init())
-//}
+#Preview {
+    ChoiceView(viewModel: .init())
+}

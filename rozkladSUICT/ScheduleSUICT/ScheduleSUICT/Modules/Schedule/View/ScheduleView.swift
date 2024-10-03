@@ -217,6 +217,7 @@ struct ScheduleView: View {
                     text.append("\n")
                     text.append(lesson.teachersName)
                 case .unowned: ()
+                case .hero: ()
                 }
                 
                 text.append("\n\n")

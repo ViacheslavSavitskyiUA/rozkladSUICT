@@ -371,6 +371,7 @@ extension SelectListViewModel {
                 }
             case .unowned: ()
             case .auditory: ()
+            case .hero: ()
             }
         case .course:
             groupViewModel.isOpen = false
