@@ -14,6 +14,14 @@ struct SplashView: View {
     var body: some View {
         showChoiceView(isShow: viewModel.isShow)
             .task {
+                
+                if StorageService.readIsFirstLounch() == false {
+                    
+                } else {
+                    UserDefaults.resetDefaults()
+                    StorageService.firstLounch(false)
+                }
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.3...2.0), execute: {
                     viewModel.isShow = true
                 })

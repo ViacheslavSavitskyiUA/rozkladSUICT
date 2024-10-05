@@ -17,8 +17,9 @@ struct ScheduleView: View {
     @ObservedObject var viewModel: ScheduleViewModel
     
     @State private var isShareSheetPresented = false
-    @State private var isPulsing = false
     @State private var isShowErrorView = false
+    
+    @State private var isShowSnakeGame = false
     
     @State private var isHideLights = true
     
@@ -116,6 +117,24 @@ struct ScheduleView: View {
             .sheet(isPresented: $isShareSheetPresented, content: {
                 ShareSheetView(activityItems: [activityText()])
         })
+            .overlay(alignment: .bottomTrailing) {
+                
+                Button {
+                    isShowSnakeGame = true
+                } label: {
+                    Text("🐍")
+                        .font(.system(size: 30))
+                        .foregroundStyle(Color.gray)
+                        .frame(width: 50, height: 50)
+                        .background(Color.gray, in: .circle)
+                        .contentShape(.circle)
+                        .padding([.bottom, .trailing], 12)
+                }
+
+        }
+            NavigationLink(destination: SnakeView(), isActive: $isShowSnakeGame) {
+                EmptyView()
+            }
         }
     }
     

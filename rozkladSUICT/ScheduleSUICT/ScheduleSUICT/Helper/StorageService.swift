@@ -11,6 +11,7 @@ enum SettingsKey: String {
     case id
     case type
     case title
+    case firstLunch
 }
 
 class StorageService {
@@ -36,5 +37,13 @@ class StorageService {
     
     static func readStorageTitle() -> String? {
          UserDefaults.standard.string(forKey: SettingsKey.title.rawValue)
+    }
+    
+    static func firstLounch(_ isFirst: Bool?) {
+        UserDefaults.standard.set(isFirst, forKey: SettingsKey.firstLunch.rawValue)
+    }
+    
+    static func readIsFirstLounch() -> Bool? {
+        UserDefaults.standard.bool(forKey: SettingsKey.firstLunch.rawValue)
     }
 }
