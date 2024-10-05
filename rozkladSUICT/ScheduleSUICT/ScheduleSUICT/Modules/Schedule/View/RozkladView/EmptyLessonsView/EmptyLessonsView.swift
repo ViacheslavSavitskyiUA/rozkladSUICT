@@ -11,13 +11,13 @@ struct EmptyLessonsView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(Color.pastelFirstSnow)
+                .foregroundStyle(Color.black.opacity(0.9))
                 .cornerRadius(16)
                 .padding(20)
             VStack {
                 Text("Немає занять")
                     .font(.gilroy(.bold, size: 28))
-                    .foregroundStyle(Color.black.opacity(0.7))
+                    .foregroundStyle(Color.fallGold.opacity(0.7))
                     .padding(.bottom, 40)
                 
                 ZStack {

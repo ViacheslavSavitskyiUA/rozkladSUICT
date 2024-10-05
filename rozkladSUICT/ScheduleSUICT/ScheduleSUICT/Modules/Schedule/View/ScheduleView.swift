@@ -118,18 +118,12 @@ struct ScheduleView: View {
                 ShareSheetView(activityItems: [activityText()])
         })
             .overlay(alignment: .bottomTrailing) {
-                
-                Button {
+
+                PJRPulseButton(action: {
                     isShowSnakeGame = true
-                } label: {
-                    Text("👻")
-                        .font(.system(size: 30))
-                        .foregroundStyle(Color.gray)
-                        .frame(width: 50, height: 50)
-                        .background(Color.gray, in: .circle)
-                        .contentShape(.circle)
-                        .padding([.bottom, .trailing], 12)
-                }.opacity(viewModel.isShowLoader ? 0 : 1)
+                })
+                .padding([.bottom, .trailing], -12)
+                .opacity(viewModel.isShowLoader ? 0 : 1)
 
         }
             NavigationLink(destination: SnakeView(), isActive: $isShowSnakeGame) {

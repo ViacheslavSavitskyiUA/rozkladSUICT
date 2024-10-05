@@ -31,6 +31,7 @@
 		6732941B2B62A2A3002754AA /* ChoiceLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732941A2B62A2A3002754AA /* ChoiceLinksView.swift */; };
 		6732941D2B62D90D002754AA /* animation14.json in Resources */ = {isa = PBXBuildFile; fileRef = 6732941C2B62D90D002754AA /* animation14.json */; };
 		673294212B62DC24002754AA /* animation15.json in Resources */ = {isa = PBXBuildFile; fileRef = 673294202B62DC24002754AA /* animation15.json */; };
+		6737E10D2CB1996D00C3E9B1 /* PusleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6737E10C2CB1996D00C3E9B1 /* PusleButton.swift */; };
 		674D5A1C2AD0026900558E5A /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1B2AD0026900558E5A /* DayEntity.swift */; };
 		674D5A202AD1946000558E5A /* RozkladCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1F2AD1946000558E5A /* RozkladCellView.swift */; };
 		674D5A222AD1A49400558E5A /* RozkladCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */; };
@@ -174,6 +175,7 @@
 		6732941A2B62A2A3002754AA /* ChoiceLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceLinksView.swift; sourceTree = "<group>"; };
 		6732941C2B62D90D002754AA /* animation14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation14.json; sourceTree = "<group>"; };
 		673294202B62DC24002754AA /* animation15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation15.json; sourceTree = "<group>"; };
+		6737E10C2CB1996D00C3E9B1 /* PusleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusleButton.swift; sourceTree = "<group>"; };
 		674D5A1B2AD0026900558E5A /* DayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEntity.swift; sourceTree = "<group>"; };
 		674D5A1F2AD1946000558E5A /* RozkladCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellView.swift; sourceTree = "<group>"; };
 		674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellViewModel.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 				679856C32AD7D59700F25DCD /* ScrollViewWithOffset.swift */,
 				679857032ADE5F5000F25DCD /* NetworkErrorView.swift */,
 				673014662AE0EDA700DC52E4 /* SavePopUpView.swift */,
+				6737E10C2CB1996D00C3E9B1 /* PusleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -947,6 +950,7 @@
 				67B3FBDF2AC6D02700366366 /* NetworkLayer.swift in Sources */,
 				6760AF402AC5DDCF000434A6 /* Lottie.swift in Sources */,
 				674D5A242AD1AF1100558E5A /* RozkladListView.swift in Sources */,
+				6737E10D2CB1996D00C3E9B1 /* PusleButton.swift in Sources */,
 				6760AF472AC5DE8E000434A6 /* ChoiceView.swift in Sources */,
 				67ACF9E52AE417D1005E54E4 /* SelectAuditoryListViewModel.swift in Sources */,
 				67EDEC9C2AC9DD1A0003C3AD /* TeacherModel.swift in Sources */,
