@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import EffectsLibrary
+import StoreKit
 
 struct ScheduleView: View {
     
@@ -113,6 +114,17 @@ struct ScheduleView: View {
                 await setupDays()
                 viewModel.checkPush()
                 isHideLights = false
+                
+                
+                let randomNumber: Int = .random(in: 1...20)
+                print("randomNumber = \(randomNumber)")
+                if randomNumber == 4 {
+                    guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+                          print("UNABLE TO GET CURRENT SCENE")
+                          return
+                    }
+                    SKStoreReviewController.requestReview(in: currentScene)
+                }
             }
             .sheet(isPresented: $isShareSheetPresented, content: {
                 ShareSheetView(activityItems: [activityText()])
