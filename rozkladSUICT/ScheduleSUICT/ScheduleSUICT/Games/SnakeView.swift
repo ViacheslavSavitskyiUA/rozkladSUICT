@@ -121,11 +121,11 @@ struct SnakeView: View {
                 self.player.pos = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
                 self.player.target = self.player.pos
                 
-                for _ in 1...20{
+                for _ in 1...30{
                     self.food.append(.spawn(within: geometry))
                 }
                 
-                for _ in 1...20{
+                for _ in 1...30{
                     self.bomb.append(.spawn(within: geometry))
                 }
             }

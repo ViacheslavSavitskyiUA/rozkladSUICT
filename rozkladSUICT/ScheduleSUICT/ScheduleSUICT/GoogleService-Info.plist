@@ -3,28 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDOctmksyyrnIkYwAP4vnq7D1d4X4fX-VA</string>
+	<string>AIzaSyDKRkjD2FX6jP74CmaIUOHOWlNOtoIuppU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>62765707897</string>
+	<string>427011767474</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>savitskyi.RozkladDUIKT</string>
 	<key>PROJECT_ID</key>
-	<string>rozkladdut</string>
+	<string>schedulesuict</string>
 	<key>STORAGE_BUCKET</key>
-	<string>rozkladdut.appspot.com</string>
+	<string>schedulesuict.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:62765707897:ios:7d5ee43b83248b46ff1aa8</string>
+	<string>1:427011767474:ios:e42c8ee2d9f6bde1569dab</string>
+	<key>DATABASE_URL</key>
+	<string>https://schedulesuict-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

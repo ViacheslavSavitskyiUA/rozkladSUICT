@@ -129,6 +129,7 @@
 		67C186A82AE920A50028B922 /* SelectTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A72AE920A50028B922 /* SelectTeacherView.swift */; };
 		67C186AA2AE920AF0028B922 /* SelectTeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186A92AE920AF0028B922 /* SelectTeacherViewModel.swift */; };
 		67C186AC2AE98CC70028B922 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C186AB2AE98CC70028B922 /* String+Extension.swift */; };
+		67C4638D2CB1CF9100A21730 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C4638C2CB1CF9100A21730 /* GoogleService-Info.plist */; };
 		67D1867A2ACDD913003261BE /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D186792ACDD913003261BE /* ScheduleViewModel.swift */; };
 		67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 67D841B92B10C3E70059BC5B /* newYear_cat.json */; };
 		67D841BD2B10CECD0059BC5B /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 67D841BC2B10CECD0059BC5B /* EffectsLibrary */; };
@@ -146,7 +147,6 @@
 		67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F581262AC7DF7B003EC9F2 /* CourseModel.swift */; };
 		67F67D572ACF26D20005534A /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F67D562ACF26D20005534A /* TransformDate.swift */; };
 		67FB38AC2B0A8D6B00885BAB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 67FB38AB2B0A8D6B00885BAB /* Lottie */; };
-		67FB38B22B0A8F2600885BAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */; };
 		67FBC7202CAF1899004E3D10 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC71F2CAF1899004E3D10 /* UserDefaults+Extension.swift */; };
 		67FBC7232CAFBF25004E3D10 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC7222CAFBF25004E3D10 /* FloatingButton.swift */; };
 		67FBC7262CAFE716004E3D10 /* SnakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC7252CAFE716004E3D10 /* SnakeView.swift */; };
@@ -284,6 +284,7 @@
 		67C186A72AE920A50028B922 /* SelectTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeacherView.swift; sourceTree = "<group>"; };
 		67C186A92AE920AF0028B922 /* SelectTeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeacherViewModel.swift; sourceTree = "<group>"; };
 		67C186AB2AE98CC70028B922 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		67C4638C2CB1CF9100A21730 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67D186792ACDD913003261BE /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		67D841B92B10C3E70059BC5B /* newYear_cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear_cat.json; sourceTree = "<group>"; };
 		67D841C12B11D0250059BC5B /* newYear_lights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear_lights.json; sourceTree = "<group>"; };
@@ -299,7 +300,6 @@
 		67EDEC9B2AC9DD1A0003C3AD /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		67F581262AC7DF7B003EC9F2 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		67F67D562ACF26D20005534A /* TransformDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
-		67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67FBC6F32CAF114E004E3D10 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		67FBC6F52CAF114E004E3D10 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		67FBC71F2CAF1899004E3D10 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 				6760AF232AC5C06C000434A6 /* Assets.xcassets */,
 				6760AF2D2AC5D6E3000434A6 /* Fonts */,
 				6760AF252AC5C06C000434A6 /* Preview Content */,
+				67C4638C2CB1CF9100A21730 /* GoogleService-Info.plist */,
 				6760AF362AC5D7A0000434A6 /* Info.plist */,
-				67FB38B02B0A8EFB00885BAB /* GoogleService-Info.plist */,
 			);
 			path = ScheduleSUICT;
 			sourceTree = "<group>";
@@ -918,7 +918,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67FB38B22B0A8F2600885BAB /* GoogleService-Info.plist in Resources */,
 				6760AF332AC5D751000434A6 /* Gilroy-Regular.ttf in Resources */,
 				679856DB2ADC048800F25DCD /* animation1.json in Resources */,
 				67C06BA02B13CE43008A9B45 /* ny_animation1.json in Resources */,
@@ -974,6 +973,7 @@
 				6760AF242AC5C06C000434A6 /* Assets.xcassets in Resources */,
 				6737E1242CB1A76200C3E9B1 /* h3.json in Resources */,
 				6737E12E2CB1AB6700C3E9B1 /* hLoaderAnimation.json in Resources */,
+				67C4638D2CB1CF9100A21730 /* GoogleService-Info.plist in Resources */,
 				67D841C22B11D0260059BC5B /* newYear_lights.json in Resources */,
 				67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */,
 				6737E12C2CB1A76200C3E9B1 /* h2.json in Resources */,
@@ -1132,7 +1132,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1195,7 +1195,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1243,7 +1243,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1285,7 +1285,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

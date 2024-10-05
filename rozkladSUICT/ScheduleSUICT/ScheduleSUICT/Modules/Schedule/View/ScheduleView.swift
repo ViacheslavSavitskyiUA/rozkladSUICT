@@ -116,7 +116,7 @@ struct ScheduleView: View {
                 isHideLights = false
                 
                 
-                let randomNumber: Int = .random(in: 1...10)
+                let randomNumber: Int = .random(in: 1...50)
                 print("randomNumber = \(randomNumber)")
                 if randomNumber == 4 {
                     guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
