@@ -10,7 +10,7 @@ import Foundation
 enum LottieFile: String {
     case student = "studentAnimation"
     case teacher = "teacherAnimation"
-    case loader = "loaderAnimation"
+    case loader = "hLoaderAnimation"//"loaderAnimation"
     case auditory = "auditoryAnimation"
     case freeAuditory = "freeAuditoryAnimation"
     

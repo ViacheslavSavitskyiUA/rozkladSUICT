@@ -10,6 +10,9 @@ struct SnakeView: View {
     @State var elapsedSec = 0.0
     @State var lastDate = Date()
     @State var score = 0
+    
+    @State var showingAlert = false
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     let updateTimer = Timer.publish(every: 0.05, on: .current, in: .common).autoconnect()
     
@@ -39,6 +42,7 @@ struct SnakeView: View {
                 .padding()
                 .overlay(alignment: .topLeading) {
                     Button {
+                        showingAlert = false
                         mode.wrappedValue.dismiss()
                     } label: {
                         Image("backArrow")
@@ -54,6 +58,26 @@ struct SnakeView: View {
                         .foregroundColor(self.score > 0 ? Color.blue : Color.red)
                         .font(.system(size: 40))
                 }
+                
+                .overlay(alignment: .topTrailing) {
+                    Button {
+                        showingAlert = true
+                    } label: {
+                        Text("Правила")
+                            .foregroundStyle(Color.white)
+                    }
+                    .padding(4)
+                    .background(Color.init(hex: "715B2F").opacity(0.7))
+                    .clipShape(Capsule())
+                    .padding([.top, .trailing], 12)
+                }
+            }
+            .alert("Правила гри", isPresented: $showingAlert) {
+                Button("Розпочати") {
+                    showingAlert = false
+                }
+            } message: {
+                Text("Ви граєте за 👻, проводячи пальцем по екрану переміщайте 👻 по полю гри і збирайте 🍭, за які будете отримувати 1 бал. Остерігайтесь 🎃, за них гра відніме 10 балів. Грайте ВИКЛЮЧНО у вільний від навчання час, удачі!")
             }
             
             .background(Color.black.opacity(0.9))
@@ -91,7 +115,9 @@ struct SnakeView: View {
                     self.score -= collisions.count * 10
                 }
             })
+
             .onAppear{
+                
                 self.player.pos = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
                 self.player.target = self.player.pos
                 
