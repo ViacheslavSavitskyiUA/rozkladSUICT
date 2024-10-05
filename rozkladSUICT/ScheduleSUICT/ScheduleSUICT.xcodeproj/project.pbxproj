@@ -32,6 +32,21 @@
 		6732941D2B62D90D002754AA /* animation14.json in Resources */ = {isa = PBXBuildFile; fileRef = 6732941C2B62D90D002754AA /* animation14.json */; };
 		673294212B62DC24002754AA /* animation15.json in Resources */ = {isa = PBXBuildFile; fileRef = 673294202B62DC24002754AA /* animation15.json */; };
 		6737E10D2CB1996D00C3E9B1 /* PusleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6737E10C2CB1996D00C3E9B1 /* PusleButton.swift */; };
+		6737E11E2CB1A76200C3E9B1 /* h4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E10F2CB1A76000C3E9B1 /* h4.json */; };
+		6737E11F2CB1A76200C3E9B1 /* h5.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1102CB1A76000C3E9B1 /* h5.json */; };
+		6737E1202CB1A76200C3E9B1 /* h15.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1112CB1A76000C3E9B1 /* h15.json */; };
+		6737E1212CB1A76200C3E9B1 /* h8.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1122CB1A76000C3E9B1 /* h8.json */; };
+		6737E1222CB1A76200C3E9B1 /* h1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1132CB1A76100C3E9B1 /* h1.json */; };
+		6737E1232CB1A76200C3E9B1 /* h6.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1142CB1A76100C3E9B1 /* h6.json */; };
+		6737E1242CB1A76200C3E9B1 /* h3.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1152CB1A76100C3E9B1 /* h3.json */; };
+		6737E1252CB1A76200C3E9B1 /* h13.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1162CB1A76100C3E9B1 /* h13.json */; };
+		6737E1262CB1A76200C3E9B1 /* h7.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1172CB1A76100C3E9B1 /* h7.json */; };
+		6737E1272CB1A76200C3E9B1 /* h9.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1182CB1A76100C3E9B1 /* h9.json */; };
+		6737E1282CB1A76200C3E9B1 /* h10.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E1192CB1A76100C3E9B1 /* h10.json */; };
+		6737E1292CB1A76200C3E9B1 /* h14.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E11A2CB1A76100C3E9B1 /* h14.json */; };
+		6737E12A2CB1A76200C3E9B1 /* h11.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E11B2CB1A76100C3E9B1 /* h11.json */; };
+		6737E12B2CB1A76200C3E9B1 /* h12.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E11C2CB1A76100C3E9B1 /* h12.json */; };
+		6737E12C2CB1A76200C3E9B1 /* h2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6737E11D2CB1A76200C3E9B1 /* h2.json */; };
 		674D5A1C2AD0026900558E5A /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1B2AD0026900558E5A /* DayEntity.swift */; };
 		674D5A202AD1946000558E5A /* RozkladCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A1F2AD1946000558E5A /* RozkladCellView.swift */; };
 		674D5A222AD1A49400558E5A /* RozkladCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */; };
@@ -176,6 +191,21 @@
 		6732941C2B62D90D002754AA /* animation14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation14.json; sourceTree = "<group>"; };
 		673294202B62DC24002754AA /* animation15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation15.json; sourceTree = "<group>"; };
 		6737E10C2CB1996D00C3E9B1 /* PusleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusleButton.swift; sourceTree = "<group>"; };
+		6737E10F2CB1A76000C3E9B1 /* h4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h4.json; sourceTree = "<group>"; };
+		6737E1102CB1A76000C3E9B1 /* h5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h5.json; sourceTree = "<group>"; };
+		6737E1112CB1A76000C3E9B1 /* h15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h15.json; sourceTree = "<group>"; };
+		6737E1122CB1A76000C3E9B1 /* h8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h8.json; sourceTree = "<group>"; };
+		6737E1132CB1A76100C3E9B1 /* h1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h1.json; sourceTree = "<group>"; };
+		6737E1142CB1A76100C3E9B1 /* h6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h6.json; sourceTree = "<group>"; };
+		6737E1152CB1A76100C3E9B1 /* h3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h3.json; sourceTree = "<group>"; };
+		6737E1162CB1A76100C3E9B1 /* h13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h13.json; sourceTree = "<group>"; };
+		6737E1172CB1A76100C3E9B1 /* h7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h7.json; sourceTree = "<group>"; };
+		6737E1182CB1A76100C3E9B1 /* h9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h9.json; sourceTree = "<group>"; };
+		6737E1192CB1A76100C3E9B1 /* h10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h10.json; sourceTree = "<group>"; };
+		6737E11A2CB1A76100C3E9B1 /* h14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h14.json; sourceTree = "<group>"; };
+		6737E11B2CB1A76100C3E9B1 /* h11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h11.json; sourceTree = "<group>"; };
+		6737E11C2CB1A76100C3E9B1 /* h12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h12.json; sourceTree = "<group>"; };
+		6737E11D2CB1A76200C3E9B1 /* h2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = h2.json; sourceTree = "<group>"; };
 		674D5A1B2AD0026900558E5A /* DayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEntity.swift; sourceTree = "<group>"; };
 		674D5A1F2AD1946000558E5A /* RozkladCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellView.swift; sourceTree = "<group>"; };
 		674D5A212AD1A49400558E5A /* RozkladCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladCellViewModel.swift; sourceTree = "<group>"; };
@@ -368,6 +398,28 @@
 			path = SavePopUp;
 			sourceTree = "<group>";
 		};
+		6737E10E2CB1A74100C3E9B1 /* Halloween */ = {
+			isa = PBXGroup;
+			children = (
+				6737E1132CB1A76100C3E9B1 /* h1.json */,
+				6737E11D2CB1A76200C3E9B1 /* h2.json */,
+				6737E1152CB1A76100C3E9B1 /* h3.json */,
+				6737E10F2CB1A76000C3E9B1 /* h4.json */,
+				6737E1102CB1A76000C3E9B1 /* h5.json */,
+				6737E1142CB1A76100C3E9B1 /* h6.json */,
+				6737E1172CB1A76100C3E9B1 /* h7.json */,
+				6737E1122CB1A76000C3E9B1 /* h8.json */,
+				6737E1182CB1A76100C3E9B1 /* h9.json */,
+				6737E1192CB1A76100C3E9B1 /* h10.json */,
+				6737E11B2CB1A76100C3E9B1 /* h11.json */,
+				6737E11C2CB1A76100C3E9B1 /* h12.json */,
+				6737E1162CB1A76100C3E9B1 /* h13.json */,
+				6737E11A2CB1A76100C3E9B1 /* h14.json */,
+				6737E1112CB1A76000C3E9B1 /* h15.json */,
+			);
+			path = Halloween;
+			sourceTree = "<group>";
+		};
 		674D5A1D2AD1922500558E5A /* RozkladView */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +610,7 @@
 		679856CB2ADC045F00F25DCD /* EmptyLessons */ = {
 			isa = PBXGroup;
 			children = (
+				6737E10E2CB1A74100C3E9B1 /* Halloween */,
 				679856CE2ADC048700F25DCD /* animation1.json */,
 				679856E92ADC0ED900F25DCD /* animation2.json */,
 				679856F02ADC0ED900F25DCD /* animation6.json */,
@@ -871,28 +924,41 @@
 				67C06BA12B13CE43008A9B45 /* ny_animation8.json in Resources */,
 				679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */,
 				679856F82ADC0EDA00F25DCD /* animation11.json in Resources */,
+				6737E1232CB1A76200C3E9B1 /* h6.json in Resources */,
+				6737E12A2CB1A76200C3E9B1 /* h11.json in Resources */,
 				67C06B9D2B13CE43008A9B45 /* ny_animation4.json in Resources */,
+				6737E1262CB1A76200C3E9B1 /* h7.json in Resources */,
+				6737E1272CB1A76200C3E9B1 /* h9.json in Resources */,
 				6732941D2B62D90D002754AA /* animation14.json in Resources */,
 				679856FC2ADC0EDA00F25DCD /* animation6.json in Resources */,
 				679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */,
 				6760AF4C2AC5E019000434A6 /* studentAnimation.json in Resources */,
+				6737E12B2CB1A76200C3E9B1 /* h12.json in Resources */,
 				67C06BAA2B149BA6008A9B45 /* ny_animation14.json in Resources */,
 				67C06BA32B13CE43008A9B45 /* ny_animation2.json in Resources */,
+				6737E1252CB1A76200C3E9B1 /* h13.json in Resources */,
 				6760AF352AC5D75C000434A6 /* Gilroy-Medium.ttf in Resources */,
 				67C06BA22B13CE43008A9B45 /* ny_animation9.json in Resources */,
 				673014632AE0ED1300DC52E4 /* checkmark.json in Resources */,
 				679856F52ADC0EDA00F25DCD /* animation2.json in Resources */,
 				679856F72ADC0EDA00F25DCD /* animation8.json in Resources */,
+				6737E1282CB1A76200C3E9B1 /* h10.json in Resources */,
 				67B3FBDC2AC6A3B500366366 /* Gilroy-Bold.ttf in Resources */,
+				6737E1292CB1A76200C3E9B1 /* h14.json in Resources */,
 				679856FA2ADC0EDA00F25DCD /* animation13.json in Resources */,
 				67D841BA2B10C3E70059BC5B /* newYear_cat.json in Resources */,
 				67C06B9A2B13CE43008A9B45 /* ny_animation5.json in Resources */,
 				672142D02ACC7ADB007FB14D /* loaderAnimation.json in Resources */,
 				67C06BA42B13CE43008A9B45 /* ny_animation10.json in Resources */,
+				6737E11E2CB1A76200C3E9B1 /* h4.json in Resources */,
+				6737E11F2CB1A76200C3E9B1 /* h5.json in Resources */,
+				6737E1222CB1A76200C3E9B1 /* h1.json in Resources */,
+				6737E1202CB1A76200C3E9B1 /* h15.json in Resources */,
 				6760AF272AC5C06C000434A6 /* Preview Assets.xcassets in Resources */,
 				679856F92ADC0EDA00F25DCD /* animation12.json in Resources */,
 				67ACF9D02AE19BFC005E54E4 /* freeAuditoryAnimation.json in Resources */,
 				673294212B62DC24002754AA /* animation15.json in Resources */,
+				6737E1212CB1A76200C3E9B1 /* h8.json in Resources */,
 				67C06B9B2B13CE43008A9B45 /* ny_animation6.json in Resources */,
 				67C06B9E2B13CE43008A9B45 /* ny_animation7.json in Resources */,
 				67C06BAC2B149BA6008A9B45 /* ny_animation13.json in Resources */,
@@ -903,8 +969,10 @@
 				6760AF4E2AC5E037000434A6 /* teacherAnimation.json in Resources */,
 				6760AF312AC5D716000434A6 /* Gilroy-Semibold.ttf in Resources */,
 				6760AF242AC5C06C000434A6 /* Assets.xcassets in Resources */,
+				6737E1242CB1A76200C3E9B1 /* h3.json in Resources */,
 				67D841C22B11D0260059BC5B /* newYear_lights.json in Resources */,
 				67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */,
+				6737E12C2CB1A76200C3E9B1 /* h2.json in Resources */,
 				67C06BAD2B149BA6008A9B45 /* ny_animation15.json in Resources */,
 				67C06B9C2B13CE43008A9B45 /* ny_animation12.json in Resources */,
 			);

@@ -15,17 +15,21 @@ enum LottieFile: String {
     case freeAuditory = "freeAuditoryAnimation"
     
     enum EmptyLessons: String, CaseIterable {
-        case a1 = "animation1"
-        case a2 = "animation2"
-        case a6 = "animation6"
-        case a8 = "animation8"
-        case a9 = "animation9"
-        case a10 = "animation10"
-        case a11 = "animation11"
-        case a12 = "animation12"
-        case a13 = "animation13"
-        case a14 = "animation14"
-        case a15 = "animation15"
+        case a1 =  "h1"//"animation1"
+        case a2 =  "h2"//"animation2"
+        case a6 =  "h3"//"animation6"
+        case a8 =  "h4"//"animation8"
+        case a9 =  "h5"//"animation9"
+        case a10 = "h6"// "animation10"
+        case a11 = "h7"// "animation11"
+        case a12 = "h8"// "animation12"
+        case a13 = "h9"// "animation13"
+        case a14 = "h10"// "animation14"
+        case a15 = "h11"// "animation15"
+        case a16 = "h12"
+        case a17 = "h13"
+        case a18 = "h14"
+        case a19 = "h15"
     }
     
     enum NetworkError: String {

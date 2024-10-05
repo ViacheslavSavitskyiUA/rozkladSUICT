@@ -23,7 +23,7 @@ struct EmptyLessonsView: View {
                 ZStack {
                     Rectangle()
                         .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.width / 1.4)
-                        .foregroundStyle(Color.white)
+                        .foregroundStyle(Color.fallGold.opacity(0.4))
                         .cornerRadius(16)
                     
                     LottieView(loopMode: .loop,
