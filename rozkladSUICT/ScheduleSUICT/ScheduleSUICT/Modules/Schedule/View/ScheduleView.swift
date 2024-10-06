@@ -368,6 +368,7 @@ struct ScheduleView: View {
     
     @MainActor
     func fetchRozklad() async -> Bool {
+        viewModel.rozklad = []
         viewModel.isShowLoader = true
         switch type {
         case .student:

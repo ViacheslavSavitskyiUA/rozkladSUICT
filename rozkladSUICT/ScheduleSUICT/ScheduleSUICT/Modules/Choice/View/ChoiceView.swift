@@ -84,10 +84,10 @@ struct ChoiceView: View {
                             
                             Spacer().frame(width: 16)
                             
-                            ChoiceCardView(viewModel: heroCardViewModel, userType: .hero, isHero: true)
-                                .onTapGesture {
-                                    select(userType: .hero)
-                                }
+//                            ChoiceCardView(viewModel: heroCardViewModel, userType: .hero, isHero: true)
+//                                .onTapGesture {
+//                                    select(userType: .hero)
+//                                }
                             
                         }
                         Spacer().frame(height: 20)
