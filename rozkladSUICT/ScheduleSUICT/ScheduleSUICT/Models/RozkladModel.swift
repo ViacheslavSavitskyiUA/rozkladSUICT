@@ -20,7 +20,7 @@ struct LessonModel: Codable {
 
 // MARK: - Period
 struct PeriodModel: Codable {
-    let r1, rz14, rz15, r5: Int
+    let r1, rz14, rz15: Int
     let disciplineID, educationDisciplineID: Int
     let disciplineFullName, disciplineShortName, classroom, timeStart: String
     let timeEnd, teachersName, teachersNameFull: String
@@ -32,7 +32,7 @@ struct PeriodModel: Codable {
     let extraText: Bool
 
     enum CodingKeys: String, CodingKey {
-        case r1, rz14, rz15, r5
+        case r1, rz14, rz15
         case disciplineID = "disciplineId"
         case educationDisciplineID = "educationDisciplineId"
         case disciplineFullName, disciplineShortName, classroom, timeStart, timeEnd, teachersName, teachersNameFull, type, dateUpdated, nonstandardTime, groups, extraText

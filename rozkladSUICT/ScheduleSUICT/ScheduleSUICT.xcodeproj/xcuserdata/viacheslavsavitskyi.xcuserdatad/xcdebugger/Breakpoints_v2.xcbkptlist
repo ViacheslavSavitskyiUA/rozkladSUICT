@@ -3,4 +3,129 @@
    uuid = "F950278D-F041-406E-AFCB-D01436E854B1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40555803-A545-4969-91E2-007493D4F9E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleSUICT/Network/NetworkLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "request(endpoint:method:urlParams:body:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - 5bfd74bf5de2a26d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.SelectTeacherModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - e4b408ca977451f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.RozkladModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - e4b408ca977451f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.FacultyModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - e8c28031d47a518"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.CourseModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - d93fbf396a1ffc15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.GroupModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - d93fbf396a1ffc15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.ChairModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "40555803-A545-4969-91E2-007493D4F9E4 - e4b408ca977451f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for generic specialization &lt;Swift.Array&lt;ScheduleSUICT.TeacherModel&gt;&gt; of ScheduleSUICT.NetworkClient.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: ScheduleSUICT.APIEndpoints, method: ScheduleSUICT.HTTPMethod, urlParams: Swift.Optional&lt;Swift.String&gt;, body: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) async -&gt; Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "ScheduleSUICT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viacheslavsavitskyi/Documents/GitHub/rozkladSUICT/rozkladSUICT/ScheduleSUICT/ScheduleSUICT/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
