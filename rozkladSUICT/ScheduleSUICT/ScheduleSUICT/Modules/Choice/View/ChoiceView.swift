@@ -67,7 +67,7 @@ struct ChoiceView: View {
                     
                     Spacer()
                     
-                    Text("Оберіть розклад, що Вас цікавить")
+                    Text("Оберіть, що Вас цікавить")
                         .font(.gilroy(.semibold, size: 17))
                         .padding(.horizontal)
                         .padding(.bottom, 24)
