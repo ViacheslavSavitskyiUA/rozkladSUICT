@@ -57,18 +57,18 @@ struct PJRPulseButton: View {
             .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true),
                value: self.isAnimating)
 
-            Button(action: {
-                action()
-            }) {
-                Text("👻")
-                    .font(.system(size: 30))
-                    .foregroundStyle(Color.gray)
-                    .frame(width: 50, height: 50)
-                    .background(Color.gray, in: .circle)
-                    .contentShape(.circle)
-//                    .padding([.bottom, .trailing], 12)
-                
-            }
+//            Button(action: {
+//                action()
+//            }) {
+//                Text("👻")
+//                    .font(.system(size: 30))
+//                    .foregroundStyle(Color.gray)
+//                    .frame(width: 50, height: 50)
+//                    .background(Color.gray, in: .circle)
+//                    .contentShape(.circle)
+////                    .padding([.bottom, .trailing], 12)
+//                
+//            }
             .onAppear(perform: {
                 self.isAnimating.toggle()
             })

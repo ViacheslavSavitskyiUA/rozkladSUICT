@@ -12,7 +12,7 @@ struct LoaderView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .frame(width: 160, height: 160)
-                .foregroundStyle(Color.init(hex: "715B2F"))
+                .foregroundStyle(Color.white)//.init(hex: "715B2F"))
             
             LottieView(loopMode: .loop, lottieFile: LottieFile.loader.rawValue)
                 .scaleEffect(0.30)

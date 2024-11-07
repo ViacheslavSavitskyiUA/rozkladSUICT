@@ -116,7 +116,7 @@ struct ScheduleView: View {
                 isHideLights = false
                 
                 
-                let randomNumber: Int = .random(in: 1...50)
+                let randomNumber: Int = .random(in: 1...30)
                 print("randomNumber = \(randomNumber)")
                 if randomNumber == 4 {
                     guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
@@ -129,15 +129,15 @@ struct ScheduleView: View {
             .sheet(isPresented: $isShareSheetPresented, content: {
                 ShareSheetView(activityItems: [activityText()])
         })
-            .overlay(alignment: .bottomTrailing) {
-
-                PJRPulseButton(action: {
-                    isShowSnakeGame = true
-                })
-                .padding([.bottom, .trailing], -12)
-                .opacity(viewModel.isShowLoader ? 0 : 1)
-
-        }
+//            .overlay(alignment: .bottomTrailing) {
+//
+//                PJRPulseButton(action: {
+//                    isShowSnakeGame = true
+//                })
+//                .padding([.bottom, .trailing], -12)
+//                .opacity(viewModel.isShowLoader ? 0 : 1)
+//
+//        }
             NavigationLink(destination: SnakeView(), isActive: $isShowSnakeGame) {
                 EmptyView()
             }
