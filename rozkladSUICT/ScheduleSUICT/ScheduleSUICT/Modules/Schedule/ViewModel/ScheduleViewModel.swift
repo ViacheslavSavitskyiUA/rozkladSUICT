@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import Firebase
 
 enum UserDataStatus {
     case saved, unsaved
@@ -48,6 +49,8 @@ final class ScheduleViewModel: ObservableObject {
         
         notificationService.scheduleNotifications(models: rozklad,
                                                   userType: type)
+        
+        Analytics.setUserProperty(title, forName: "Group/Teacher/Auditory")
     }
     
     func saveUserData() {
