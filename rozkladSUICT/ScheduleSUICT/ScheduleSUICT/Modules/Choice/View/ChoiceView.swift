@@ -137,7 +137,7 @@ struct ChoiceView: View {
                                                              searchId: StorageService.readStorageId() ?? 0),
                                    isActive: $isToScheduleScreen) {
                         EmptyView()
-                    }
+                    }.isDetailLink(false)
                 }
                 
                 NavigationLink(destination: SelectAuditoryListView(viewModel: .init(title: selectUserType.titleSelectItemsView)),
@@ -147,7 +147,7 @@ struct ChoiceView: View {
                 
                 NavigationLink(destination: HeroView(), isActive: $isToNextScreenHero) {
                     EmptyView()
-                }
+                }.isDetailLink(false)
             }
             .padding(.bottom)
             .navigationBarTitleDisplayMode(.inline)

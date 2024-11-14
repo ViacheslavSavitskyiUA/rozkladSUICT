@@ -47,7 +47,7 @@ struct PJRPulseButton: View {
             Group {
                 ForEach(circleArray, id: \.self) { cirlce in
                     Circle()
-                        .fill(Color.gray)
+                        .fill(Color.red)
                         .opacity(self.isAnimating ? cirlce.opacity : 0)
                         .frame(width: cirlce.width, height: cirlce.width)
                         .scaleEffect(self.isAnimating ? 1 : 0)
@@ -57,18 +57,18 @@ struct PJRPulseButton: View {
             .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true),
                value: self.isAnimating)
 
-//            Button(action: {
-//                action()
-//            }) {
-//                Text("👻")
-//                    .font(.system(size: 30))
-//                    .foregroundStyle(Color.gray)
-//                    .frame(width: 50, height: 50)
-//                    .background(Color.gray, in: .circle)
-//                    .contentShape(.circle)
-////                    .padding([.bottom, .trailing], 12)
-//                
-//            }
+            Button(action: {
+                action()
+            }) {
+                Text("🎁")
+                    .font(.system(size: 24))
+                    .foregroundStyle(Color.red)
+                    .frame(width: 50, height: 50)
+                    .background(Color.init(hex: "ea4335"), in: .circle)
+                    .contentShape(.circle)
+//                    .padding([.bottom, .trailing], 12)
+                
+            }
             .onAppear(perform: {
                 self.isAnimating.toggle()
             })

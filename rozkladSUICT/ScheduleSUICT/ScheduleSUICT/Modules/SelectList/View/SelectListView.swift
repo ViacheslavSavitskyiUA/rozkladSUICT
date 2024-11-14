@@ -26,7 +26,7 @@ struct SelectListView: View {
                                                          searchId: viewModel.returnScheduleVMParameters().searchId),
                                isActive: $viewModel.isShowRozklad) {
                     EmptyView()
-                }
+                }.isDetailLink(false)
             }
             .navigationTitle(viewModel.userType.titleSelectItemsView)
             .navigationBarTitleDisplayMode(.large)

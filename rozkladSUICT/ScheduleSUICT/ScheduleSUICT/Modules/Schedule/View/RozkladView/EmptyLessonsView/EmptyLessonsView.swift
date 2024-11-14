@@ -11,7 +11,7 @@ struct EmptyLessonsView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(Color.pastelFirstSnow)
+                .foregroundStyle(Color.red.opacity(0.5))
                 .cornerRadius(16)
                 .padding(20)
             VStack {
@@ -27,9 +27,9 @@ struct EmptyLessonsView: View {
                         .cornerRadius(16)
                     
                     LottieView(loopMode: .loop,
-                               lottieFile: (LottieFile.EmptyLessons.allCases.randomElement()
-                                            ?? .a1).rawValue)
-                    .scaleEffect(0.2)
+                               lottieFile: (LottieFile.NewYear.EmptyLessons.allCases.randomElement()
+                                            ?? .a15).rawValue)
+                    .scaleEffect(0.15)
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width / 1.45, height: UIScreen.main.bounds.width / 1.45)
                 }

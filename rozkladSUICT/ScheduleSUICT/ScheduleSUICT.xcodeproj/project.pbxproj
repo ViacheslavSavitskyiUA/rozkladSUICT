@@ -93,6 +93,11 @@
 		679856FD2ADC0EDA00F25DCD /* animation9.json in Resources */ = {isa = PBXBuildFile; fileRef = 679856F12ADC0ED900F25DCD /* animation9.json */; };
 		679857022ADC5D8000F25DCD /* animationNetrorkError.json in Resources */ = {isa = PBXBuildFile; fileRef = 679857012ADC5D8000F25DCD /* animationNetrorkError.json */; };
 		679857042ADE5F5000F25DCD /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679857032ADE5F5000F25DCD /* NetworkErrorView.swift */; };
+		679A50172CE61A4A0098F3D3 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A50162CE61A4A0098F3D3 /* DashBoardView.swift */; };
+		679A50192CE61A670098F3D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A50182CE61A670098F3D3 /* Game.swift */; };
+		679A501B2CE61C090098F3D3 /* GameGridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A501A2CE61C090098F3D3 /* GameGridsView.swift */; };
+		679A501D2CE61C630098F3D3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A501C2CE61C630098F3D3 /* TimerView.swift */; };
+		679A501F2CE61C790098F3D3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A501E2CE61C790098F3D3 /* TitleView.swift */; };
 		67A25F352AF027EA00DFC783 /* RozkladDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A25F342AF027EA00DFC783 /* RozkladDetailView.swift */; };
 		67ACF9CE2AE19BE7005E54E4 /* auditoryAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 67ACF9CD2AE19BE7005E54E4 /* auditoryAnimation.json */; };
 		67ACF9D02AE19BFC005E54E4 /* freeAuditoryAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 67ACF9CF2AE19BFC005E54E4 /* freeAuditoryAnimation.json */; };
@@ -149,7 +154,7 @@
 		67FB38AC2B0A8D6B00885BAB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 67FB38AB2B0A8D6B00885BAB /* Lottie */; };
 		67FBC7202CAF1899004E3D10 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC71F2CAF1899004E3D10 /* UserDefaults+Extension.swift */; };
 		67FBC7232CAFBF25004E3D10 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC7222CAFBF25004E3D10 /* FloatingButton.swift */; };
-		67FBC7262CAFE716004E3D10 /* SnakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC7252CAFE716004E3D10 /* SnakeView.swift */; };
+		67FBC7262CAFE716004E3D10 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FBC7252CAFE716004E3D10 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -249,6 +254,11 @@
 		679856F12ADC0ED900F25DCD /* animation9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation9.json; sourceTree = "<group>"; };
 		679857012ADC5D8000F25DCD /* animationNetrorkError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationNetrorkError.json; sourceTree = "<group>"; };
 		679857032ADE5F5000F25DCD /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		679A50162CE61A4A0098F3D3 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
+		679A50182CE61A670098F3D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		679A501A2CE61C090098F3D3 /* GameGridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridsView.swift; sourceTree = "<group>"; };
+		679A501C2CE61C630098F3D3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		679A501E2CE61C790098F3D3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		67A25F342AF027EA00DFC783 /* RozkladDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladDetailView.swift; sourceTree = "<group>"; };
 		67ACF9CD2AE19BE7005E54E4 /* auditoryAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = auditoryAnimation.json; sourceTree = "<group>"; };
 		67ACF9CF2AE19BFC005E54E4 /* freeAuditoryAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = freeAuditoryAnimation.json; sourceTree = "<group>"; };
@@ -304,7 +314,7 @@
 		67FBC6F52CAF114E004E3D10 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		67FBC71F2CAF1899004E3D10 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		67FBC7222CAFBF25004E3D10 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
-		67FBC7252CAFE716004E3D10 /* SnakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeView.swift; sourceTree = "<group>"; };
+		67FBC7252CAFE716004E3D10 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -835,7 +845,12 @@
 		67FBC7242CAFE706004E3D10 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				67FBC7252CAFE716004E3D10 /* SnakeView.swift */,
+				67FBC7252CAFE716004E3D10 /* GameView.swift */,
+				679A50162CE61A4A0098F3D3 /* DashBoardView.swift */,
+				679A50182CE61A670098F3D3 /* Game.swift */,
+				679A501A2CE61C090098F3D3 /* GameGridsView.swift */,
+				679A501C2CE61C630098F3D3 /* TimerView.swift */,
+				679A501E2CE61C790098F3D3 /* TitleView.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -1027,11 +1042,13 @@
 				67ACF9E52AE417D1005E54E4 /* SelectAuditoryListViewModel.swift in Sources */,
 				67EDEC9C2AC9DD1A0003C3AD /* TeacherModel.swift in Sources */,
 				674D5A1C2AD0026900558E5A /* DayEntity.swift in Sources */,
-				67FBC7262CAFE716004E3D10 /* SnakeView.swift in Sources */,
+				679A501F2CE61C790098F3D3 /* TitleView.swift in Sources */,
+				67FBC7262CAFE716004E3D10 /* GameView.swift in Sources */,
 				674D5A262AD1AF2400558E5A /* RozkladListViewModel.swift in Sources */,
 				6760AF222AC5C06A000434A6 /* ContentView.swift in Sources */,
 				6760AF492AC5DEAD000434A6 /* ChoiceCardView.swift in Sources */,
 				67F581272AC7DF7B003EC9F2 /* CourseModel.swift in Sources */,
+				679A50192CE61A670098F3D3 /* Game.swift in Sources */,
 				6702DCA32AED86FB0066FAE9 /* LessonType.swift in Sources */,
 				67ACF9E32AE417BE005E54E4 /* SelectAuditoryListView.swift in Sources */,
 				67C186AA2AE920AF0028B922 /* SelectTeacherViewModel.swift in Sources */,
@@ -1043,6 +1060,7 @@
 				6760AF202AC5C06A000434A6 /* ScheduleSUICTApp.swift in Sources */,
 				671287D62ACED88100EF5CF5 /* DayCollectionView.swift in Sources */,
 				679856CA2ADBE27600F25DCD /* EmptyLessonsView.swift in Sources */,
+				679A501D2CE61C630098F3D3 /* TimerView.swift in Sources */,
 				67A25F352AF027EA00DFC783 /* RozkladDetailView.swift in Sources */,
 				679856C22AD6A81300F25DCD /* ScrollIndicatorHidden.swift in Sources */,
 				67FBC7202CAF1899004E3D10 /* UserDefaults+Extension.swift in Sources */,
@@ -1075,6 +1093,7 @@
 				676D96DF2CAEC47700EC154B /* HeroModel.swift in Sources */,
 				671BE11A2ACD9C3000310DA4 /* UINavigationController+Extension.swift in Sources */,
 				67B3FBE32AC6E61A00366366 /* SelectItemView.swift in Sources */,
+				679A50172CE61A4A0098F3D3 /* DashBoardView.swift in Sources */,
 				6713616D2AC691BB00B78C42 /* ChoiceViewModel.swift in Sources */,
 				67E9398D2AC602E100AB47ED /* UserType.swift in Sources */,
 				67FBC7232CAFBF25004E3D10 /* FloatingButton.swift in Sources */,
@@ -1082,6 +1101,7 @@
 				671287D32ACEB7E100EF5CF5 /* DayCellViewModel.swift in Sources */,
 				6760AF3B2AC5D929000434A6 /* Font+Extension.swift in Sources */,
 				67EDEC8D2AC87DB10003C3AD /* BaseEntity.swift in Sources */,
+				679A501B2CE61C090098F3D3 /* GameGridsView.swift in Sources */,
 				67B3FBE12AC6DF7100366366 /* NetworkManager.swift in Sources */,
 				67EDEC8A2AC87C890003C3AD /* ChoiceEntity.swift in Sources */,
 				67C186A22AE63C5C0028B922 /* TextFieldClearButton.swift in Sources */,
@@ -1243,7 +1263,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1285,7 +1305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = savitskyi.RozkladDUIKT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
