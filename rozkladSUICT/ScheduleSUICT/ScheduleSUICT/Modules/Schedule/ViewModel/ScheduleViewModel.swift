@@ -97,6 +97,10 @@ final class ScheduleViewModel: ObservableObject {
         }
     }
     
+    func getRozkladEqualNavTitle() -> Bool {
+        return StorageService.readStorageTitle() != nil ? true : false
+    }
+    
     @MainActor
     func transformRangeDateString() -> (start: String, end: String) {
         let dates = Date().getCurrentWeekDays()

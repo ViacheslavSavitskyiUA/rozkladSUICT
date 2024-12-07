@@ -5,10 +5,6 @@ struct GameView: View {
     
     @StateObject var game = Game()
     
-    init() {
-        Analytics.setUserProperty("\(game.bestScore)", forName: "Best_game_score")
-    }
-    
     var body: some View {
         ZStack {
             
@@ -37,6 +33,8 @@ struct GameView: View {
                         }
                     }
                     Spacer()
+                }.task {
+                    Analytics.setUserProperty("\(game.bestScore)", forName: "Best_game_score")
                 }
                 .padding(.horizontal)
             }

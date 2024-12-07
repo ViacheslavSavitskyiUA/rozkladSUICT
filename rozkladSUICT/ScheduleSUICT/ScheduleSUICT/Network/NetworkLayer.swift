@@ -67,7 +67,8 @@ extension NetworkClient {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(APIError.badRequest) }
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { 
+                return .failure(APIError.badRequest) }
             
             let decode = try JSONDecoder().decode(T.self, from: data)
             return .success(decode)

@@ -14,6 +14,7 @@ struct ScheduleView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @Environment(\.scenePhase) var scenePhase
+    @Environment(\.modelContext) private var context
     
     @ObservedObject var viewModel: ScheduleViewModel
     
@@ -24,6 +25,8 @@ struct ScheduleView: View {
     
     @State private var isHideLights = true
     
+    @State private var isShowOfflineText = false
+    
     @State var rozkladListViewModel: RozkladListViewModel = .init(lessons: [], type: .unowned)
     @State var dayCollectionViewModel: DayCollectionViewModel = .init(completion: { _ in })
     
@@ -31,6 +34,8 @@ struct ScheduleView: View {
     
     @State private var detailInfo: (LessonEntity, UserType) = (.init(), .auditory)
     @State private var isShowDetailView: Bool = false
+    
+    @State private var swiftDataService = SwiftDataService()
     
     let type: UserType
     var searchId: Int = 0
@@ -83,6 +88,7 @@ struct ScheduleView: View {
                     .frame(height: 48)
                     showView(isError: isShowErrorView)
                 }
+                showOfflineText(isShowOfflineText)
             }
             .navigationBarHidden(true)
             .overlay(content: {
@@ -146,6 +152,12 @@ struct ScheduleView: View {
         }
     }
     
+    @ViewBuilder func showOfflineText(_ isShow: Bool) -> some View {
+        if isShow {
+            MarqueeText(text: "Увага! Не вдалось встановити зʼєдання з сервером! Розклад може відрізнятись!", font: UIFont.preferredFont(forTextStyle: .subheadline), leftFade: 16, rightFade: 16, startDelay: 1)
+        }
+    }
+    
     @ViewBuilder func showLessons(_ hasLessons: Bool) -> some View {
         switch hasLessons {
         case true:
@@ -172,7 +184,6 @@ struct ScheduleView: View {
                     .frame(width: UIScreen.main.bounds.width, height: 8)
                     .opacity(isHideLights ? 0 : 1)
                 DayCollectionView(viewModel: dayCollectionViewModel)
-//                    .background(Color.white)
                 showLessons(!selectDay.isEmpty)
                     .opacity(viewModel.isShowLoader ? 0 : 1)
             }
@@ -381,8 +392,18 @@ struct ScheduleView: View {
                 isShowErrorView = false
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
+                
+                if StorageService.readStorageTitle() != nil {
+                    swiftDataService.saveRozklad(schedule: models, context: context)
+                }
+                isShowOfflineText = false
             } catch {
-                isShowErrorView = true
+                if viewModel.getRozkladEqualNavTitle() {
+                    await viewModel.transformRozklad(models: swiftDataService.fetchRozklad(context: context))
+                    isShowOfflineText = true
+                } else {
+                    isShowErrorView = true
+                }
             }
             
         case .teacher:
@@ -393,8 +414,18 @@ struct ScheduleView: View {
                 isShowErrorView = false
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
+                
+                if StorageService.readStorageTitle() != nil {
+                    swiftDataService.saveRozklad(schedule: models, context: context)
+                }
+                isShowOfflineText = false
             } catch {
-                isShowErrorView = true
+                if viewModel.getRozkladEqualNavTitle() {
+                    await viewModel.transformRozklad(models: swiftDataService.fetchRozklad(context: context))
+                    isShowOfflineText = true
+                } else {
+                    isShowErrorView = true
+                }
             }
         case .auditory:
             do {

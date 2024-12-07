@@ -31,11 +31,8 @@ struct ScheduleSUICTApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            OnboardingView()
             SplashView(viewModel: .init())
-            
-            
-//            SelectAuditoryListView(viewModel: .init())
+                .modelContainer(for: [MainRozkladSwiftDataModel.self])
         }
     }
 }
