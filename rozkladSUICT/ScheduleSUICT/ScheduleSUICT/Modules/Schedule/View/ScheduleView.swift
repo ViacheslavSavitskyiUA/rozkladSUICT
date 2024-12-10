@@ -124,7 +124,7 @@ struct ScheduleView: View {
                 isHideLights = false
                 
                 
-                let randomNumber: Int = .random(in: 1...30)
+                let randomNumber: Int = .random(in: 1...15)
                 print("randomNumber = \(randomNumber)")
                 if randomNumber == 4 {
                     guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
@@ -393,7 +393,8 @@ struct ScheduleView: View {
                 await viewModel.transformRozklad(models: models)
                 viewModel.askedSaveQuestion()
                 
-                if StorageService.readStorageTitle() != nil {
+                if StorageService.readStorageTitle() != nil,
+                   viewModel.userDataStatus == .saved {
                     swiftDataService.saveRozklad(schedule: models, context: context)
                 }
                 isShowOfflineText = false
@@ -420,7 +421,8 @@ struct ScheduleView: View {
                 }
                 isShowOfflineText = false
             } catch {
-                if viewModel.getRozkladEqualNavTitle() {
+                if viewModel.getRozkladEqualNavTitle(),
+                    viewModel.userDataStatus == .saved {
                     await viewModel.transformRozklad(models: swiftDataService.fetchRozklad(context: context))
                     isShowOfflineText = true
                 } else {
